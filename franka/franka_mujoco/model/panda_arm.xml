@@ -76,22 +76,12 @@
         <exclude body1="world" body2="panda_link7"/>
         <exclude body1="panda_link1" body2="panda_link2"/>
         <exclude body1="panda_link1" body2="panda_link3"/>
-        <exclude body1="panda_link1" body2="panda_link4"/>
-        <exclude body1="panda_link1" body2="panda_link5"/>
-        <exclude body1="panda_link1" body2="panda_link6"/>
-        <!-- <exclude body1="panda_link1" body2="panda_link7"/> -->
         <exclude body1="panda_link2" body2="panda_link3"/>
         <exclude body1="panda_link2" body2="panda_link4"/>
-        <exclude body1="panda_link2" body2="panda_link5"/>
-        <exclude body1="panda_link2" body2="panda_link6"/>
-        <exclude body1="panda_link2" body2="panda_link7"/>
         <exclude body1="panda_link3" body2="panda_link4"/>
         <exclude body1="panda_link3" body2="panda_link5"/>
-        <exclude body1="panda_link3" body2="panda_link6"/>
-        <exclude body1="panda_link3" body2="panda_link7"/>
         <exclude body1="panda_link4" body2="panda_link5"/>
         <exclude body1="panda_link4" body2="panda_link6"/>
-        <exclude body1="panda_link4" body2="panda_link7"/>
         <exclude body1="panda_link5" body2="panda_link6"/>
         <exclude body1="panda_link5" body2="panda_link7"/>
         <exclude body1="panda_link6" body2="panda_link7"/>

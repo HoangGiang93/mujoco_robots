@@ -44,4 +44,20 @@
             </body>
         </body>
     </worldbody>
+
+    <contact>
+        <exclude body1="world" body2="shoulder_link"/>
+        <exclude body1="world" body2="upper_arm_link"/>
+        <exclude body1="world" body2="forearm_link"/>
+        <exclude body1="world" body2="wrist_1_link"/>
+        <exclude body1="world" body2="wrist_2_link"/>
+        <exclude body1="world" body2="wrist_3_link"/>
+        <exclude body1="shoulder_link" body2="shoulder_link"/>
+        <exclude body1="shoulder_link" body2="upper_arm_link"/>
+        <exclude body1="upper_arm_link" body2="forearm_link"/>
+        <exclude body1="forearm_link" body2="wrist_1_link"/>
+        <exclude body1="wrist_1_link" body2="wrist_2_link"/>
+        <exclude body1="wrist_2_link" body2="wrist_3_link"/>
+    </contact>
+
 </mujoco>

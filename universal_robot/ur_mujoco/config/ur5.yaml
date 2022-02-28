@@ -16,9 +16,9 @@ mujoco:
       - wrist_2_joint
       - wrist_3_joint
     controller_gains:
-      Kp: [5000, 5000, 5000, 5000, 5000, 5000]
+      Kp: [2000, 2000, 2000, 2000, 2000, 2000]
       Kv: [50, 50, 50, 50, 50, 50]
-      Ki: [100, 100, 100, 100, 100, 100]
+      Ki: [0, 0, 0, 0, 0, 0]
   
   joint_state_publisher:
     joints: *joints
