@@ -1,0 +1,30 @@
+mujoco:
+  init_positions:
+    shoulder_pan_joint: 0
+    shoulder_lift_joint: 0
+    elbow_joint: 0
+    wrist_1_joint: 0
+    wrist_2_joint: 0
+    wrist_3_joint: 0
+
+  joint_trajectory_controller:
+    joints: &joints
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    controller_gains:
+      Kp: [5000, 5000, 5000, 5000, 5000, 5000]
+      Kv: [50, 50, 50, 50, 50, 50]
+      Ki: [100, 100, 100, 100, 100, 100]
+  
+  joint_state_publisher:
+    joints: *joints
+    publish_rate: 60
+
+  follow_joint_trajectory_feedback_publisher:
+    joints: *joints
+    publish_rate: 10
+  

@@ -79,7 +79,7 @@
         <exclude body1="panda_link1" body2="panda_link4"/>
         <exclude body1="panda_link1" body2="panda_link5"/>
         <exclude body1="panda_link1" body2="panda_link6"/>
-        <exclude body1="panda_link1" body2="panda_link7"/>
+        <!-- <exclude body1="panda_link1" body2="panda_link7"/> -->
         <exclude body1="panda_link2" body2="panda_link3"/>
         <exclude body1="panda_link2" body2="panda_link4"/>
         <exclude body1="panda_link2" body2="panda_link5"/>
@@ -96,23 +96,6 @@
         <exclude body1="panda_link5" body2="panda_link7"/>
         <exclude body1="panda_link6" body2="panda_link7"/>
     </contact>
-
-    <!-- <actuator>
-		<position name="pservo1" joint="panda_joint1" kp="1000" />
-		<velocity name="vservo1" joint="panda_joint1" kv="100" />
-		<position name="pservo2" joint="panda_joint2" kp="1000" />
-		<velocity name="vservo2" joint="panda_joint2" kv="100" />
-        <position name="pservo3" joint="panda_joint3" kp="1000" />
-		<velocity name="vservo3" joint="panda_joint3" kv="100" />
-        <position name="pservo4" joint="panda_joint4" kp="1000" />
-		<velocity name="vservo4" joint="panda_joint4" kv="100" />
-        <position name="pservo5" joint="panda_joint5" kp="1000" />
-		<velocity name="vservo5" joint="panda_joint5" kv="100" />
-        <position name="pservo6" joint="panda_joint6" kp="1000" />
-		<velocity name="vservo6" joint="panda_joint6" kv="100" />
-        <position name="pservo7" joint="panda_joint7" kp="1000" />
-		<velocity name="vservo7" joint="panda_joint7" kv="100" />
-	</actuator> -->
 
     <sensor>
 		<framepos objtype="site" objname="endeff"/>
