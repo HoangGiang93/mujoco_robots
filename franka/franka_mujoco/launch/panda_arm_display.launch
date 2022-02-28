@@ -1,0 +1,21 @@
+<launch>
+
+    <arg name="namespace" default="panda_arm"/>
+    <include file="$(find franka_mujoco)/launch/panda_arm_sim.launch" >
+        <arg name="namespace" value="$(arg namespace)"/>
+    </include>
+    
+    <group ns="$(arg namespace)">
+        <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm.urdf" />
+        <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+            <remap from="joint_states" to="desired_joint_states" />
+        </node>
+        <node name="joint_state_publisher" pkg="mujoco_sim" type="joint_state_publisher.py" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    </group>
+
+    <!-- <include file="$(find franka_control)/launch/franka_control.launch" /> -->
+
+    <node name="$(anon rviz)" pkg="rviz" type="rviz" args="-d $(find franka_mujoco)/rviz_config/rviz_config.rviz" />
+
+</launch>

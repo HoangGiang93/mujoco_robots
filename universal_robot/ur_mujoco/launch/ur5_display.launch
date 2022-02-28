@@ -1,0 +1,19 @@
+<launch>
+
+    <arg name="namespace" default="ur5"/>
+    <include file="$(find ur_mujoco)/launch/ur5_sim.launch" >
+        <arg name="namespace" value="$(arg namespace)"/>
+    </include>
+
+    <group ns="$(arg namespace)">
+        <param name="robot_description" command="$(find xacro)/xacro '$(find ur_description)/urdf/ur5_robot.urdf.xacro'" />
+        <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+            <remap from="joint_states" to="desired_joint_states" />
+        </node>
+        <node name="joint_state_publisher" pkg="mujoco_sim" type="joint_state_publisher.py" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    </group>
+    
+    <node name="$(anon rviz)" pkg="rviz" type="rviz" args="-d $(find ur_mujoco)/rviz_config/rviz_config.rviz" />
+
+</launch>
