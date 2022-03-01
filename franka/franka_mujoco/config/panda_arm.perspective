@@ -41,7 +41,7 @@
                 },
                 "topics": {
                   "type": "repr",
-                  "repr": "[u'/mujoco/follow_joint_trajectory/feedback/actual/positions[0]', u'/mujoco/follow_joint_trajectory/feedback/desired/positions[0]']"
+                  "repr": "[u'/panda_arm/follow_joint_trajectory/feedback/actual/positions[0]', u'/panda_arm/follow_joint_trajectory/feedback/desired/positions[0]']"
                 },
                 "y_limits": {
                   "type": "repr",
@@ -88,7 +88,7 @@
                 },
                 "topics": {
                   "type": "repr",
-                  "repr": "[u'/mujoco/follow_joint_trajectory/feedback/desired/positions[1]', u'/mujoco/follow_joint_trajectory/feedback/actual/positions[1]']"
+                  "repr": "[u'/panda_arm/follow_joint_trajectory/feedback/desired/positions[1]', u'/panda_arm/follow_joint_trajectory/feedback/actual/positions[1]']"
                 },
                 "y_limits": {
                   "type": "repr",
