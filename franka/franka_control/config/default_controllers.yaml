@@ -2,6 +2,25 @@ joint_state_controller:
   type:         joint_state_controller/JointStateController
   publish_rate: 1000
 
+joint_trajectory_controller: 
+  type: effort_controllers/JointTrajectoryController  
+  joints:
+    - panda_joint1
+    - panda_joint2
+    - panda_joint3
+    - panda_joint4
+    - panda_joint5
+    - panda_joint6
+    - panda_joint7
+  gains:
+    panda_joint1: {p: 2000, i: 100, d: 50}
+    panda_joint2: {p: 2000, i: 100, d: 50}
+    panda_joint3: {p: 2000, i: 100, d: 50}
+    panda_joint4: {p: 2000, i: 100, d: 50}
+    panda_joint5: {p: 2000, i: 100, d: 50}
+    panda_joint6: {p: 2000, i: 100, d: 50}
+    panda_joint7: {p: 2000, i: 100, d: 50}
+
 panda_joint1_position_controller:
   type:         effort_controllers/JointPositionController
   joint:        panda_joint1
