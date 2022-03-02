@@ -1,4 +1,7 @@
 <mujoco model="ur5">
+    <option timestep="0.0001" integrator="RK4" gravity="0 0 -9.81" >
+		<flag sensornoise="disable" energy="enable" contact="enable" />
+	</option>
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
