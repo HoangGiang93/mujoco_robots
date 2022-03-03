@@ -16,39 +16,8 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0.04" rpy="0 ${pi/2} ${pi/2}"/>
         <geometry>
-          <cylinder radius="${0.04+safety_distance}" length="0.1" />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 -0.05 0.04" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${0.04+safety_distance}"  />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0.05 0.04" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${0.04+safety_distance}"  />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0 0.1" rpy="0 ${pi/2} ${pi/2}"/>
-        <geometry>
-          <cylinder radius="${0.02+safety_distance}" length="0.1" />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 -0.05 0.1" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${0.02+safety_distance}"  />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0.05 0.1" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${0.02+safety_distance}"  />
+          <mesh filename="package://franka_description/meshes/collision/hand.stl"/>
         </geometry>
       </collision>
     </link>
@@ -65,6 +34,11 @@
           <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
+        </geometry>
+      </collision>
     </link>
     <link name="${ns}_rightfinger">
       <visual>
@@ -73,6 +47,12 @@
           <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <geometry>
+          <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
+        </geometry>
+      </collision>
    </link>
     <joint name="${ns}_finger_joint1" type="prismatic">
       <parent link="${ns}_hand"/>

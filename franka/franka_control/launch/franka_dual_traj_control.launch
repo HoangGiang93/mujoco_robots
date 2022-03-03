@@ -1,0 +1,14 @@
+<launch>
+
+	<!-- Load controller manager -->
+	<rosparam command="load" file="$(find franka_control)/config/dual_panda_arm.yaml" />
+	<node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
+		joint_state_controller 
+		panda_1_joint_trajectory_controller
+		panda_2_joint_trajectory_controller
+		panda_1_finger_joint1_effort_controller
+		panda_1_finger_joint2_effort_controller
+		panda_2_finger_joint1_effort_controller
+		panda_2_finger_joint2_effort_controller" />
+
+</launch>
