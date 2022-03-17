@@ -12,24 +12,44 @@ from giskard_msgs.msg import MoveGoal
 import actionlib
 from giskard_msgs.msg import MoveResult
 
+from mujoco_msgs.msg import ModelState
+
 import tf
 
 import math
+from random import random, uniform
 
-
-
+cube_pub = rospy.Publisher('panda_arm/create_object', ModelState, queue_size=10)
 hand_1_pub = [rospy.Publisher('panda_arm/panda_1_finger_joint' + str(i) + '_effort_controller/command', Float64, queue_size=10) for i in range(1,3)]
-hand_2_pub = [rospy.Publisher('panda_arm/panda_2_finger_joint' + str(i) + '_effort_controller/command', Float64, queue_size=10) for i in range(1,3)]
 
 # Creates the SimpleActionClient, passing the type of the action
 # (MoveAction) to the constructor.
-client = actionlib.SimpleActionClient("/giskard/command", MoveAction)
-
-
+client = actionlib.SimpleActionClient("/giskard_1/command", MoveAction)
 
 cartesian_goal = CartesianConstraint()
  
 cartesian_goal.type = cartesian_goal.POSE_6D
+
+cube = ModelState()
+
+def set_new_cube(i):
+    cube.name = 'cube_1_' + str(i)
+    cube.pose.position.x = uniform(-0.2, 0.2)
+    cube.pose.position.y = -0.8 
+    cube.pose.position.z = 3.0
+    cube.pose.orientation.x = 0.0
+    cube.pose.orientation.y = 0.0
+    cube.pose.orientation.z = 0.0
+    cube.pose.orientation.w = 1.0
+    cube.type = ModelState.CUBE
+    cube.scale.x = 0.02
+    cube.scale.y = 0.02
+    cube.scale.z = 0.02
+    cube.color.r = random()
+    cube.color.g = random()
+    cube.color.b = random()
+    cube.color.a = 1.0
+    cube_pub.publish(cube)
 
 def execute_joint_goal(joint_names, position):
     # Waits until the action server has started up and started
@@ -171,40 +191,25 @@ def panda_1_close():
     hand_1_pub[1].publish(0)
     return
 
-def panda_2_open():
-    hand_2_pub[0].publish(300)
-    hand_2_pub[1].publish(300)
-    return
-
-def panda_2_close():
-    hand_2_pub[0].publish(0)
-    hand_2_pub[1].publish(0)
-    return
-
 if __name__ == '__main__':
-    rospy.init_node('test_dual_joint_pick_place')
+    rospy.init_node('test_dual_joint_pick_place_1')
     rospy.sleep(1)
+
     listener = tf.TransformListener()
 
-    panda_1_open()
-    execute_joint_goal(["panda_1_joint1", "panda_1_joint2", "panda_1_joint3", "panda_1_joint4", "panda_1_joint5", "panda_1_joint6", "panda_1_joint7"], [-math.pi/2, 0.37, 0.0, -2.22, 0, 2.56, 0.8])
-    move_to_pre_pick('panda_1_link0', 'panda_1_hand_tcp', 'cube_1')
-    move_to_pick('panda_1_link0', 'panda_1_hand_tcp', 'cube_1')
-    panda_1_close()
-    move_to_post_pick('panda_1_link0', 'panda_1_hand_tcp', 'cube_1')
-    execute_joint_goal(["panda_1_joint1"], [math.pi/2])
-    move_to_pre_pick('panda_1_link0', 'panda_1_hand_tcp', 'place')
-    panda_1_open()
-    execute_joint_goal(["panda_1_joint1"], [-math.pi/2])
-    
-    panda_2_open()
-    execute_joint_goal(["panda_2_joint1", "panda_2_joint2", "panda_2_joint3", "panda_2_joint4", "panda_2_joint5", "panda_2_joint6", "panda_2_joint7"], [-math.pi/2, 0.37, 0.0, -2.22, 0, 2.56, 0.8])
-    move_to_pre_pick('panda_2_link0', 'panda_2_hand_tcp', 'cube_1')
-    move_to_pick('panda_2_link0', 'panda_2_hand_tcp', 'cube_1')
-    panda_2_close()
-    move_to_post_pick('panda_2_link0', 'panda_2_hand_tcp', 'cube_1')
-    execute_joint_goal(["panda_2_joint1"], [math.pi/2])
-    panda_2_open()
-    execute_joint_goal(["panda_2_joint1"], [-math.pi/2])
- 
-    
+    i = 0
+    set_new_cube(i)
+    i = i + 1
+    while not rospy.is_shutdown():
+        panda_1_open()
+        execute_joint_goal(["panda_1_joint1", "panda_1_joint2", "panda_1_joint3", "panda_1_joint4", "panda_1_joint5", "panda_1_joint6", "panda_1_joint7"], [-math.pi/2, 0.37, 0.0, -2.22, 0, 2.56, 0.8])
+        move_to_pre_pick('panda_1_link0', 'panda_1_hand_tcp', cube.name)
+        move_to_pick('panda_1_link0', 'panda_1_hand_tcp', cube.name)
+        panda_1_close()
+        move_to_post_pick('panda_1_link0', 'panda_1_hand_tcp', cube.name)
+        execute_joint_goal(["panda_1_joint1"], [math.pi/2])
+        move_to_pre_pick('panda_1_link0', 'panda_1_hand_tcp', 'place')
+        panda_1_open()
+        set_new_cube(i)
+        i = i + 1
+        execute_joint_goal(["panda_1_joint1"], [-math.pi/2])

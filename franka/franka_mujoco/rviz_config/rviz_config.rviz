@@ -9,8 +9,10 @@ Panels:
         - /RobotModel1
         - /TF1
         - /TF1/Frames1
+        - /Marker1
+        - /Marker1/Namespaces1
       Splitter Ratio: 0.5
-    Tree Height: 1574
+    Tree Height: 270
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -205,70 +207,10 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base:
-          Value: false
-        cube_1:
-          Value: true
-        map:
-          Value: false
-        panda_1_hand:
-          Value: false
-        panda_1_hand_tcp:
-          Value: false
-        panda_1_leftfinger:
-          Value: false
-        panda_1_link0:
-          Value: false
-        panda_1_link1:
-          Value: false
-        panda_1_link2:
-          Value: false
-        panda_1_link3:
-          Value: false
-        panda_1_link4:
-          Value: false
-        panda_1_link5:
-          Value: false
-        panda_1_link6:
-          Value: false
-        panda_1_link7:
-          Value: false
-        panda_1_link8:
-          Value: false
-        panda_1_rightfinger:
-          Value: false
-        panda_2_hand:
-          Value: false
-        panda_2_hand_tcp:
-          Value: false
-        panda_2_leftfinger:
-          Value: false
-        panda_2_link0:
-          Value: false
-        panda_2_link1:
-          Value: false
-        panda_2_link2:
-          Value: false
-        panda_2_link3:
-          Value: false
-        panda_2_link4:
-          Value: false
-        panda_2_link5:
-          Value: false
-        panda_2_link6:
-          Value: false
-        panda_2_link7:
-          Value: false
-        panda_2_link8:
-          Value: false
-        panda_2_rightfinger:
-          Value: false
-        place:
-          Value: false
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -276,45 +218,16 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          base:
-            panda_1_link0:
-              panda_1_link1:
-                panda_1_link2:
-                  panda_1_link3:
-                    panda_1_link4:
-                      panda_1_link5:
-                        panda_1_link6:
-                          panda_1_link7:
-                            panda_1_link8:
-                              panda_1_hand:
-                                panda_1_hand_tcp:
-                                  {}
-                                panda_1_leftfinger:
-                                  {}
-                                panda_1_rightfinger:
-                                  {}
-            panda_2_link0:
-              panda_2_link1:
-                panda_2_link2:
-                  panda_2_link3:
-                    panda_2_link4:
-                      panda_2_link5:
-                        panda_2_link6:
-                          panda_2_link7:
-                            panda_2_link8:
-                              panda_2_hand:
-                                panda_2_hand_tcp:
-                                  {}
-                                panda_2_leftfinger:
-                                  {}
-                                panda_2_rightfinger:
-                                  {}
-            place:
-              {}
-          cube_1:
-            {}
+        {}
       Update Interval: 0
+      Value: false
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /panda_arm/visualization_marker
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
@@ -360,9 +273,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.510398268699646
+      Pitch: 0.44539833068847656
       Target Frame: <Fixed Frame>
-      Yaw: 5.893605709075928
+      Yaw: 5.363593101501465
     Saved: ~
 Window Geometry:
   Displays:
@@ -370,7 +283,7 @@ Window Geometry:
   Height: 2086
   Hide Left Dock: true
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd00000004000000000000035f0000071efc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000006e0000071e0000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f00000730fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000006e000007300000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000008d800000060fc0100000002fb0000000800540069006d00650100000000000008d80000057100fffffffb0000000800540069006d00650100000000000004500000000000000000000008d80000071e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000004b80000071efc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000006e0000071e0000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f00000730fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000006e000007300000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000008d800000060fc0100000002fb0000000800540069006d00650100000000000008d80000057100fffffffb0000000800540069006d00650100000000000004500000000000000000000008d80000076500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
