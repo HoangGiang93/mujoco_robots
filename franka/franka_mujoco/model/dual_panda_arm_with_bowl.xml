@@ -1,0 +1,7 @@
+<mujoco model="panda">
+
+    <include file="dual_panda_arm.xml" />
+
+    <include file="bowl.xml" />
+
+</mujoco>

@@ -17,9 +17,9 @@ from mujoco_msgs.msg import ModelState
 import tf
 
 import math
-from random import random, uniform
+from random import random, uniform, randint
 
-cube_pub = rospy.Publisher('panda_arm/create_object', ModelState, queue_size=1)
+object_pub = rospy.Publisher('panda_arm/create_object', ModelState, queue_size=1)
 hand_2_pub = [rospy.Publisher('panda_arm/panda_2_finger_joint' + str(i) + '_effort_controller/command', Float64, queue_size=10) for i in range(1,3)]
 
 # Creates the SimpleActionClient, passing the type of the action
@@ -30,26 +30,28 @@ cartesian_goal = CartesianConstraint()
  
 cartesian_goal.type = cartesian_goal.POSE_6D
 
-cube = ModelState()
+object = ModelState()
+types = [ModelState.CUBE, ModelState.SPHERE, ModelState.CYLINDER]
 
-def set_new_cube(i):
-    cube.name = 'cube_2_' + str(i)
-    cube.pose.position.x = uniform(-0.2, 0.2)
-    cube.pose.position.y = 0.8 
-    cube.pose.position.z = 3.0
-    cube.pose.orientation.x = 0.0
-    cube.pose.orientation.y = 0.0
-    cube.pose.orientation.z = 0.0
-    cube.pose.orientation.w = 1.0
-    cube.type = ModelState.CUBE
-    cube.scale.x = 0.02
-    cube.scale.y = 0.02
-    cube.scale.z = 0.02
-    cube.color.r = random()
-    cube.color.g = random()
-    cube.color.b = random()
-    cube.color.a = 1.0
-    cube_pub.publish(cube)
+def set_new_object(i):
+    object.name = 'object_2_' + str(i)
+    object.pose.position.x = uniform(-0.2, 0.2)
+    object.pose.position.y = 0.8 
+    object.pose.position.z = 1.5
+    object.pose.orientation.x = 0.0
+    object.pose.orientation.y = 0.0
+    object.pose.orientation.z = 0.0
+    object.pose.orientation.w = 1.0
+
+    object.type = types[randint(0, 2)]
+    object.scale.x = 0.025
+    object.scale.y = 0.025
+    object.scale.z = 0.025
+    object.color.r = random()
+    object.color.g = random()
+    object.color.b = random()
+    object.color.a = 1.0
+    object_pub.publish(object)
 
 def execute_joint_goal(joint_names, position):
     # Waits until the action server has started up and started
@@ -147,10 +149,10 @@ def execute_cartesian_goal(root_link, tip_link, position, orientation):
     else:
         print('something went wrong')
 
-def move_to_pre_pick(root_link, hand, cube):
+def move_to_pre_pick(root_link, hand, object):
     while not rospy.is_shutdown():
         try:
-            (trans, _) = listener.lookupTransform(hand, cube, rospy.Time(0))
+            (trans, _) = listener.lookupTransform(hand, object, rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             continue
         
@@ -159,10 +161,10 @@ def move_to_pre_pick(root_link, hand, cube):
         if abs(trans[0]) < 0.01 and abs(trans[1]) < 0.01:
             return
 
-def move_to_pick(root_link, hand, cube):
+def move_to_pick(root_link, hand, object):
     while not rospy.is_shutdown():
         try:
-            (trans, _) = listener.lookupTransform(hand, cube, rospy.Time(0))
+            (trans, _) = listener.lookupTransform(hand, object, rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             continue
         
@@ -170,10 +172,10 @@ def move_to_pick(root_link, hand, cube):
         if abs(trans[0]) < 0.01 and abs(trans[1]) < 0.01 and abs(trans[2]) < 0.01:
             return
 
-def move_to_post_pick(root_link, hand, cube):
+def move_to_post_pick(root_link, hand, object):
     while not rospy.is_shutdown():
         try:
-            (trans, _) = listener.lookupTransform(hand, cube, rospy.Time(0))
+            (trans, _) = listener.lookupTransform(hand, object, rospy.Time(0))
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
             continue
         
@@ -198,21 +200,21 @@ if __name__ == '__main__':
     listener = tf.TransformListener()
 
     i = 0
-    set_new_cube(i)
+    set_new_object(i)
     i = i + 1
     while not rospy.is_shutdown():
         execute_joint_goal(["panda_1_joint1"], [-math.pi/2])
         
         panda_2_open()
         execute_joint_goal(["panda_2_joint1", "panda_2_joint2", "panda_2_joint3", "panda_2_joint4", "panda_2_joint5", "panda_2_joint6", "panda_2_joint7"], [math.pi/2, 0.37, 0.0, -2.22, 0, 2.56, 0.8])
-        move_to_pre_pick('panda_2_link0', 'panda_2_hand_tcp', cube.name)
-        move_to_pick('panda_2_link0', 'panda_2_hand_tcp', cube.name)
+        move_to_pre_pick('panda_2_link0', 'panda_2_hand_tcp', object.name)
+        move_to_pick('panda_2_link0', 'panda_2_hand_tcp', object.name)
         panda_2_close()
-        move_to_post_pick('panda_2_link0', 'panda_2_hand_tcp', cube.name)
+        move_to_post_pick('panda_2_link0', 'panda_2_hand_tcp', object.name)
         execute_joint_goal(["panda_2_joint1"], [-math.pi/2])
-        move_to_pre_pick('panda_2_link0', 'panda_2_hand_tcp', 'place')
+        # move_to_pre_pick('panda_2_link0', 'panda_2_hand_tcp', 'place')
         panda_2_open()
-        set_new_cube(i)
+        set_new_object(i)
         i = i + 1
         execute_joint_goal(["panda_2_joint1"], [math.pi/2])
 
