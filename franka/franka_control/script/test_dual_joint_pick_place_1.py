@@ -202,15 +202,14 @@ if __name__ == '__main__':
     i = 0
     set_new_object(i)
     i = i + 1
+    execute_joint_goal(["panda_1_joint1", "panda_1_joint2", "panda_1_joint3", "panda_1_joint4", "panda_1_joint5", "panda_1_joint6", "panda_1_joint7"], [-math.pi/2, 0.37, 0.0, -2.22, 0, 2.56, 0.8])
     while not rospy.is_shutdown():
         panda_1_open()
-        execute_joint_goal(["panda_1_joint1", "panda_1_joint2", "panda_1_joint3", "panda_1_joint4", "panda_1_joint5", "panda_1_joint6", "panda_1_joint7"], [-math.pi/2, 0.37, 0.0, -2.22, 0, 2.56, 0.8])
         move_to_pre_pick('panda_1_link0', 'panda_1_hand_tcp', object.name)
         move_to_pick('panda_1_link0', 'panda_1_hand_tcp', object.name)
         panda_1_close()
         move_to_post_pick('panda_1_link0', 'panda_1_hand_tcp', object.name)
         execute_joint_goal(["panda_1_joint1"], [math.pi/2])
-        # move_to_pre_pick('panda_1_link0', 'panda_1_hand_tcp', 'place')
         panda_1_open()
         set_new_object(i)
         i = i + 1
