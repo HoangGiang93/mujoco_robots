@@ -10,8 +10,8 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
-        <mesh name="hand" file="meshes/hand.stl" />
-        <mesh name="finger" file="meshes/finger.stl" />
+        <mesh name="hand" file="meshes/dual_panda_arm.xml/hand.stl" />
+        <mesh name="finger" file="meshes/dual_panda_arm.xml/finger.stl" />
     </asset>
     <worldbody>
         <geom size="10 10 0.1" type="plane" rgba="0.5 0.5 0.5 1" />

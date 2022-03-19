@@ -1,7 +1,7 @@
 <mujoco model="panda">
-    <option timestep="0.0001" integrator="RK4" gravity="0 0 -9.81" >
-		<flag sensornoise="disable" energy="enable" contact="enable" />
-	</option>
+    <option timestep="0.0001" integrator="RK4" gravity="0 0 -9.81">
+        <flag sensornoise="disable" energy="enable" contact="enable" />
+    </option>
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <worldbody>
@@ -56,7 +56,7 @@
                                     <geom size="0.06 0.005" pos="0.0424 0.0424 0.082" quat="0.5 0.5 0.5 -0.5" type="cylinder" />
                                     <geom size="0.06" pos="0.0424 0.0424 0.087" />
                                     <geom size="0.06" pos="0.0424 0.0424 0.077" />
-                                    <site name="endeff" pos="0 0 0.15" rgba="0 0 .9 1" size="0.05"/>
+                                    <site name="endeff" pos="0 0 0.15" rgba="0 0 .9 1" size="0.05" />
                                 </body>
                             </body>
                         </body>
@@ -67,48 +67,48 @@
     </worldbody>
 
     <contact>
-        <exclude body1="world" body2="panda_link1"/>
-        <exclude body1="world" body2="panda_link2"/>
-        <exclude body1="world" body2="panda_link3"/>
-        <exclude body1="world" body2="panda_link4"/>
-        <exclude body1="world" body2="panda_link5"/>
-        <exclude body1="world" body2="panda_link6"/>
-        <exclude body1="world" body2="panda_link7"/>
+        <exclude body1="world" body2="panda_link1" />
+        <exclude body1="world" body2="panda_link2" />
+        <exclude body1="world" body2="panda_link3" />
+        <exclude body1="world" body2="panda_link4" />
+        <exclude body1="world" body2="panda_link5" />
+        <exclude body1="world" body2="panda_link6" />
+        <exclude body1="world" body2="panda_link7" />
 
-        <exclude body1="panda_link1" body2="panda_link2"/>
-        <exclude body1="panda_link1" body2="panda_link3"/>
-        <exclude body1="panda_link1" body2="panda_link3"/>
-        <exclude body1="panda_link1" body2="panda_link4"/>
-        <exclude body1="panda_link1" body2="panda_link5"/>
-        <exclude body1="panda_link1" body2="panda_link6"/>
-        <exclude body1="panda_link1" body2="panda_link7"/>
+        <exclude body1="panda_link1" body2="panda_link2" />
+        <exclude body1="panda_link1" body2="panda_link3" />
+        <exclude body1="panda_link1" body2="panda_link3" />
+        <exclude body1="panda_link1" body2="panda_link4" />
+        <exclude body1="panda_link1" body2="panda_link5" />
+        <exclude body1="panda_link1" body2="panda_link6" />
+        <exclude body1="panda_link1" body2="panda_link7" />
 
-        <exclude body1="panda_link2" body2="panda_link3"/>
-        <exclude body1="panda_link2" body2="panda_link4"/>
-        <exclude body1="panda_link2" body2="panda_link5"/>
-        <exclude body1="panda_link2" body2="panda_link6"/>
-        <exclude body1="panda_link2" body2="panda_link7"/>
+        <exclude body1="panda_link2" body2="panda_link3" />
+        <exclude body1="panda_link2" body2="panda_link4" />
+        <exclude body1="panda_link2" body2="panda_link5" />
+        <exclude body1="panda_link2" body2="panda_link6" />
+        <exclude body1="panda_link2" body2="panda_link7" />
 
-        <exclude body1="panda_link3" body2="panda_link4"/>
-        <exclude body1="panda_link3" body2="panda_link5"/>
-        <exclude body1="panda_link3" body2="panda_link6"/>
-        <exclude body1="panda_link3" body2="panda_link7"/>
-        
-        <exclude body1="panda_link4" body2="panda_link5"/>
-        <exclude body1="panda_link4" body2="panda_link6"/>
-        <exclude body1="panda_link4" body2="panda_link7"/>
+        <exclude body1="panda_link3" body2="panda_link4" />
+        <exclude body1="panda_link3" body2="panda_link5" />
+        <exclude body1="panda_link3" body2="panda_link6" />
+        <exclude body1="panda_link3" body2="panda_link7" />
 
-        <exclude body1="panda_link5" body2="panda_link6"/>
-        <exclude body1="panda_link5" body2="panda_link7"/>
-        
-        <exclude body1="panda_link6" body2="panda_link7"/>
+        <exclude body1="panda_link4" body2="panda_link5" />
+        <exclude body1="panda_link4" body2="panda_link6" />
+        <exclude body1="panda_link4" body2="panda_link7" />
+
+        <exclude body1="panda_link5" body2="panda_link6" />
+        <exclude body1="panda_link5" body2="panda_link7" />
+
+        <exclude body1="panda_link6" body2="panda_link7" />
     </contact>
 
     <sensor>
-		<framepos objtype="site" objname="endeff"/>
-		<framelinvel objtype="site" objname="endeff"/>
-        <frameangvel objtype="site" objname="endeff"/>
-        <framelinacc objtype="site" objname="endeff"/>
-        <frameangacc objtype="site" objname="endeff"/>
-	</sensor>
+        <framepos objtype="site" objname="endeff" />
+        <framelinvel objtype="site" objname="endeff" />
+        <frameangvel objtype="site" objname="endeff" />
+        <framelinacc objtype="site" objname="endeff" />
+        <frameangacc objtype="site" objname="endeff" />
+    </sensor>
 </mujoco>
