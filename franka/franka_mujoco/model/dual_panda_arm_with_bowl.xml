@@ -11,10 +11,10 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
-        <mesh name="bowl" file="meshes/dual_panda_arm_with_bowl.xml/bowl_side.stl" />
-        <mesh name="bowl_bottom" file="meshes/dual_panda_arm_with_bowl.xml/bowl_bottom.stl" />
-        <mesh name="hand" file="meshes/dual_panda_arm_with_bowl.xml/hand.stl" />
-        <mesh name="finger" file="meshes/dual_panda_arm_with_bowl.xml/finger.stl" />
+        <mesh name="bowl" file="dual_panda_arm_with_bowl/meshes/bowl_side.stl" />
+        <mesh name="bowl_bottom" file="dual_panda_arm_with_bowl/meshes/bowl_bottom.stl" />
+        <mesh name="hand" file="dual_panda_arm_with_bowl/meshes/hand.stl" />
+        <mesh name="finger" file="dual_panda_arm_with_bowl/meshes/finger.stl" />
     </asset>
     <worldbody>
         <geom size="10 10 0.1" type="plane" rgba="0.5 0.5 0.5 1" />

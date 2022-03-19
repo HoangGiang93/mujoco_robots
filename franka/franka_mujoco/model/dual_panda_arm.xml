@@ -10,11 +10,10 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
-        <mesh name="hand" file="meshes/dual_panda_arm.xml/hand.stl" />
-        <mesh name="finger" file="meshes/dual_panda_arm.xml/finger.stl" />
+        <mesh name="hand" file="dual_panda_arm/meshes/hand.stl" />
+        <mesh name="finger" file="dual_panda_arm/meshes/finger.stl" />
     </asset>
     <worldbody>
-        <geom size="10 10 0.1" type="plane" rgba="0.5 0.5 0.5 1" />
         <geom size="0.5 1 0.5" pos="0 0 0.5" type="box" rgba="1 1 1 1" />
         <geom size="0.09 0.015" pos="-0.075 -0.5 1.06" quat="0.707107 0 0.707107 0" type="cylinder" />
         <geom size="0.09" pos="-0.06 -0.5 1.06" />
@@ -73,15 +72,13 @@
                                     <geom pos="0 0 0.107" quat="0.92388 0 0 -0.382683" type="mesh" mesh="hand" />
                                     <body name="panda_1_leftfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
                                         <inertial pos="-1.82909e-06 0.0123159 0.0245396" quat="0.70113 0.0854958 -0.0855768 0.702698" mass="0.0166274" diaginertia="4.87247e-06 4.85977e-06 8.12278e-07" />
-                                        <joint name="panda_1_finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0 0.04" stiffness="100.0" springref="0.0" damping="1.0" />
-                                        <!-- <geom name="panda_1_leftfinger" pos="0 0.002 0" size="0.01 0.002 0.053" type="box" /> -->
-                                        <geom name="panda_1_leftfinger" type="mesh" mesh="finger" />
+                                        <joint name="panda_1_finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0 0.04" />
+                                        <geom type="mesh" mesh="finger" />
                                     </body>
                                     <body name="panda_1_rightfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
                                         <inertial pos="1.82909e-06 -0.0123159 0.0245396" quat="-0.702698 0.0855768 0.0854958 0.70113" mass="0.0166274" diaginertia="4.87247e-06 4.85977e-06 8.12278e-07" />
-                                        <joint name="panda_1_finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" limited="true" range="0 0.04" stiffness="100.0" springref="0.0" damping="1.0" />
-                                        <!-- <geom name="panda_1_rightfinger" pos="0 -0.002 0" quat="0 0 0 1" size="0.01 0.002 0.053" type="box" /> -->
-                                        <geom name="panda_1_rightfinger" quat="0 0 0 1" type="mesh" mesh="finger" />
+                                        <joint name="panda_1_finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" limited="true" range="0 0.04" />
+                                        <geom quat="0 0 0 1" type="mesh" mesh="finger" />
                                     </body>
                                 </body>
                             </body>
@@ -141,13 +138,13 @@
                                     <geom pos="0 0 0.107" quat="0.92388 0 0 -0.382683" type="mesh" mesh="hand" />
                                     <body name="panda_2_leftfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
                                         <inertial pos="-1.82909e-06 0.0123159 0.0245396" quat="0.70113 0.0854958 -0.0855768 0.702698" mass="0.0166274" diaginertia="4.87247e-06 4.85977e-06 8.12278e-07" />
-                                        <joint name="panda_2_finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0 0.04" stiffness="100.0" springref="0.0" damping="1.0" />
-                                        <geom name="panda_2_leftfinger" type="mesh" mesh="finger" />
+                                        <joint name="panda_2_finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0 0.04" />
+                                        <geom type="mesh" mesh="finger" />
                                     </body>
                                     <body name="panda_2_rightfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
                                         <inertial pos="1.82909e-06 -0.0123159 0.0245396" quat="-0.702698 0.0855768 0.0854958 0.70113" mass="0.0166274" diaginertia="4.87247e-06 4.85977e-06 8.12278e-07" />
-                                        <joint name="panda_2_finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" limited="true" range="0 0.04" stiffness="100.0" springref="0.0" damping="1.0" />
-                                        <geom name="panda_2_rightfinger" quat="0 0 0 1" type="mesh" mesh="finger" />
+                                        <joint name="panda_2_finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" limited="true" range="0 0.04" />
+                                        <geom quat="0 0 0 1" type="mesh" mesh="finger" />
                                     </body>
                                 </body>
                             </body>
@@ -231,5 +228,4 @@
 
         <exclude body1="panda_2_link6" body2="panda_2_link7" />
     </contact>
-
 </mujoco>

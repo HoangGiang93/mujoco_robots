@@ -5,13 +5,13 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
-        <mesh name="base" file="meshes/ur5.xml/base.stl" />
-        <mesh name="shoulder" file="meshes/ur5.xml/shoulder.stl" />
-        <mesh name="upperarm" file="meshes/ur5.xml/upperarm.stl" />
-        <mesh name="forearm" file="meshes/ur5.xml/forearm.stl" />
-        <mesh name="wrist1" file="meshes/ur5.xml/wrist1.stl" />
-        <mesh name="wrist2" file="meshes/ur5.xml/wrist2.stl" />
-        <mesh name="wrist3" file="meshes/ur5.xml/wrist3.stl" />
+        <mesh name="base" file="ur5/meshes/base.stl" />
+        <mesh name="shoulder" file="ur5/meshes/shoulder.stl" />
+        <mesh name="upperarm" file="ur5/meshes/upperarm.stl" />
+        <mesh name="forearm" file="ur5/meshes/forearm.stl" />
+        <mesh name="wrist1" file="ur5/meshes/wrist1.stl" />
+        <mesh name="wrist2" file="ur5/meshes/wrist2.stl" />
+        <mesh name="wrist3" file="ur5/meshes/wrist3.stl" />
     </asset>
     <worldbody>
         <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base" />
@@ -47,20 +47,4 @@
             </body>
         </body>
     </worldbody>
-
-    <contact>
-        <exclude body1="world" body2="shoulder_link" />
-        <exclude body1="world" body2="upper_arm_link" />
-        <exclude body1="world" body2="forearm_link" />
-        <exclude body1="world" body2="wrist_1_link" />
-        <exclude body1="world" body2="wrist_2_link" />
-        <exclude body1="world" body2="wrist_3_link" />
-        <exclude body1="shoulder_link" body2="shoulder_link" />
-        <exclude body1="shoulder_link" body2="upper_arm_link" />
-        <exclude body1="upper_arm_link" body2="forearm_link" />
-        <exclude body1="forearm_link" body2="wrist_1_link" />
-        <exclude body1="wrist_1_link" body2="wrist_2_link" />
-        <exclude body1="wrist_2_link" body2="wrist_3_link" />
-    </contact>
-
 </mujoco>
