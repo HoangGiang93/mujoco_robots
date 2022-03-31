@@ -1,0 +1,3 @@
+[submodule "iai_robots/iai_robots"]
+	path = iai_robots/iai_robots
+	url = git@github.com:code-iai/iai_robots.git
