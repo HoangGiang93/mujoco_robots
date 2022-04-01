@@ -1,0 +1,53 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 60
+
+arm_flex_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: arm_flex_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+arm_lift_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: arm_lift_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+arm_roll_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: arm_roll_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+head_pan_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: head_pan_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+head_tilt_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: head_tilt_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+wrist_flex_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: wrist_flex_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+wrist_roll_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: wrist_roll_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+hand_motor_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: hand_motor_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+hand_l_spring_proximal_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: hand_l_spring_proximal_joint
+  pid: { p: 2000, i: 100, d: 50 }
+
+hand_r_spring_proximal_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: hand_r_spring_proximal_joint
+  pid: { p: 2000, i: 100, d: 50 }

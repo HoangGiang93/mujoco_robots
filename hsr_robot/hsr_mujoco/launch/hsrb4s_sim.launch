@@ -1,0 +1,11 @@
+<launch>
+
+    <arg name="namespace" default="hsrb4s"/>
+    
+    <group ns="$(arg namespace)">
+        <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="robot" value="$(find hsr_mujoco)/model/hsrb4s.xml" />
+        </include>
+    </group>
+
+</launch>

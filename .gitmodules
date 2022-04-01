@@ -1,3 +1,9 @@
 [submodule "iai_robots/iai_robots"]
 	path = iai_robots/iai_robots_description
 	url = git@github.com:code-iai/iai_robots.git
+[submodule "hsr_robot/hsr_description"]
+	path = hsr_robot/hsr_description/hsr_description
+	url = git@github.com:code-iai/hsr_description.git
+[submodule "hsr_robot/hsr_meshes"]
+	path = hsr_robot/hsr_description/hsr_meshes
+	url = git@github.com:ToyotaResearchInstitute/hsr_meshes.git
