@@ -3,7 +3,6 @@
     <arg name="namespace" default="panda_arm"/>
     
     <group ns="$(arg namespace)">
-        <rosparam command="load" file="$(find franka_mujoco)/config/dual_panda_arm.yaml" />
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
             <arg name="robot" value="$(find franka_mujoco)/model/dual_panda_arm.xml" />
         </include>

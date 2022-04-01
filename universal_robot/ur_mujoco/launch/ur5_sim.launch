@@ -3,7 +3,6 @@
     <arg name="namespace" default="ur5"/>
 
     <group ns="$(arg namespace)">
-        <rosparam command="load" file="$(find ur_mujoco)/config/ur5.yaml" />
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
             <arg name="robot" value="$(find ur_mujoco)/model/ur5.xml" />
         </include>
