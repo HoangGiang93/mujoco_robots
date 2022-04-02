@@ -1,13 +1,4 @@
 <mujoco model="panda">
-
-    <option timestep="0.001" integrator="Euler" gravity="0 0 -9.81">
-        <flag sensornoise="disable" energy="disable" contact="enable" />
-    </option>
-
-    <default>
-        <geom condim="4" solimp="0.99 0.99 0" solref="0.01 1" />
-    </default>
-
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
@@ -17,7 +8,6 @@
         <mesh name="finger" file="dual_panda_arm_with_bowl/meshes/finger.stl" />
     </asset>
     <worldbody>
-        <geom size="10 10 0.1" type="plane" rgba="0.5 0.5 0.5 1" />
         <geom size="0.5 1 0.5" pos="0 0 0.5" type="box" rgba="1 1 1 1" />
         <geom size="0.09 0.015" pos="-0.075 -0.5 1.06" quat="0.707107 0 0.707107 0" type="cylinder" />
         <geom size="0.09" pos="-0.06 -0.5 1.06" />
@@ -200,79 +190,4 @@
             <geom name="bowl_side_36" type="mesh" euler="0 0 6.2832" mesh="bowl" rgba="1 1 1 1" />
         </body>
     </worldbody>
-
-    <contact>
-        <exclude body1="world" body2="panda_1_link1" />
-        <exclude body1="world" body2="panda_1_link2" />
-        <exclude body1="world" body2="panda_1_link3" />
-        <exclude body1="world" body2="panda_1_link4" />
-        <exclude body1="world" body2="panda_1_link5" />
-        <exclude body1="world" body2="panda_1_link6" />
-        <exclude body1="world" body2="panda_1_link7" />
-
-        <exclude body1="panda_1_link1" body2="panda_1_link2" />
-        <exclude body1="panda_1_link1" body2="panda_1_link3" />
-        <exclude body1="panda_1_link1" body2="panda_1_link3" />
-        <exclude body1="panda_1_link1" body2="panda_1_link4" />
-        <exclude body1="panda_1_link1" body2="panda_1_link5" />
-        <exclude body1="panda_1_link1" body2="panda_1_link6" />
-        <exclude body1="panda_1_link1" body2="panda_1_link7" />
-
-        <exclude body1="panda_1_link2" body2="panda_1_link3" />
-        <exclude body1="panda_1_link2" body2="panda_1_link4" />
-        <exclude body1="panda_1_link2" body2="panda_1_link5" />
-        <exclude body1="panda_1_link2" body2="panda_1_link6" />
-        <exclude body1="panda_1_link2" body2="panda_1_link7" />
-
-        <exclude body1="panda_1_link3" body2="panda_1_link4" />
-        <exclude body1="panda_1_link3" body2="panda_1_link5" />
-        <exclude body1="panda_1_link3" body2="panda_1_link6" />
-        <exclude body1="panda_1_link3" body2="panda_1_link7" />
-
-        <exclude body1="panda_1_link4" body2="panda_1_link5" />
-        <exclude body1="panda_1_link4" body2="panda_1_link6" />
-        <exclude body1="panda_1_link4" body2="panda_1_link7" />
-
-        <exclude body1="panda_1_link5" body2="panda_1_link6" />
-        <exclude body1="panda_1_link5" body2="panda_1_link7" />
-
-        <exclude body1="panda_1_link6" body2="panda_1_link7" />
-
-        <exclude body1="world" body2="panda_2_link1" />
-        <exclude body1="world" body2="panda_2_link2" />
-        <exclude body1="world" body2="panda_2_link3" />
-        <exclude body1="world" body2="panda_2_link4" />
-        <exclude body1="world" body2="panda_2_link5" />
-        <exclude body1="world" body2="panda_2_link6" />
-        <exclude body1="world" body2="panda_2_link7" />
-
-        <exclude body1="panda_2_link1" body2="panda_2_link2" />
-        <exclude body1="panda_2_link1" body2="panda_2_link3" />
-        <exclude body1="panda_2_link1" body2="panda_2_link3" />
-        <exclude body1="panda_2_link1" body2="panda_2_link4" />
-        <exclude body1="panda_2_link1" body2="panda_2_link5" />
-        <exclude body1="panda_2_link1" body2="panda_2_link6" />
-        <exclude body1="panda_2_link1" body2="panda_2_link7" />
-
-        <exclude body1="panda_2_link2" body2="panda_2_link3" />
-        <exclude body1="panda_2_link2" body2="panda_2_link4" />
-        <exclude body1="panda_2_link2" body2="panda_2_link5" />
-        <exclude body1="panda_2_link2" body2="panda_2_link6" />
-        <exclude body1="panda_2_link2" body2="panda_2_link7" />
-
-        <exclude body1="panda_2_link3" body2="panda_2_link4" />
-        <exclude body1="panda_2_link3" body2="panda_2_link5" />
-        <exclude body1="panda_2_link3" body2="panda_2_link6" />
-        <exclude body1="panda_2_link3" body2="panda_2_link7" />
-
-        <exclude body1="panda_2_link4" body2="panda_2_link5" />
-        <exclude body1="panda_2_link4" body2="panda_2_link6" />
-        <exclude body1="panda_2_link4" body2="panda_2_link7" />
-
-        <exclude body1="panda_2_link5" body2="panda_2_link6" />
-        <exclude body1="panda_2_link5" body2="panda_2_link7" />
-
-        <exclude body1="panda_2_link6" body2="panda_2_link7" />
-    </contact>
-
 </mujoco>

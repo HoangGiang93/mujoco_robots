@@ -11,7 +11,7 @@
         <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-        <include file="$(find franka_control)/launch/franka_traj_control.launch" />
+        <include file="$(find franka_control)/launch/panda_arm_traj_control.launch" />
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 

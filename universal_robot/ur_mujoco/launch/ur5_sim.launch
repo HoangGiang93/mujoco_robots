@@ -5,6 +5,7 @@
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
             <arg name="robot" value="$(find ur_mujoco)/model/ur5.xml" />
+            <arg name="config" value="$(find ur_mujoco)/config/ur5.xml" />
         </include>
     </group>
     
