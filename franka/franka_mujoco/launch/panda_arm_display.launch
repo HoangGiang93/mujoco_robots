@@ -4,8 +4,6 @@
     <include file="$(find franka_mujoco)/launch/panda_arm_sim.launch" >
         <arg name="namespace" value="$(arg namespace)"/>
     </include>
-
-    <node pkg="tf" type="static_transform_publisher" name="localization" args="0 0 0 0 0 0 map panda_link0 100" output="screen"/>
     
     <group ns="$(arg namespace)">
         <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm.urdf" />

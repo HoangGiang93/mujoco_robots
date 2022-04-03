@@ -8,8 +8,6 @@
         </include>
     </group>
 
-    <node pkg="tf" type="static_transform_publisher" name="map_pub" args="0 0 0 0 0 0 map base 100" output="screen" />
-
     <node pkg="tf" type="static_transform_publisher" name="place_pub" args="0 0 1 0 0 0 base place 100" output="screen" />
 
     <group ns="$(arg namespace)">

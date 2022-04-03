@@ -10,6 +10,6 @@
 		wheel_front_left_joint_velocity_controller
 		wheel_front_right_joint_velocity_controller
 		gripper_joint_effort_controller" />
-
+	<node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen" />
 
 </launch>
