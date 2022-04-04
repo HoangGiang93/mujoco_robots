@@ -7,3 +7,15 @@
 [submodule "hsr_robot/hsr_meshes"]
 	path = hsr_robot/hsr_description/hsr_meshes
 	url = git@github.com:ToyotaResearchInstitute/hsr_meshes.git
+[submodule "tiago/tiago_description/hey5_description"]
+	path = tiago/tiago_description/hey5_description
+	url = git@github.com:pal-robotics/hey5_description.git
+[submodule "tiago/tiago_description/tiago_robot"]
+	path = tiago/tiago_description/tiago_robot
+	url = git@github.com:pal-robotics/tiago_robot.git
+[submodule "tiago/tiago_description_calibration"]
+	path = tiago/tiago_description/tiago_description_calibration
+	url = https://github.com/pal-robotics/tiago_description_calibration.git
+[submodule "tiago/tiago_description/pmb2_robot"]
+	path = tiago/tiago_description/pmb2_robot
+	url = git@github.com:pal-robotics/pmb2_robot.git
