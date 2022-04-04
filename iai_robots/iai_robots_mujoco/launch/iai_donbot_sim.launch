@@ -3,9 +3,9 @@
     <arg name="namespace" default="iai_donbot"/>
 
     <group ns="$(arg namespace)">
-        <rosparam command="load" file="$(find iai_robots_mujoco)/config/iai_donbot.yaml" />
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
             <arg name="robot" value="$(find iai_robots_mujoco)/model/iai_donbot.xml" />
+            <arg name="config" value="$(find iai_robots_mujoco)/config/iai_donbot.xml" />
             <arg name="use_odom_joints" value="true" />
         </include>
     </group>

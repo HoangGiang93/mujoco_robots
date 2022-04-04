@@ -1,7 +1,4 @@
 <mujoco model="hsrb">
-    <option>
-        <flag contact="disable"/>
-    </option>
     <compiler angle="radian"/>
     <size njmax="500" nconmax="100"/>
     <asset>

@@ -12,4 +12,9 @@
 		panda_joint6_position_controller
 		panda_joint7_position_controller" />
 
+		<node name="command_publisher" pkg="franka_control" type="command_publisher.py" />
+		<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+			<remap from="joint_states" to="desired_joint_states" />
+		</node>
+
 </launch>

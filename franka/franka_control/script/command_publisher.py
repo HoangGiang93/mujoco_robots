@@ -11,6 +11,6 @@ def get_joint_state_cb(data):
         pubs[i].publish(data.position[i])
 
 if __name__ == '__main__':
-    rospy.init_node('joint_position_command', anonymous=True)
+    rospy.init_node('command_publisher', anonymous=True)
     rospy.Subscriber('desired_joint_states', JointState, get_joint_state_cb, queue_size=10)
     rospy.spin()

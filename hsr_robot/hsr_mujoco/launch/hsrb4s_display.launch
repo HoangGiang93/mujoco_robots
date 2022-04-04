@@ -10,6 +10,7 @@
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find hsr_control)/launch/hsr_pos_control_with_gui.launch" />
+        <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hsr_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 
