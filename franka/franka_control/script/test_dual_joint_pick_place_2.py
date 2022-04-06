@@ -13,7 +13,7 @@ import actionlib
 from giskard_msgs.msg import MoveResult
 
 from mujoco_msgs.msg import ModelState
-from mujoco_msgs.srv import ModelStateService
+from mujoco_msgs.srv import GenerateObject
 
 import tf
 
@@ -70,7 +70,7 @@ def set_new_object(i):
     rospy.wait_for_service("/panda_arm/generate_objects")
     try:
         gen_objects = rospy.ServiceProxy(
-            "/panda_arm/generate_objects", ModelStateService
+            "/panda_arm/generate_objects", GenerateObject
         )
         res = gen_objects([object])
         return res.success
