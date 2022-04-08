@@ -13,7 +13,7 @@ import actionlib
 from giskard_msgs.msg import MoveResult
 
 from mujoco_msgs.msg import ModelState
-from mujoco_msgs.srv import GenerateObject, GenerateObjectRequest
+from mujoco_msgs.srv import SpawnObject, SpawnObjectRequest
 
 import tf
 
@@ -50,6 +50,38 @@ color = [
     ColorRGBA(1, 1, 0, 1),
 ]
 
+def set_bowl():
+    object.name = "bowl.xml"
+    object.pose.position.x = 0.0
+    object.pose.position.y = 0.0
+    object.pose.position.z = 2.0
+    object.pose.orientation.x = 0.0
+    object.pose.orientation.y = 0.0
+    object.pose.orientation.z = 0.0
+    object.pose.orientation.w = 1.0
+
+    object.type = ModelState.MESH
+    object.scale.x = 1.0
+    object.scale.y = 1.0
+    object.scale.z = 1.0
+    object.color = ColorRGBA(0.8, 0.1, 0, 1)
+
+    objects = SpawnObjectRequest()
+    objects.model_states = [object]
+    rospy.wait_for_service("/panda_arm/spawn_objects")
+    rospy.wait_for_service("/unreal/spawn_objects")
+    try:
+        gen_objects = rospy.ServiceProxy(
+            "/panda_arm/spawn_objects", SpawnObject
+        )
+        gen_objects(objects)
+        object.name = "bowl"
+        gen_objects = rospy.ServiceProxy(
+            "/unreal/spawn_objects", SpawnObject
+        )
+        gen_objects(objects)
+    except rospy.ServiceException as e:
+        print("Service call failed: %s" % e)
 
 def set_new_object(i):
     object.name = "object_1_" + str(i)
@@ -67,15 +99,19 @@ def set_new_object(i):
     object.scale.z = 0.025
     object.color = color[randint(0, len(color) - 1)]
 
-    objects = GenerateObjectRequest()
+    objects = SpawnObjectRequest()
     objects.model_states = [object]
-    rospy.wait_for_service("/panda_arm/generate_objects")
+    rospy.wait_for_service("/panda_arm/spawn_objects")
+    rospy.wait_for_service("/unreal/spawn_objects")
     try:
         gen_objects = rospy.ServiceProxy(
-            "/panda_arm/generate_objects", GenerateObject
+            "/panda_arm/spawn_objects", SpawnObject
         )
-        res = gen_objects(objects)
-        return res.success
+        gen_objects(objects)
+        gen_objects = rospy.ServiceProxy(
+            "/unreal/spawn_objects", SpawnObject
+        )
+        gen_objects(objects)
     except rospy.ServiceException as e:
         print("Service call failed: %s" % e)
 
@@ -121,10 +157,10 @@ def execute_joint_goal(joint_names, position):
     client.wait_for_result()
 
     result = client.get_result()  # type: MoveResult
-    if result.error_codes[0] == MoveResult.SUCCESS:
-        print("giskard returned success")
-    else:
-        print("something went wrong")
+    # if result.error_codes[0] == MoveResult.SUCCESS:
+    #     print("giskard returned success")
+    # else:
+    #     print("something went wrong")
 
 
 def execute_cartesian_goal(root_link, tip_link, position, orientation):
@@ -244,7 +280,9 @@ if __name__ == "__main__":
     rospy.sleep(1)
 
     listener = tf.TransformListener()
-
+    
+    set_bowl()
+    rospy.sleep(1)
     i = 0
     set_new_object(i)
     i = i + 1

@@ -1,27 +1,19 @@
 <launch>
 
-    <arg name="namespace" default="panda_arm" />
-    <group ns="$(arg namespace)">
-        <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
-            <arg name="robot" value="$(find franka_mujoco)/model/dual_panda_arm_with_bowl.xml" />
-            <arg name="config" value="$(find franka_mujoco)/config/dual_panda_arm.xml" />
-        </include>
-    </group>
+    <arg name="namespace" default="panda_arm"/>
+    <arg name="config" default="$(find franka_mujoco)/config/dual_panda_arm_with_bowl.xml" />
+
+    <include file="$(find franka_mujoco)/launch/dual_panda_arm_display.launch">
+        <arg name="namespace" value="$(arg namespace)"/>
+        <arg name="config" value="$(arg config)" />
+    </include>
 
     <node pkg="tf" type="static_transform_publisher" name="place_pub" args="0 0 1 0 0 0 base place 100" output="screen" />
 
-    <group ns="$(arg namespace)">
-        <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/dual_panda_arm.urdf" />
-        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-
-        <include file="$(find franka_control)/launch/dual_panda_arm_traj_control.launch" />
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_mujoco)/rviz_config/rviz_config.rviz" />
-    </group>
-
     <include file="$(find giskardpy)/launch/giskardpy_dual_panda_arm.launch" />
 
-    <node pkg="franka_control" type="test_dual_joint_pick_place_1.py" name="test_1" output="screen" launch-prefix="bash -c 'sleep 5; $0 $@' " />
+    <!-- <node pkg="franka_control" type="test_dual_joint_pick_place_1.py" name="test_1" output="screen" launch-prefix="bash -c 'sleep 5; $0 $@' " />
 
-    <node pkg="franka_control" type="test_dual_joint_pick_place_2.py" name="test_2" output="screen" launch-prefix="bash -c 'sleep 15; $0 $@' " />
+    <node pkg="franka_control" type="test_dual_joint_pick_place_2.py" name="test_2" output="screen" launch-prefix="bash -c 'sleep 15; $0 $@' " /> -->
 
 </launch>
