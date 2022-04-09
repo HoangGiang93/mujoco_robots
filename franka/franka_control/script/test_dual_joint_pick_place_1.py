@@ -12,7 +12,7 @@ from giskard_msgs.msg import MoveGoal
 import actionlib
 from giskard_msgs.msg import MoveResult
 
-from mujoco_msgs.msg import ModelState
+from mujoco_msgs.msg import ObjectState
 from mujoco_msgs.srv import SpawnObject, SpawnObjectRequest
 
 import tf
@@ -37,8 +37,8 @@ cartesian_goal = CartesianConstraint()
 
 cartesian_goal.type = cartesian_goal.POSE_6D
 
-object = ModelState()
-types = [ModelState.CUBE, ModelState.SPHERE, ModelState.CYLINDER]
+object = ObjectState()
+types = [ObjectState.CUBE, ObjectState.SPHERE, ObjectState.CYLINDER]
 
 color = [
     ColorRGBA(0, 0, 1, 1),
@@ -60,16 +60,16 @@ def set_bowl():
     object.pose.orientation.z = 0.0
     object.pose.orientation.w = 1.0
 
-    object.type = ModelState.MESH
+    object.type = ObjectState.MESH
     object.scale.x = 1.0
     object.scale.y = 1.0
     object.scale.z = 1.0
     object.color = ColorRGBA(0.8, 0.1, 0, 1)
+    object.mesh_path = "Assets/SM_bowl"
 
     objects = SpawnObjectRequest()
-    objects.model_states = [object]
-    rospy.wait_for_service("/panda_arm/spawn_objects")
-    rospy.wait_for_service("/unreal/spawn_objects")
+    objects.object_states = [object]
+    
     try:
         gen_objects = rospy.ServiceProxy(
             "/panda_arm/spawn_objects", SpawnObject
@@ -100,9 +100,7 @@ def set_new_object(i):
     object.color = color[randint(0, len(color) - 1)]
 
     objects = SpawnObjectRequest()
-    objects.model_states = [object]
-    rospy.wait_for_service("/panda_arm/spawn_objects")
-    rospy.wait_for_service("/unreal/spawn_objects")
+    objects.object_states = [object]
     try:
         gen_objects = rospy.ServiceProxy(
             "/panda_arm/spawn_objects", SpawnObject
@@ -280,6 +278,13 @@ if __name__ == "__main__":
     rospy.sleep(1)
 
     listener = tf.TransformListener()
+
+    rospy.wait_for_service("/panda_arm/spawn_objects", 1)
+    try:
+        rospy.wait_for_service("/unreal/spawn_objects", 1)
+    except rospy.ROSException as e:
+        print("Service call failed: %s" % e)
+    
     
     set_bowl()
     rospy.sleep(1)

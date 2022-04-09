@@ -12,8 +12,8 @@ from giskard_msgs.msg import MoveGoal
 import actionlib
 from giskard_msgs.msg import MoveResult
 
-from mujoco_msgs.msg import ModelState
-from mujoco_msgs.srv import GenerateObject, GenerateObjectRequest
+from mujoco_msgs.msg import ObjectState
+from mujoco_msgs.srv import SpawnObject, SpawnObjectRequest
 
 import tf
 
@@ -37,8 +37,8 @@ cartesian_goal = CartesianConstraint()
 
 cartesian_goal.type = cartesian_goal.POSE_6D
 
-object = ModelState()
-types = [ModelState.CUBE, ModelState.SPHERE, ModelState.CYLINDER]
+object = ObjectState()
+types = [ObjectState.CUBE, ObjectState.SPHERE, ObjectState.CYLINDER]
 
 color = [
     ColorRGBA(0, 0, 1, 1),
@@ -67,17 +67,15 @@ def set_new_object(i):
     object.scale.z = 0.025
     object.color = color[randint(0, len(color) - 1)]
     
-    objects = GenerateObjectRequest()
-    objects.model_states = [object]
-    rospy.wait_for_service("/panda_arm/spawn_objects")
-    rospy.wait_for_service("/unreal/spawn_objects")
+    objects = SpawnObjectRequest()
+    objects.object_states = [object]
     try:
         gen_objects = rospy.ServiceProxy(
-            "/panda_arm/spawn_objects", GenerateObject
+            "/panda_arm/spawn_objects", SpawnObject
         )
         gen_objects(objects)
         gen_objects = rospy.ServiceProxy(
-            "/unreal/spawn_objects", GenerateObject
+            "/unreal/spawn_objects", SpawnObject
         )
         gen_objects(objects)
     except rospy.ServiceException as e:
@@ -248,6 +246,12 @@ if __name__ == "__main__":
     rospy.sleep(1)
 
     listener = tf.TransformListener()
+
+    rospy.wait_for_service("/panda_arm/spawn_objects", 1)
+    try:
+        rospy.wait_for_service("/unreal/spawn_objects", 1)
+    except rospy.ROSException as e:
+        print("Service call failed: %s" % e)
 
     i = 0
     set_new_object(i)
