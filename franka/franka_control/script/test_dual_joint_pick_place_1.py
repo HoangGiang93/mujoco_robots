@@ -12,7 +12,7 @@ from giskard_msgs.msg import MoveGoal
 import actionlib
 from giskard_msgs.msg import MoveResult
 
-from mujoco_msgs.msg import ObjectState
+from mujoco_msgs.msg import ObjectStatus, ObjectInfo, ObjectState
 from mujoco_msgs.srv import SpawnObject, SpawnObjectRequest
 
 import tf
@@ -37,8 +37,8 @@ cartesian_goal = CartesianConstraint()
 
 cartesian_goal.type = cartesian_goal.POSE_6D
 
-object = ObjectState()
-types = [ObjectState.CUBE, ObjectState.SPHERE, ObjectState.CYLINDER]
+object = ObjectStatus()
+types = [ObjectInfo.CUBE, ObjectInfo.SPHERE, ObjectInfo.CYLINDER]
 
 color = [
     ColorRGBA(0, 0, 1, 1),
@@ -51,7 +51,14 @@ color = [
 ]
 
 def set_bowl():
-    object.name = "bowl.xml"
+    object.info.name = "bowl"
+    object.info.type = ObjectInfo.MESH
+    object.info.size.x = 1.0
+    object.info.size.y = 1.0
+    object.info.size.z = 1.0
+    object.info.rgba = ColorRGBA(0.8, 0.1, 0, 1)
+    object.info.mesh = "bowl.xml"
+
     object.pose.position.x = 0.0
     object.pose.position.y = 0.0
     object.pose.position.z = 2.0
@@ -60,22 +67,15 @@ def set_bowl():
     object.pose.orientation.z = 0.0
     object.pose.orientation.w = 1.0
 
-    object.type = ObjectState.MESH
-    object.scale.x = 1.0
-    object.scale.y = 1.0
-    object.scale.z = 1.0
-    object.color = ColorRGBA(0.8, 0.1, 0, 1)
-    object.mesh_path = "Assets/SM_bowl"
-
     objects = SpawnObjectRequest()
-    objects.object_states = [object]
+    objects.objects = [object]
     
     try:
         gen_objects = rospy.ServiceProxy(
-            "/panda_arm/spawn_objects", SpawnObject
+            "/mujoco/spawn_objects", SpawnObject
         )
         gen_objects(objects)
-        object.name = "bowl"
+        object.info.mesh = "Assets/SM_bowl"
         gen_objects = rospy.ServiceProxy(
             "/unreal/spawn_objects", SpawnObject
         )
@@ -84,7 +84,13 @@ def set_bowl():
         print("Service call failed: %s" % e)
 
 def set_new_object(i):
-    object.name = "object_1_" + str(i)
+    object.info.name = "object_1_" + str(i)
+    object.info.type = types[randint(0, len(types) - 1)]
+    object.info.size.x = 0.025
+    object.info.size.y = 0.025
+    object.info.size.z = 0.025
+    object.info.rgba = color[randint(0, len(color) - 1)]
+
     object.pose.position.x = uniform(-0.2, 0.2)
     object.pose.position.y = -0.8
     object.pose.position.z = 1.5
@@ -93,17 +99,11 @@ def set_new_object(i):
     object.pose.orientation.z = 0.0
     object.pose.orientation.w = 1.0
 
-    object.type = types[randint(0, len(types) - 1)]
-    object.scale.x = 0.025
-    object.scale.y = 0.025
-    object.scale.z = 0.025
-    object.color = color[randint(0, len(color) - 1)]
-
     objects = SpawnObjectRequest()
-    objects.object_states = [object]
+    objects.objects = [object]
     try:
         gen_objects = rospy.ServiceProxy(
-            "/panda_arm/spawn_objects", SpawnObject
+            "/mujoco/spawn_objects", SpawnObject
         )
         gen_objects(objects)
         gen_objects = rospy.ServiceProxy(
@@ -279,7 +279,7 @@ if __name__ == "__main__":
 
     listener = tf.TransformListener()
 
-    rospy.wait_for_service("/panda_arm/spawn_objects", 1)
+    rospy.wait_for_service("/mujoco/spawn_objects", 1)
     try:
         rospy.wait_for_service("/unreal/spawn_objects", 1)
     except rospy.ROSException as e:
@@ -305,10 +305,10 @@ if __name__ == "__main__":
     )
     while not rospy.is_shutdown():
         panda_1_open()
-        move_to_pre_pick("panda_1_link0", "panda_1_hand_tcp", object.name)
-        move_to_pick("panda_1_link0", "panda_1_hand_tcp", object.name)
+        move_to_pre_pick("panda_1_link0", "panda_1_hand_tcp", object.info.name)
+        move_to_pick("panda_1_link0", "panda_1_hand_tcp", object.info.name)
         panda_1_close()
-        move_to_post_pick("panda_1_link0", "panda_1_hand_tcp", object.name)
+        move_to_post_pick("panda_1_link0", "panda_1_hand_tcp", object.info.name)
         execute_joint_goal(["panda_1_joint1"], [math.pi / 2])
         panda_1_open()
         set_new_object(i)
