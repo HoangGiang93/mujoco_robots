@@ -12,8 +12,8 @@
 
     <include file="$(find giskardpy)/launch/giskardpy_dual_panda_arm.launch" />
 
-    <node pkg="franka_control" type="test_dual_joint_pick_place_1.py" name="test_1" output="screen" launch-prefix="bash -c 'sleep 1; $0 $@' " />
+    <node pkg="franka_control" type="test_dual_joint_pick_place_ue_1.py" name="test_1" output="screen" launch-prefix="bash -c 'sleep 1; $0 $@' " />
 
-    <node pkg="franka_control" type="test_dual_joint_pick_place_2.py" name="test_2" output="screen" launch-prefix="bash -c 'sleep 6; $0 $@' " />
+    <node pkg="franka_control" type="test_dual_joint_pick_place_ue_2.py" name="test_2" output="screen" launch-prefix="bash -c 'sleep 6; $0 $@' " />
 
 </launch>

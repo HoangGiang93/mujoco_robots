@@ -20,9 +20,9 @@ import tf
 import math
 from random import random, uniform, randint
 
-hand_1_pub = [
+hand_2_pub = [
     rospy.Publisher(
-        "panda_arm/panda_1_finger_joint" + str(i) + "_effort_controller/command",
+        "panda_arm/panda_2_finger_joint" + str(i) + "_effort_controller/command",
         Float64,
         queue_size=10,
     )
@@ -31,7 +31,7 @@ hand_1_pub = [
 
 # Creates the SimpleActionClient, passing the type of the action
 # (MoveAction) to the constructor.
-client = actionlib.SimpleActionClient("/giskard_1/command", MoveAction)
+client = actionlib.SimpleActionClient("/giskard_2/command", MoveAction)
 
 cartesian_goal = CartesianConstraint()
 
@@ -51,56 +51,29 @@ color = [
     ColorRGBA(1, 1, 0, 1),
 ]
 
-def set_bowl():
-    object.info.name = "bowl"
-    object.info.type = ObjectInfo.MESH
-    object.info.size.x = 1.0
-    object.info.size.y = 1.0
-    object.info.size.z = 1.0
-    object.info.rgba = ColorRGBA(0.8, 0.1, 0, 1)
-    object.info.mesh = "bowl.xml"
-
-    object.pose.position.x = 0.0
-    object.pose.position.y = 0.0
-    object.pose.position.z = 1.0
-    object.pose.orientation.x = 0.0
-    object.pose.orientation.y = 0.0
-    object.pose.orientation.z = 0.0
-    object.pose.orientation.w = 1.0
-
-    objects = SpawnObjectRequest()
-    objects.objects = [object]
-    
-    try:
-        gen_objects = rospy.ServiceProxy(
-            "/mujoco/spawn_objects", SpawnObject
-        )
-        gen_objects(objects)
-    except rospy.ServiceException as e:
-        print("Service call failed: %s" % e)
 
 def set_new_object(i):
     idx = randint(0, 2)
-    object.info.name = names[idx] + "_1_" + str(i)
+    object.info.name = names[idx] + "_2_" + str(i)
     object.info.type = types[idx]
-    object.info.size.x = 0.025
-    object.info.size.y = 0.025
-    object.info.size.z = 0.025
-    object.info.rgba = color[randint(0, len(color) - 1)]
-
     object.pose.position.x = uniform(-0.2, 0.2)
-    object.pose.position.y = -0.8
+    object.pose.position.y = 0.8
     object.pose.position.z = 1.5
     object.pose.orientation.x = 0.0
     object.pose.orientation.y = 0.0
     object.pose.orientation.z = 0.0
     object.pose.orientation.w = 1.0
 
+    object.info.size.x = 0.025
+    object.info.size.y = 0.025
+    object.info.size.z = 0.025
+    object.info.rgba = color[randint(0, len(color) - 1)]
+    
     objects = SpawnObjectRequest()
     objects.objects = [object]
     try:
         gen_objects = rospy.ServiceProxy(
-            "/mujoco/spawn_objects", SpawnObject
+            "/unreal/spawn_objects", SpawnObject
         )
         gen_objects(objects)
     except rospy.ServiceException as e:
@@ -148,10 +121,10 @@ def execute_joint_goal(joint_names, position):
     client.wait_for_result()
 
     result = client.get_result()  # type: MoveResult
-    # if result.error_codes[0] == MoveResult.SUCCESS:
-    #     print("giskard returned success")
-    # else:
-    #     print("something went wrong")
+    if result.error_codes[0] == MoveResult.SUCCESS:
+        print("giskard returned success")
+    else:
+        print("something went wrong")
 
 
 def execute_cartesian_goal(root_link, tip_link, position, orientation):
@@ -254,52 +227,49 @@ def move_to_post_pick(root_link, hand, object):
         return
 
 
-def panda_1_open():
-    hand_1_pub[0].publish(300)
-    hand_1_pub[1].publish(300)
+def panda_2_open():
+    hand_2_pub[0].publish(300)
+    hand_2_pub[1].publish(300)
     return
 
 
-def panda_1_close():
-    hand_1_pub[0].publish(0)
-    hand_1_pub[1].publish(0)
+def panda_2_close():
+    hand_2_pub[0].publish(0)
+    hand_2_pub[1].publish(0)
     return
 
 
 if __name__ == "__main__":
-    rospy.init_node("test_dual_joint_pick_place_1")
+    rospy.init_node("test_dual_joint_pick_place_2")
     rospy.sleep(1)
 
     listener = tf.TransformListener()
 
-    rospy.wait_for_service("/mujoco/spawn_objects", 1)
-    
-    
-    set_bowl()
-    rospy.sleep(1)
+    rospy.wait_for_service("/unreal/spawn_objects", 1)
+
     i = 0
     set_new_object(i)
     i = i + 1
     execute_joint_goal(
         [
-            "panda_1_joint1",
-            "panda_1_joint2",
-            "panda_1_joint3",
-            "panda_1_joint4",
-            "panda_1_joint5",
-            "panda_1_joint6",
-            "panda_1_joint7",
+            "panda_2_joint1",
+            "panda_2_joint2",
+            "panda_2_joint3",
+            "panda_2_joint4",
+            "panda_2_joint5",
+            "panda_2_joint6",
+            "panda_2_joint7",
         ],
-        [-math.pi / 2, 0.37, 0.0, -2.22, 0, 2.56, 0.8],
+        [math.pi / 2, 0.37, 0.0, -2.22, 0, 2.56, 0.8],
     )
     while not rospy.is_shutdown():
-        panda_1_open()
-        move_to_pre_pick("panda_1_link0", "panda_1_hand_tcp", object.info.name)
-        move_to_pick("panda_1_link0", "panda_1_hand_tcp", object.info.name)
-        panda_1_close()
-        move_to_post_pick("panda_1_link0", "panda_1_hand_tcp", object.info.name)
-        execute_joint_goal(["panda_1_joint1"], [math.pi / 2])
-        panda_1_open()
+        panda_2_open()
+        move_to_pre_pick("panda_2_link0", "panda_2_hand_tcp", object.info.name)
+        move_to_pick("panda_2_link0", "panda_2_hand_tcp", object.info.name)
+        panda_2_close()
+        move_to_post_pick("panda_2_link0", "panda_2_hand_tcp", object.info.name)
+        execute_joint_goal(["panda_2_joint1"], [-math.pi / 2])
+        panda_2_open()
         set_new_object(i)
         i = i + 1
-        execute_joint_goal(["panda_1_joint1"], [-math.pi / 2])
+        execute_joint_goal(["panda_2_joint1"], [math.pi / 2])

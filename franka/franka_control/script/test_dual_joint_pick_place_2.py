@@ -39,6 +39,7 @@ cartesian_goal.type = cartesian_goal.POSE_6D
 
 object = ObjectStatus()
 types = [ObjectInfo.CUBE, ObjectInfo.SPHERE, ObjectInfo.CYLINDER]
+names = ["Cube", "Sphere",  "Cylinder"]
 
 color = [
     ColorRGBA(0, 0, 1, 1),
@@ -52,7 +53,9 @@ color = [
 
 
 def set_new_object(i):
-    object.info.name = "object_2_" + str(i)
+    idx = randint(0, 2)
+    object.info.name = names[idx] + "_2_" + str(i)
+    object.info.type = types[idx]
     object.pose.position.x = uniform(-0.2, 0.2)
     object.pose.position.y = 0.8
     object.pose.position.z = 1.5
@@ -61,7 +64,6 @@ def set_new_object(i):
     object.pose.orientation.z = 0.0
     object.pose.orientation.w = 1.0
 
-    object.info.type = types[randint(0, len(types) - 1)]
     object.info.size.x = 0.025
     object.info.size.y = 0.025
     object.info.size.z = 0.025
@@ -72,10 +74,6 @@ def set_new_object(i):
     try:
         gen_objects = rospy.ServiceProxy(
             "/mujoco/spawn_objects", SpawnObject
-        )
-        gen_objects(objects)
-        gen_objects = rospy.ServiceProxy(
-            "/unreal/spawn_objects", SpawnObject
         )
         gen_objects(objects)
     except rospy.ServiceException as e:
@@ -248,10 +246,6 @@ if __name__ == "__main__":
     listener = tf.TransformListener()
 
     rospy.wait_for_service("/mujoco/spawn_objects", 1)
-    try:
-        rospy.wait_for_service("/unreal/spawn_objects", 1)
-    except rospy.ROSException as e:
-        print("Service call failed: %s" % e)
 
     i = 0
     set_new_object(i)

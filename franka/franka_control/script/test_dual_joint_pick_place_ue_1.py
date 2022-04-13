@@ -58,7 +58,7 @@ def set_bowl():
     object.info.size.y = 1.0
     object.info.size.z = 1.0
     object.info.rgba = ColorRGBA(0.8, 0.1, 0, 1)
-    object.info.mesh = "bowl.xml"
+    object.info.mesh = "Assets/StaticMeshes/SM_bowl.SM_bowl"
 
     object.pose.position.x = 0.0
     object.pose.position.y = 0.0
@@ -73,7 +73,7 @@ def set_bowl():
     
     try:
         gen_objects = rospy.ServiceProxy(
-            "/mujoco/spawn_objects", SpawnObject
+            "/unreal/spawn_objects", SpawnObject
         )
         gen_objects(objects)
     except rospy.ServiceException as e:
@@ -100,7 +100,7 @@ def set_new_object(i):
     objects.objects = [object]
     try:
         gen_objects = rospy.ServiceProxy(
-            "/mujoco/spawn_objects", SpawnObject
+            "/unreal/spawn_objects", SpawnObject
         )
         gen_objects(objects)
     except rospy.ServiceException as e:
@@ -272,7 +272,7 @@ if __name__ == "__main__":
 
     listener = tf.TransformListener()
 
-    rospy.wait_for_service("/mujoco/spawn_objects", 1)
+    rospy.wait_for_service("/unreal/spawn_objects", 1)
     
     
     set_bowl()
