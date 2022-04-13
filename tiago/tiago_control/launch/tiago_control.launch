@@ -1,0 +1,50 @@
+<launch>
+
+	<!-- Load controller manager -->
+	<rosparam command="load" file="$(find tiago_control)/config/default_controllers.yaml" />
+	<node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
+		joint_state_controller
+		torso_controller
+		head_controller
+		arm_controller 
+		joint_trajectory_controller"/>
+		<!-- hand_index_joint_effort_controller
+		hand_mrl_joint_effort_controller
+		hand_index_abd_joint_effort_controller
+		hand_index_virtual_1_joint_effort_controller
+		hand_index_virtual_2_joint_effort_controller
+		hand_index_virtual_3_joint_effort_controller
+		hand_index_flex_1_joint_effort_controller
+		hand_index_flex_2_joint_effort_controller
+		hand_index_flex_3_joint_effort_controller
+		hand_little_abd_joint_effort_controller
+		hand_little_virtual_1_joint_effort_controller
+		hand_little_virtual_2_joint_effort_controller
+		hand_little_virtual_3_joint_effort_controller
+		hand_little_flex_1_joint_effort_controller
+		hand_little_flex_2_joint_effort_controller
+		hand_little_flex_3_joint_effort_controller
+		hand_middle_abd_joint_effort_controller
+		hand_middle_virtual_1_joint_effort_controller
+		hand_middle_virtual_2_joint_effort_controller
+		hand_middle_virtual_3_joint_effort_controller
+		hand_middle_flex_1_joint_effort_controller
+		hand_middle_flex_2_joint_effort_controller
+		hand_middle_flex_3_joint_effort_controller
+		hand_ring_abd_joint_effort_controller
+		hand_ring_virtual_1_joint_effort_controller
+		hand_ring_virtual_2_joint_effort_controller
+		hand_ring_virtual_3_joint_effort_controller
+		hand_ring_flex_1_joint_effort_controller
+		hand_ring_flex_2_joint_effort_controller
+		hand_ring_flex_3_joint_effort_controller
+		hand_thumb_abd_joint_effort_controller
+		hand_thumb_virtual_1_joint_effort_controller
+		hand_thumb_virtual_2_joint_effort_controller
+		hand_thumb_flex_1_joint_effort_controller
+		hand_thumb_flex_2_joint_effort_controller
+		hand_thumb_joint_effort_controller" /> -->
+
+	<node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" />
+
+</launch>
