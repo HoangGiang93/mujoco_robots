@@ -66,7 +66,7 @@ arm_controller:
     arm_7_joint:
       goal: 0.02
 
-joint_trajectory_controller:
+finger_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
     - hand_index_abd_joint

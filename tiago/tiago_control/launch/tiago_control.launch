@@ -7,7 +7,7 @@
 		torso_controller
 		head_controller
 		arm_controller 
-		joint_trajectory_controller"/>
+		finger_controller"/>
 		<!-- hand_index_joint_effort_controller
 		hand_mrl_joint_effort_controller
 		hand_index_abd_joint_effort_controller
