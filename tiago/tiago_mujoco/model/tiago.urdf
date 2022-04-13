@@ -1079,21 +1079,21 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_visual_core.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_core.dae" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_visual_shoulder.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_shoulder.dae" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_visual_neck.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_neck.dae" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
@@ -1134,7 +1134,7 @@
     <visual>
       <origin rpy="0 0 0.0" xyz="0.0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/head/head_1_visual.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/head/head_1_collision.dae" scale="1 1 1"/>
       </geometry>
       <material name="White"/>
     </visual>
@@ -1182,7 +1182,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/head/head_2_visual.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/head/head_2_collision.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -1373,7 +1373,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_1_visual.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/arm/arm_1_collision.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -1404,7 +1404,7 @@
       <!-- <origin xyz="0 0 0" rpy="${180 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" /> -->
       <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_2_visual.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/arm/arm_2_collision.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -1433,7 +1433,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_3_visual.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/arm/arm_3_collision.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -1465,7 +1465,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_4_visual.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/arm/arm_4_collision.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -1532,7 +1532,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_5_visual-wrist-2010.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/arm/arm_5_collision-wrist-2010.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -1561,7 +1561,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_6_visual-wrist-2010.dae" scale="1 1 1"/>
+        <mesh filename="package://tiago_description/meshes/arm/arm_6_collision-wrist-2010.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
