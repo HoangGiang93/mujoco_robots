@@ -4,6 +4,7 @@
 
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="joint_inits" value="$(find ur_mujoco)/config/ur5.yaml" />
             <arg name="robot" value="$(find ur_description)/urdf/ur5.urdf" />
             <arg name="config" value="$(find ur_mujoco)/config/ur5.xml" />
             <arg name="use_urdf" value="true" />
