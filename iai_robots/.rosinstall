@@ -1,0 +1,4 @@
+- git:
+    local-name: iai_robots_description
+    uri: git@github.com:HoangGiang93/iai_robots.git
+    version: 5901c094bf559859bfc937808561dac7e099d572
