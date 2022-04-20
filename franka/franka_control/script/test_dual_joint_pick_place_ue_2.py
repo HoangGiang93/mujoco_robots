@@ -56,6 +56,7 @@ def set_new_object(i):
     idx = randint(0, 2)
     object.info.name = names[idx] + "_2_" + str(i)
     object.info.type = types[idx]
+    object.info.movable = True
     object.pose.position.x = uniform(-0.2, 0.2)
     object.pose.position.y = 0.8
     object.pose.position.z = 1.5

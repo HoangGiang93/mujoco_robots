@@ -54,6 +54,7 @@ color = [
 def set_bowl():
     object.info.name = "bowl"
     object.info.type = ObjectInfo.MESH
+    object.info.movable = False
     object.info.size.x = 1.0
     object.info.size.y = 1.0
     object.info.size.z = 1.0
@@ -83,6 +84,7 @@ def set_new_object(i):
     idx = randint(0, 2)
     object.info.name = names[idx] + "_1_" + str(i)
     object.info.type = types[idx]
+    object.info.movable = True
     object.info.size.x = 0.025
     object.info.size.y = 0.025
     object.info.size.z = 0.025

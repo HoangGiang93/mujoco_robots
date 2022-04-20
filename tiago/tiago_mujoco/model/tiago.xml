@@ -25,7 +25,6 @@
         <mesh name="finger_flex_collision" file="tiago/meshes/finger_flex_collision.stl" />
         <mesh name="finger_flex_tip_collision" file="tiago/meshes/finger_flex_tip_collision.stl" />
         <mesh name="finger_abd_collision" file="tiago/meshes/finger_abd_collision.stl" />
-        <mesh name="shelf" file="tiago/meshes/ShelfSystemH200T5L100W.stl" />
     </asset>
     <worldbody>
         <geom pos="0 0 0.0985" type="mesh" mesh="base" />
