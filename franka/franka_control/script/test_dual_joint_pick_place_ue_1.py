@@ -58,7 +58,7 @@ def set_bowl():
     object.info.size.y = 1.0
     object.info.size.z = 1.0
     object.info.rgba = ColorRGBA(0.8, 0.1, 0, 1)
-    object.info.mesh = "Assets/StaticMeshes/SM_bowl.SM_bowl"
+    object.info.mesh = "/URoboViz/Assets/StaticMeshes/SM_bowl.SM_bowl"
 
     object.pose.position.x = 0.0
     object.pose.position.y = 0.0
