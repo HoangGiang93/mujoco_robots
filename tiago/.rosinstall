@@ -8,9 +8,9 @@
     version: da3e237a7ea8cac1d798b657d447ff013a8a57a0
 - git:
     local-name: tiago_description/tiago_description_calibration
-    uri: https://github.com/pal-robotics/tiago_description_calibration.git
+    uri: git@github.com:pal-robotics/tiago_description_calibration.git
     version: b608b8da030d9dc61b474bfffad6b01655d52d71
 - git:
     local-name: tiago_description/tiago_robot
-    uri: git@github.com:HoangGiang93/tiago_robot.git
-    version: 974cc7208852306b05294b78fb1d9ce2c871c758
+    uri: git@github.com:pal-robotics/tiago_robot.git
+    version: ee8c909be59aec65cf707c02013cfed37be2d051
