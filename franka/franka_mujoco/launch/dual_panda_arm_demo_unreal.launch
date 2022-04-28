@@ -1,10 +1,10 @@
 <launch>
 
-    <arg name="namespace" default="panda_arm"/>
+    <arg name="namespace" default="panda_arm" />
     <arg name="config" default="$(find franka_mujoco)/config/dual_panda_arm_with_bowl.xml" />
 
     <include file="$(find franka_mujoco)/launch/dual_panda_arm_display.launch">
-        <arg name="namespace" value="$(arg namespace)"/>
+        <arg name="namespace" value="$(arg namespace)" />
         <arg name="config" value="$(arg config)" />
         <arg name="pub_object_marker" value="false" />
         <arg name="pub_object_state" value="true" />

@@ -1,13 +1,13 @@
 <launch>
 
-    <arg name="namespace" default="iai_donbot"/>
+    <arg name="namespace" default="iai_donbot" />
 
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="config" value="$(find iai_robots_mujoco)/config/iai_donbot.yaml" />
             <arg name="robot" value="$(find iai_robots_mujoco)/model/iai_donbot.xml" />
-            <arg name="config" value="$(find iai_robots_mujoco)/config/iai_donbot.xml" />
-            <arg name="use_odom_joints" value="true" />
+            <arg name="world" value="$(find iai_robots_mujoco)/model/world/iai_donbot.xml" />
         </include>
     </group>
-    
+
 </launch>

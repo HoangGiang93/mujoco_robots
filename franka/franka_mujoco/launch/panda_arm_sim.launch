@@ -1,11 +1,13 @@
 <launch>
 
-    <arg name="namespace" default="panda_arm"/>
-    
+    <arg name="namespace" default="panda_arm" />
+    <arg name="config" default="$(find franka_mujoco)/config/panda_arm.yaml" />
+
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="config" value="$(arg config)" />
             <arg name="robot" value="$(find franka_mujoco)/model/panda_arm.xml" />
-            <arg name="config" value="$(find franka_mujoco)/config/panda_arm.xml" />
+            <arg name="world" value="$(find franka_mujoco)/model/world/panda_arm.xml" />
         </include>
     </group>
 

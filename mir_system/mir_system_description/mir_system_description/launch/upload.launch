@@ -1,0 +1,5 @@
+<launch>
+  <arg name="urdf" default="$(find mir_system)/urdf/mir_system.xacro"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf)'"/>
+</launch>

@@ -1,8 +1,8 @@
 <launch>
 
-    <arg name="namespace" default="ur5"/>
-    <include file="$(find ur_mujoco)/launch/ur5_sim.launch" >
-        <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="namespace" default="ur5" />
+    <include file="$(find ur_mujoco)/launch/ur5_sim.launch">
+        <arg name="namespace" value="$(arg namespace)" />
     </include>
 
     <group ns="$(arg namespace)">

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mir_system">
+
+  <!-- MiR100 -->
+  <xacro:include filename="$(find mir_description)/urdf/mir.urdf.xacro" />
+
+  <!-- mir100_hook -->
+  <xacro:include filename="$(find mir100_hook_description)/urdf/mir100_hook.urdf" />
+
+  <!-- roll_container -->
+  <xacro:include filename="$(find roll_container_description)/urdf/roll_container.urdf" />
+  
+  <joint name="mir_hook_joint" type="fixed">
+    <origin xyz="0.106 0.0 0.35" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="root"/>
+  </joint>
+
+  <joint name="hook_point_joint" type="fixed">
+    <origin xyz="-0.2 -0.36 0.0" rpy="-1.5708 0 0"/>
+    <parent link="carriage"/>
+    <child link="hook_point"/>
+  </joint>
+
+  <link name="hook_point" />
+
+  <joint name="roll_container_joint" type="fixed">
+    <origin xyz="-0.25 0.0 0.0" rpy="0 0 1.5708"/>
+    <parent link="hook_point"/>
+    <child link="roll_container_root"/>
+  </joint>
+
+</robot>

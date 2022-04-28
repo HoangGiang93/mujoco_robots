@@ -1,0 +1,17 @@
+<launch>
+
+    <arg name="namespace" default="mir_system" />
+    <include file="$(find mir_system_mujoco)/launch/mir_system_sim.launch">
+        <arg name="namespace" value="$(arg namespace)" />
+    </include>
+
+    <group ns="$(arg namespace)">
+        <param name="robot_description" command="$(find xacro)/xacro $(find mir_system_description)/urdf/mir_system.xacro" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+        <include file="$(find mir_system_control)/launch/mir_system_control.launch" />
+        <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mir_system_control)/rviz_config/rviz_config.rviz" />
+    </group>
+
+</launch>

@@ -1,12 +1,12 @@
 <launch>
 
-    <arg name="namespace" default="hsrb4s"/>
-    
+    <arg name="namespace" default="hsrb4s" />
+
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="config" value="$(find hsr_mujoco)/config/hsrb4s.yaml" />
             <arg name="robot" value="$(find hsr_mujoco)/model/hsrb4s.xml" />
-            <arg name="use_odom_joints" value="true" />
-            <arg name="config" value="$(find hsr_mujoco)/config/hsrb4s.xml" />
+            <arg name="world" value="$(find hsr_mujoco)/model/world/hsrb4s.xml" />
         </include>
     </group>
 

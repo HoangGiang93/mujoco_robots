@@ -9,8 +9,8 @@ Panels:
         - /RobotModel1
         - /TF1
         - /TF1/Frames1
-        - /Marker1
-        - /Marker1/Namespaces1
+        - /MarkerArray1
+        - /MarkerArray1/Namespaces1
       Splitter Ratio: 0.5
     Tree Height: 1645
   - Class: rviz/Selection
@@ -201,7 +201,7 @@ Visualization Manager:
           Show Trail: false
           Value: true
       Name: RobotModel
-      Robot Description: panda_arm/robot_description
+      Robot Description: dual_panda_arm/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -221,10 +221,10 @@ Visualization Manager:
         {}
       Update Interval: 0
       Value: false
-    - Class: rviz/Marker
+    - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /mujoco/visualization_marker
-      Name: Marker
+      Marker Topic: /mujoco/visualization_marker_array
+      Name: MarkerArray
       Namespaces:
         {}
       Queue Size: 100
@@ -273,9 +273,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.44039833545684814
+      Pitch: 0.5803982019424438
       Target Frame: <Fixed Frame>
-      Yaw: 5.363593101501465
+      Yaw: 5.443594932556152
     Saved: ~
 Window Geometry:
   Displays:

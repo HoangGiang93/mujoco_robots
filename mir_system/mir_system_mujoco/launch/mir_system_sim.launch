@@ -1,0 +1,13 @@
+<launch>
+
+  <arg name="namespace" default="mir_system" />
+
+  <group ns="$(arg namespace)">
+    <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+      <arg name="config" value="$(find mir_system_mujoco)/config/mir_system.yaml" />
+      <arg name="robot" value="$(find mir_system_mujoco)/model/mir_system.xml" />
+      <arg name="world" value="$(find mir_system_mujoco)/model/world/mir_system.xml" />
+    </include>
+  </group>
+
+</launch>

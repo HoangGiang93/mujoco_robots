@@ -5,3 +5,13 @@ joint_inits:
   wrist_1_joint: -1
   wrist_2_joint: 1
   wrist_3_joint: 1
+
+use_odom_joints: false
+
+pub_object_marker_array: true
+
+pub_object_tf: true
+
+pub_object_state_array: true
+
+root_frame_id: map

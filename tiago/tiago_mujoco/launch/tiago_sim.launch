@@ -1,14 +1,13 @@
 <launch>
 
-  <arg name="namespace" default="tiago"/>
-  
+  <arg name="namespace" default="tiago" />
+
   <group ns="$(arg namespace)">
-      <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
-          <arg name="robot" value="$(find tiago_mujoco)/model/tiago.xml" />
-          <arg name="use_odom_joints" value="true" />
-          <arg name="config" value="$(find tiago_mujoco)/config/tiago.xml" />
-          <arg name="root_frame_id" value="odom" />
-      </include>
+    <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+      <arg name="config" value="$(find tiago_mujoco)/config/tiago.yaml" />
+      <arg name="robot" value="$(find tiago_mujoco)/model/tiago.xml" />
+      <arg name="world" value="$(find tiago_mujoco)/model/world/tiago.xml" />
+    </include>
   </group>
 
 </launch>

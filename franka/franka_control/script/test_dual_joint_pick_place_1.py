@@ -22,7 +22,7 @@ from random import random, uniform, randint
 
 hand_1_pub = [
     rospy.Publisher(
-        "panda_arm/panda_1_finger_joint" + str(i) + "_effort_controller/command",
+        "dual_panda_arm/panda_1_finger_joint" + str(i) + "_effort_controller/command",
         Float64,
         queue_size=10,
     )

@@ -1,11 +1,11 @@
 <launch>
 
-    <arg name="namespace" default="panda_arm"/>
-    <arg name="config" default="$(find franka_mujoco)/config/dual_panda_arm_with_bowl.xml" />
+    <arg name="namespace" default="dual_panda_arm" />
+    <arg name="world" default="$(find franka_mujoco)/model/world/dual_panda_arm_with_bowl.xml" />
 
     <include file="$(find franka_mujoco)/launch/dual_panda_arm_display.launch">
-        <arg name="namespace" value="$(arg namespace)"/>
-        <arg name="config" value="$(arg config)" />
+        <arg name="namespace" value="$(arg namespace)" />
+        <arg name="world" value="$(arg world)" />
     </include>
 
     <node pkg="tf" type="static_transform_publisher" name="place_pub" args="0 0 1 0 0 0 base place 100" output="screen" />
