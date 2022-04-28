@@ -1,0 +1,12 @@
+# main SMURF file of model "mir100_hook"
+# created with Phobos 1.0.1 "Capricious Choutengan" - https://github.com/dfki-ric/phobos
+
+SMURF version: 1.0.1 "Capricious Choutengan"
+modelname: mir100_hook
+date: '20210225_16:18'
+files:
+- ../urdf/mir100_hook.urdf
+- mir100_hook_collision.yml
+- mir100_hook_materials.yml
+- mir100_hook_motors.yml
+- mir100_hook_controllers.yml

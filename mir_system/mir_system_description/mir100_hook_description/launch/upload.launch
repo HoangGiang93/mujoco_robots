@@ -1,0 +1,5 @@
+<launch>
+  <arg name="urdf" default="$(find mir100_hook_description)/urdf/mir100_hook.urdf"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf)'"/>
+</launch>

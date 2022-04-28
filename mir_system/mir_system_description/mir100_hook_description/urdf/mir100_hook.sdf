@@ -1,0 +1,629 @@
+<sdf version="1.6">
+  <model name="mir100_hook">
+    <link name="root">
+      <pose frame="">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame="">0.041003 -0.000587 0.107745 0 -0 0</pose>
+        <mass>10.4</mass>
+        <inertia>
+          <ixx>0.0132281</ixx>
+          <ixy>-0.0003299</ixy>
+          <ixz>2.77e-05</ixz>
+          <iyy>0.0183048</iyy>
+          <iyz>-9.9e-06</iyz>
+          <izz>0.0244622</izz>
+        </inertia>
+      </inertial>
+      <collision name="root_fixed_joint_lump__collision_frame_1_collision">
+        <pose frame="">-0.069 -0.1933 0.019755 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.772 0.0687 0.03696</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_2_collision_1">
+        <pose frame="">-0.069 0.1933 0.019755 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.772 0.0687 0.03696</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_3_collision_2">
+        <pose frame="">-0.040636 -9e-06 0.279281 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05496</length>
+            <radius>0.1158</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_4_collision_3">
+        <pose frame="">0.158063 -2e-06 0.041374 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.31652 0.458 0.077</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_5_collision_4">
+        <pose frame="">0.169356 0 0.154775 1.5708 0.759218 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.23816</length>
+            <radius>0.18914</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_6_collision_5">
+        <pose frame="">0.109248 -0.161247 0.13939 1.5708 0.698132 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.19236</length>
+            <radius>0.03474</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_7_collision_6">
+        <pose frame="">0.109248 0.161247 0.13939 1.5708 -0.698132 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.19236</length>
+            <radius>0.03474</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="root_fixed_joint_lump__collision_frame_8_collision_7">
+        <pose frame="">0.038432 -2e-06 0.124659 1.65283 -0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05496</length>
+            <radius>0.193</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="root_fixed_joint_lump__visual_frame_visual">
+        <pose frame="">-0.069 -2e-06 0.154775 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/frame.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="pan_motor">
+      <pose frame="">-0.067 -3e-06 0.138363 0 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.020505 -2.9e-05 -0.018385 0 -0 0</pose>
+        <mass>5.5</mass>
+        <inertia>
+          <ixx>0.0013133</ixx>
+          <ixy>0.000168</ixy>
+          <ixz>5e-07</ixz>
+          <iyy>0.0014023</iyy>
+          <iyz>-1.4e-06</iyz>
+          <izz>0.000605</izz>
+        </inertia>
+      </inertial>
+      <collision name="pan_motor_fixed_joint_lump__collision_pan_motor_collision">
+        <pose frame="">0 0 -0.023878 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.214637</length>
+            <radius>0.0589277</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="pan_motor_fixed_joint_lump__visual_pan_motor_visual">
+        <pose frame="">-0.020024 -0.000352 -0.003214 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/pan_motor.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="pan_motor_joint" type="revolute">
+      <child>pan_motor</child>
+      <parent>root</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="lift_arm_lower">
+      <pose frame="">-0.144511 3e-05 0.081961 1.5708 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.207215 0.10737 3.3e-05 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.0003373</ixx>
+          <ixy>-0.0006013</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0014916</iyy>
+          <iyz>0</iyz>
+          <izz>0.0012083</izz>
+        </inertia>
+      </inertial>
+      <collision name="lift_arm_lower_fixed_joint_lump__collision_lift_arm_lower_collision">
+        <pose frame="">-0.209331 0.106738 3.3e-05 -1.5708 -0 -0.471239</pose>
+        <geometry>
+          <box>
+            <size>0.44835 0.0915 0.024385</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="lift_arm_lower_fixed_joint_lump__visual_lift_arm_lower_visual">
+        <pose frame="">-0.209255 0.106738 3.3e-05 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/lift_lower_arm.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="lift_arm_lower_joint" type="revolute">
+      <child>lift_arm_lower</child>
+      <parent>pan_motor</parent>
+      <axis>
+        <xyz>0 -1 -0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="carriage">
+      <pose frame="">-0.563108 -0 0.295624 1.5708 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.008619 0.004713 0.001038 0 -0 0</pose>
+        <mass>8.35</mass>
+        <inertia>
+          <ixx>0.0102801</ixx>
+          <ixy>0.0005188</ixy>
+          <ixz>-0.0035496</ixz>
+          <iyy>0.0089798</iyy>
+          <iyz>-7.18e-05</iyz>
+          <izz>0.0049397</izz>
+        </inertia>
+      </inertial>
+      <collision name="carriage_fixed_joint_lump__collision_carriage_1_collision">
+        <pose frame="">-0.042414 0.089503 3e-06 -1.5708 -0 -0.349066</pose>
+        <geometry>
+          <box>
+            <size>0.03052 0.13439 0.162844</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_carriage_2_collision_1">
+        <pose frame="">-0.053809 -0.13627 0 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.07194 0.139106 0.396932</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_carriage_4_collision_2">
+        <pose frame="">-0.021649 -0.283037 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.00545 0.13741 0.086511</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_crawler_1_collision_3">
+        <pose frame="">-0.184611 -0.28075 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0243 0.272 0.03627</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_crawler_2_collision_4">
+        <pose frame="">-0.212973 -0.302873 0.132826 -0 -0 0.804597</pose>
+        <geometry>
+          <cylinder>
+            <length>0.00544</length>
+            <radius>0.05733</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_crawler_3_collision_5">
+        <pose frame="">-0.212973 -0.302873 -0.132826 -0 -0 0.804597</pose>
+        <geometry>
+          <cylinder>
+            <length>0.00544</length>
+            <radius>0.05733</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_crawler_4_collision_6">
+        <pose frame="">-0.192115 -0.278682 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0027 0.05712 0.08424</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_lock_1_collision_7">
+        <pose frame="">-0.241435 -0.331425 -0.000296 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08282 0.073393 0.033625</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_lock_2_collision_8">
+        <pose frame="">-0.271374 -0.310815 -0.000296 -0 -0 -0.247837</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0055601</length>
+            <radius>0.0100875</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_lock_3_collision_9">
+        <pose frame="">-0.181923 -0.346613 -0.000296 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.19998 0.072281 0.003363</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_lock_4_collision_10">
+        <pose frame="">-0.106719 -0.181047 0.036097 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03838 0.002224 0.33625</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_container_lock_5_collision_11">
+        <pose frame="">-0.106719 -0.181047 -0.036097 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03838 0.002224 0.33625</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_1_collision_12">
+        <pose frame="">-0.216423 -0.354515 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.12103 0.0034</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_2_collision_13">
+        <pose frame="">-0.061257 -0.354515 0 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03 0.12103 0.0034</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_3_collision_14">
+        <pose frame="">-0.14406 -0.355083 -0.053405 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.194 0.01482 0.0034</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_4_collision_15">
+        <pose frame="">-0.143986 -0.354515 0.052922 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.194 0.01482 0.0034</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_5_collision_16">
+        <pose frame="">-0.04691 -0.315142 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.004 0.12103 0.0816</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_6_collision_17">
+        <pose frame="">-0.145378 -0.336134 0.058856 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.00247 0.0391</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_fork_base_7_collision_18">
+        <pose frame="">-0.145378 -0.336134 -0.058856 -1.5708 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.00247 0.0391</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_tilt_actuator_cylinder_collision_19">
+        <pose frame="">-0.170188 -0.201547 0.001702 -1.5708 -0 -0.331613</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0686558</length>
+            <radius>0.0093432</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_tilt_actuator_motor_collision_20">
+        <pose frame="">-0.138106 -0.101872 0.001702 -1.5708 -0 -0.331612</pose>
+        <geometry>
+          <cylinder>
+            <length>0.13608</length>
+            <radius>0.0216029</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_tilt_arm_lower_collision_21">
+        <pose frame="">-0.139071 -0.322423 3e-06 -1.5708 0 -0.326377</pose>
+        <geometry>
+          <box>
+            <size>0.084407 0.056925 0.01379</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="carriage_fixed_joint_lump__collision_tilt_arm_upper_collision_22">
+        <pose frame="">-0.137535 -0.248382 3e-06 -1.5708 -0 -0.497419</pose>
+        <geometry>
+          <box>
+            <size>0.075952 0.0368 0.017795</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="carriage_fixed_joint_lump__visual_carriage_visual">
+        <pose frame="">-0.034513 -0.082015 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/carriage.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_container_crawler_visual_1">
+        <pose frame="">-0.206798 -0.289601 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/container_crawler.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_container_lock_visual_2">
+        <pose frame="">-0.181881 -0.180375 -0.000269 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/container_lock.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_fork_base_visual_3">
+        <pose frame="">-0.14489 -0.2715 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/fork_base.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_tilt_actuator_cylinder_visual_4">
+        <pose frame="">-0.167665 -0.194474 0.001702 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/Part__Feature079.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_tilt_actuator_motor_visual_5">
+        <pose frame="">-0.115885 -0.095356 0.001702 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/Part__Feature078.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_tilt_arm_lower_visual_6">
+        <pose frame="">-0.13785 -0.32126 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/tilt_arm_lower.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="carriage_fixed_joint_lump__visual_tilt_arm_upper_visual_7">
+        <pose frame="">-0.140431 -0.245335 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/Part__Feature158.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="carriage_joint" type="revolute">
+      <child>carriage</child>
+      <parent>lift_arm_lower</parent>
+      <axis>
+        <xyz>0 -1 -0</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="lift_motor_joint">
+      <pose frame="">-0.320112 -0 0.210208 1.5708 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.028832 0.033894 0.011049 0 -0 0</pose>
+        <mass>0.55</mass>
+        <inertia>
+          <ixx>0.0001287</ixx>
+          <ixy>-3.9e-06</ixy>
+          <ixz>3.2e-05</ixz>
+          <iyy>0.0001894</iyy>
+          <iyz>4.65e-05</iyz>
+          <izz>8.17e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="lift_motor_joint_fixed_joint_lump__collision_lift_actuator_cylinder_collision">
+        <pose frame="">-0.190074 0.149046 3e-06 -1.5708 0 -2.23751</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10763</length>
+            <radius>0.0096713</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="lift_motor_joint_fixed_joint_lump__collision_lift_actuator_motor_collision_1">
+        <pose frame="">-0.083919 0.062095 3e-06 -1.5708 0 -2.23751</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18732</length>
+            <radius>0.0186919</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="lift_motor_joint_fixed_joint_lump__visual_lift_actuator_cylinder_visual">
+        <pose frame="">-0.18108 0.142421 8e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/Part__Feature063.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="lift_motor_joint_fixed_joint_lump__visual_lift_actuator_motor_visual_1">
+        <pose frame="">-0.070637 0.061273 3e-06 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/Part__Feature062.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="lift_motor_joint_joint" type="revolute">
+      <child>lift_motor_joint</child>
+      <parent>lift_arm_lower</parent>
+      <axis>
+        <xyz>0 -1 -0</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="lift_arm_upper">
+      <pose frame="">-0.144511 -3e-06 0.221609 1.5708 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.139777 0.076913 -9.9e-05 0 -0 0</pose>
+        <mass>2.2</mass>
+        <inertia>
+          <ixx>0.0009413</ixx>
+          <ixy>-0.0006054</ixy>
+          <ixz>0.0005665</ixz>
+          <iyy>0.0032542</iyy>
+          <iyz>-1.06e-05</iyz>
+          <izz>0.0025802</izz>
+        </inertia>
+      </inertial>
+      <collision name="lift_arm_upper_fixed_joint_lump__collision_emergency_stop_collision">
+        <pose frame="">-0.077 0.072108 -0.000214 -1.5708 -0 -0.471239</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0454842</length>
+            <radius>0.0200511</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="lift_arm_upper_fixed_joint_lump__collision_lift_arm_upper_collision_1">
+        <pose frame="">-0.209254 0.10621 0 -1.5708 -0 -0.471239</pose>
+        <geometry>
+          <box>
+            <size>0.44835 0.0915 0.025162</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="lift_arm_upper_fixed_joint_lump__visual_emergency_stop_visual">
+        <pose frame="">-0.073294 0.074537 -5.6e-05 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/emergency_stop.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="lift_arm_upper_fixed_joint_lump__visual_lift_arm_upper_visual_1">
+        <pose frame="">-0.209254 0.102748 0 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://meshes/fbx/lift_arm_upper.fbx</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="lift_arm_upper_joint" type="revolute">
+      <child>lift_arm_upper</child>
+      <parent>pan_motor</parent>
+      <axis>
+        <xyz>0 -1 -0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>

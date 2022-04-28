@@ -1,0 +1,5 @@
+entities:
+  - name: mir100_hook
+    type: smurf
+    file: mir100_hook.smurf
+    anchor: world

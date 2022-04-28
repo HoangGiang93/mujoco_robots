@@ -1,0 +1,33 @@
+#controllers definition SMURF file for "mir100_hook", 20210225_16:18
+
+controllers:
+- d: 0
+  i: 0
+  name: motor_controller_9_pan_motor
+  p: 10.0
+  target: motor_9_pan_motor
+  type: PID
+- d: 0
+  i: 0
+  name: motor_controller_6_lift_arm_lower
+  p: 10.0
+  target: motor_6_lift_arm_lower
+  type: PID
+- d: 0
+  i: 0
+  name: motor_controller_7_lift_arm_upper
+  p: 10.0
+  target: motor_7_lift_arm_upper
+  type: PID
+- d: 0
+  i: 0
+  name: motor_controller_1_carriage
+  p: 10.0
+  target: motor_1_carriage
+  type: PID
+- d: 0
+  i: 0
+  name: motor_controller_8_lift_motor_joint
+  p: 10.0
+  target: motor_8_lift_motor_joint
+  type: PID
