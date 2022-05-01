@@ -1,6 +1,16 @@
 joint_ignores:
-  carriage
-
+  - carriage
+  - lift_arm_lower
+  - lift_arm_upper
+  - lift_motor_joint
+  - pan_motor
+  - castor_rigit_left_wheel
+  - castor_rigit_right_wheel
+  - castor_swivel_left_fork
+  - castor_swivel_left_wheel
+  - castor_swivel_right_fork
+  - castor_swivel_right_wheel
+  
 use_odom_joints: true
 
 pub_object_marker_array: true
