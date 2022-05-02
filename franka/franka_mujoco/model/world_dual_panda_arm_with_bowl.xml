@@ -4,10 +4,10 @@
   </option>
 
   <asset>
-    <mesh name="bowl" file="dual_panda_arm/meshes/bowl_side.stl" />
-    <mesh name="bowl_bottom" file="dual_panda_arm/meshes/bowl_bottom.stl" />
     <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4" />
     <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2" />
+    <mesh name="bowl" file="world_dual_panda_arm_with_bowl/meshes/bowl_side.stl" />
+    <mesh name="bowl_bottom" file="world_dual_panda_arm_with_bowl/meshes/bowl_bottom.stl" />
   </asset>
 
   <default>
@@ -92,5 +92,5 @@
 
     <exclude body1="panda_2_link6" body2="panda_2_link7" />
   </contact>
-  
+
 </mujoco>

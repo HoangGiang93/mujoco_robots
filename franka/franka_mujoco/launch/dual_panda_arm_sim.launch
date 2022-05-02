@@ -1,7 +1,7 @@
 <launch>
 
     <arg name="namespace" default="dual_panda_arm" />
-    <arg name="world" default="$(find franka_mujoco)/model/world/dual_panda_arm.xml" />
+    <arg name="world" default="$(find franka_mujoco)/model/world_dual_panda_arm.xml" />
 
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
