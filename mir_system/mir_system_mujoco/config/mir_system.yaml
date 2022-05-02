@@ -10,7 +10,7 @@ joint_ignores:
   - castor_swivel_left_wheel
   - castor_swivel_right_fork
   - castor_swivel_right_wheel
-  
+
 use_odom_joints: true
 
 pub_object_marker_array: true
@@ -19,4 +19,4 @@ pub_object_tf: true
 
 pub_object_state_array: true
 
-root_frame_id: odom
+root_frame_id: map

@@ -378,19 +378,19 @@
     </link>
 
     <joint name="carriage" type="revolute">
-      <origin xyz="-0.418597 0.213663 3e-05" rpy="0 0 0"/>
+      <origin xyz="-0.418597 0.213663 3e-05" rpy="0 0 -0.26"/>
       <parent link="lift_arm_lower"/>
       <child link="carriage"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-0.5235988" upper="0" effort="0" velocity="0"/>
+      <limit lower="${-0.5235988+0.26}" upper="0.26" effort="0" velocity="0"/>
     </joint>
 
     <joint name="lift_arm_lower" type="revolute">
-      <origin xyz="-0.077511 3.3e-05 -0.0564022" rpy="1.5707964 0 0"/>
+      <origin xyz="-0.077511 3.3e-05 -0.0564022" rpy="1.5707964 -0.26 0"/>
       <parent link="pan_motor"/>
       <child link="lift_arm_lower"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="0" upper="0.5235988" effort="100.0" velocity="6.0"/>
+      <limit lower="-0.26" upper="${0.5235988-0.26}" effort="100.0" velocity="6.0"/>
     </joint>
 
     <!-- <joint name="lift_arm_upper" type="revolute">
