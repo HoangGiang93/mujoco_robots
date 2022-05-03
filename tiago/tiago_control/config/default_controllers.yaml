@@ -30,209 +30,87 @@ head_controller:
     head_2_joint:
       goal: 0.02
 
-arm_controller:
+arm_left_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
-    - arm_1_joint
-    - arm_2_joint
-    - arm_3_joint
-    - arm_4_joint
-    - arm_5_joint
-    - arm_6_joint
-    - arm_7_joint
+    - arm_left_1_joint
+    - arm_left_2_joint
+    - arm_left_3_joint
+    - arm_left_4_joint
+    - arm_left_5_joint
+    - arm_left_6_joint
+    - arm_left_7_joint
   gains:
-    arm_1_joint: *pid_gains
-    arm_2_joint: *pid_gains
-    arm_3_joint: *pid_gains
-    arm_4_joint: *pid_gains
-    arm_5_joint: *pid_gains
-    arm_6_joint: *pid_gains
-    arm_7_joint: *pid_gains
+    arm_left_1_joint: *pid_gains
+    arm_left_2_joint: *pid_gains
+    arm_left_3_joint: *pid_gains
+    arm_left_4_joint: *pid_gains
+    arm_left_5_joint: *pid_gains
+    arm_left_6_joint: *pid_gains
+    arm_left_7_joint: *pid_gains
   constraints:
     goal_time: 0.6
     stopped_velocity_tolerance: 5.0
-    arm_1_joint:
+    arm_left_1_joint:
       goal: 0.02
-    arm_2_joint:
+    arm_left_2_joint:
       goal: 0.02
-    arm_3_joint:
+    arm_left_3_joint:
       goal: 0.02
-    arm_4_joint:
+    arm_left_4_joint:
       goal: 0.02
-    arm_5_joint:
+    arm_left_5_joint:
       goal: 0.02
-    arm_6_joint:
+    arm_left_6_joint:
       goal: 0.02
-    arm_7_joint:
+    arm_left_7_joint:
       goal: 0.02
 
-finger_controller:
+arm_right_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
-    - hand_index_abd_joint
-    - hand_index_virtual_1_joint
-    - hand_index_virtual_2_joint
-    - hand_index_virtual_3_joint
-    - hand_index_flex_1_joint
-    - hand_index_flex_2_joint
-    - hand_index_flex_3_joint
-    - hand_little_abd_joint
-    - hand_little_virtual_1_joint
-    - hand_little_virtual_2_joint
-    - hand_little_virtual_3_joint
-    - hand_little_flex_1_joint
-    - hand_little_flex_2_joint
-    - hand_little_flex_3_joint
-    - hand_middle_abd_joint
-    - hand_middle_virtual_1_joint
-    - hand_middle_virtual_2_joint
-    - hand_middle_virtual_3_joint
-    - hand_middle_flex_1_joint
-    - hand_middle_flex_2_joint
-    - hand_middle_flex_3_joint
-    - hand_ring_abd_joint
-    - hand_ring_virtual_1_joint
-    - hand_ring_virtual_2_joint
-    - hand_ring_virtual_3_joint
-    - hand_ring_flex_1_joint
-    - hand_ring_flex_2_joint
-    - hand_ring_flex_3_joint
-    - hand_thumb_abd_joint
-    - hand_thumb_virtual_1_joint
-    - hand_thumb_virtual_2_joint
-    - hand_thumb_flex_1_joint
-    - hand_thumb_flex_2_joint
+    - arm_right_1_joint
+    - arm_right_2_joint
+    - arm_right_3_joint
+    - arm_right_4_joint
+    - arm_right_5_joint
+    - arm_right_6_joint
+    - arm_right_7_joint
   gains:
-    hand_index_abd_joint: &finger_gains {p: 2000, i: 100, d: 50}
-    hand_index_virtual_1_joint: *finger_gains
-    hand_index_virtual_2_joint: *finger_gains
-    hand_index_virtual_3_joint: *finger_gains
-    hand_index_flex_1_joint: *finger_gains
-    hand_index_flex_2_joint: *finger_gains
-    hand_index_flex_3_joint: *finger_gains
-    hand_little_abd_joint: *finger_gains
-    hand_little_virtual_1_joint: *finger_gains
-    hand_little_virtual_2_joint: *finger_gains
-    hand_little_virtual_3_joint: *finger_gains
-    hand_little_flex_1_joint: *finger_gains
-    hand_little_flex_2_joint: *finger_gains
-    hand_little_flex_3_joint: *finger_gains
-    hand_middle_abd_joint: *finger_gains
-    hand_middle_virtual_1_joint: *finger_gains
-    hand_middle_virtual_2_joint: *finger_gains
-    hand_middle_virtual_3_joint: *finger_gains
-    hand_middle_flex_1_joint: *finger_gains
-    hand_middle_flex_2_joint: *finger_gains
-    hand_middle_flex_3_joint: *finger_gains
-    hand_ring_abd_joint: *finger_gains
-    hand_ring_virtual_1_joint: *finger_gains
-    hand_ring_virtual_2_joint: *finger_gains
-    hand_ring_virtual_3_joint: *finger_gains
-    hand_ring_flex_1_joint: *finger_gains
-    hand_ring_flex_2_joint: *finger_gains
-    hand_ring_flex_3_joint: *finger_gains
-    hand_thumb_abd_joint: *finger_gains
-    hand_thumb_virtual_1_joint: *finger_gains
-    hand_thumb_virtual_2_joint: *finger_gains
-    hand_thumb_flex_1_joint: *finger_gains
-    hand_thumb_flex_2_joint: *finger_gains
+    arm_right_1_joint: *pid_gains
+    arm_right_2_joint: *pid_gains
+    arm_right_3_joint: *pid_gains
+    arm_right_4_joint: *pid_gains
+    arm_right_5_joint: *pid_gains
+    arm_right_6_joint: *pid_gains
+    arm_right_7_joint: *pid_gains
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 5.0
+    arm_right_1_joint:
+      goal: 0.02
+    arm_right_2_joint:
+      goal: 0.02
+    arm_right_3_joint:
+      goal: 0.02
+    arm_right_4_joint:
+      goal: 0.02
+    arm_right_5_joint:
+      goal: 0.02
+    arm_right_6_joint:
+      goal: 0.02
+    arm_right_7_joint:
+      goal: 0.02
 
-hand_index_abd_joint_effort_controller:
+gripper_left_left_finger_effort_controller:
   type: effort_controllers/JointEffortController
-  joint: hand_index_abd_joint
-hand_index_virtual_1_joint_effort_controller:
+  joint: gripper_left_left_finger_joint
+gripper_left_right_finger_effort_controller:
   type: effort_controllers/JointEffortController
-  joint: hand_index_virtual_1_joint
-hand_index_virtual_2_joint_effort_controller:
+  joint: gripper_left_right_finger_joint
+gripper_right_left_finger_effort_controller:
   type: effort_controllers/JointEffortController
-  joint: hand_index_virtual_2_joint
-hand_index_virtual_3_joint_effort_controller:
+  joint: gripper_right_left_finger_joint
+gripper_right_right_finger_effort_controller:
   type: effort_controllers/JointEffortController
-  joint: hand_index_virtual_3_joint
-hand_index_flex_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_index_flex_1_joint
-hand_index_flex_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_index_flex_2_joint
-hand_index_flex_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_index_flex_3_joint
-hand_little_abd_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_abd_joint
-hand_little_virtual_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_virtual_1_joint
-hand_little_virtual_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_virtual_2_joint
-hand_little_virtual_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_virtual_3_joint
-hand_little_flex_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_flex_1_joint
-hand_little_flex_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_flex_2_joint
-hand_little_flex_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_little_flex_3_joint
-hand_middle_abd_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_abd_joint
-hand_middle_virtual_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_virtual_1_joint
-hand_middle_virtual_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_virtual_2_joint
-hand_middle_virtual_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_virtual_3_joint
-hand_middle_flex_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_flex_1_joint
-hand_middle_flex_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_flex_2_joint
-hand_middle_flex_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_middle_flex_3_joint
-hand_ring_abd_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_ring_abd_joint
-hand_ring_virtual_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_ring_virtual_1_joint
-hand_ring_virtual_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_ring_virtual_2_joint
-hand_ring_virtual_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_ring_virtual_3_joint
-hand_ring_flex_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_ring_flex_1_joint
-hand_ring_flex_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_ring_flex_2_joint
-hand_thumb_abd_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_thumb_abd_joint
-hand_thumb_virtual_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_thumb_virtual_1_joint
-hand_thumb_virtual_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_thumb_virtual_2_joint
-hand_thumb_flex_1_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_thumb_flex_1_joint
-hand_thumb_flex_2_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_thumb_flex_2_joint
-hand_thumb_flex_3_joint_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: hand_thumb_flex_3_joint
+  joint: gripper_right_right_finger_joint

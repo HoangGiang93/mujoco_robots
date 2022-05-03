@@ -6,7 +6,7 @@
     </include>
 
     <group ns="$(arg namespace)">
-        <param name="robot_description" command="$(find xacro)/xacro $(find tiago_description)/robots/tiago.urdf.xacro" />
+        <param name="robot_description" command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find tiago_control)/launch/tiago_control.launch" />
