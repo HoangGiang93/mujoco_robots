@@ -1,16 +1,3 @@
 - git:
-    local-name: tiago_description/hey5_description
-    uri: git@github.com:pal-robotics/hey5_description.git
-    version: 6608818d3df3391590f090be61a4b34dceb4af0d
-- git:
-    local-name: tiago_description/pmb2_robot
-    uri: git@github.com:pal-robotics/pmb2_robot.git
-    version: da3e237a7ea8cac1d798b657d447ff013a8a57a0
-- git:
-    local-name: tiago_description/tiago_description_calibration
-    uri: git@github.com:pal-robotics/tiago_description_calibration.git
-    version: b608b8da030d9dc61b474bfffad6b01655d52d71
-- git:
-    local-name: tiago_description/tiago_robot
-    uri: git@github.com:pal-robotics/tiago_robot.git
-    version: ee8c909be59aec65cf707c02013cfed37be2d051
+    local-name: iai_tiago
+    uri: git@github.com:code-iai/iai_tiago.git
