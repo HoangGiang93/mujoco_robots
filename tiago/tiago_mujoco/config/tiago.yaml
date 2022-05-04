@@ -6,4 +6,6 @@ pub_object_tf: false
 
 pub_object_state_array: false
 
-root_frame_id: odom
+pub_world_joint_state: true
+
+root_frame_id: map

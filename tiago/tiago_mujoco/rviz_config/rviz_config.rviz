@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /RobotModel2/Status1
       Splitter Ratio: 0.5
     Tree Height: 1520
   - Class: rviz/Selection
@@ -62,41 +63,80 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        arm_1_link:
+        arm_left_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_2_link:
+        arm_left_2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_3_link:
+        arm_left_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_4_link:
+        arm_left_4_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_5_link:
+        arm_left_5_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_6_link:
+        arm_left_6_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm_7_link:
+        arm_left_7_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        arm_tool_link:
+        arm_left_tool_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_4_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_5_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_6_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_right_7_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_tool_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -205,201 +245,49 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_grasping_frame:
+        gripper_left_grasping_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        hand_index_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_index_flex_1_link:
+        gripper_left_left_finger_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_flex_2_link:
+        gripper_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_flex_3_link:
+        gripper_left_right_finger_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_link:
+        gripper_left_tool_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gripper_right_grasping_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gripper_right_left_finger_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_virtual_1_link:
+        gripper_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_virtual_2_link:
+        gripper_right_right_finger_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_mrl_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_palm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_safety_box:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_tool_link:
+        gripper_right_tool_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -450,12 +338,22 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        wrist_ft_link:
+        wrist_left_ft_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wrist_ft_tool_link:
+        wrist_left_ft_tool_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_right_ft_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_right_ft_tool_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -499,37 +397,702 @@ Visualization Manager:
       Marker Topic: /mujoco/visualization_marker_array
       Name: MarkerArray
       Namespaces:
-        fridge_area_lower_drawer_main: true
-        iai_fridge_door: true
-        kitchen_island_left_lower_drawer_main: true
-        kitchen_island_left_upper_drawer_main: true
-        kitchen_island_middle_lower_drawer_main: true
-        kitchen_island_middle_upper_drawer_main: true
-        kitchen_island_right_lower_drawer_main: true
-        kitchen_island_right_upper_drawer_main: true
-        oven_area_area_left_drawer_main: true
-        oven_area_area_middle_lower_drawer_main: true
-        oven_area_area_middle_upper_drawer_main: true
-        oven_area_area_right_drawer_main: true
-        oven_area_oven_door: true
-        oven_area_oven_knob_oven: true
-        oven_area_oven_knob_stove_1: true
-        oven_area_oven_knob_stove_2: true
-        oven_area_oven_knob_stove_3: true
-        oven_area_oven_knob_stove_4: true
-        sink_area_dish_washer_door: true
-        sink_area_dish_washer_tray_bottom: true
-        sink_area_left_bottom_drawer_main: true
-        sink_area_left_middle_drawer_main: true
-        sink_area_left_upper_drawer_main: true
-        sink_area_trash_drawer_main: true
+        {}
       Queue Size: 100
       Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        dining_area_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        dining_area_jokkmokk_left_chair_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dining_area_jokkmokk_right_chair_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dining_area_jokkmokk_table_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fridge_area:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fridge_area_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        fridge_area_lower_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fridge_area_lower_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_ceiling:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_block:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_block_left_bar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_block_right_bar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_block_top_bar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf1_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf1_front_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf1_left_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf1_right_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf2_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf2_front_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf2_left_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf2_right_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf3_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf3_front_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf3_left_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_door_shelf3_right_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        iai_fridge_main_middle_level:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        kitchen_island_left_lower_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_left_lower_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_left_panel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_left_upper_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_left_upper_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_middle_lower_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_middle_lower_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_middle_panel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_middle_upper_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_middle_upper_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_right_lower_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_right_lower_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_right_panel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_right_upper_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_right_upper_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_stove:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_island_surface:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_wall_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchen_walls:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        oven_area_area:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        oven_area_area_left_drawer_barrier_0_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_0_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_0_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_1_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_1_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_1_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_2_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_2_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_2_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_3_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_3_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_barrier_3_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_board_0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_board_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_board_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_board_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_left_drawer_main_padding:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_middle_lower_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_middle_lower_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_middle_upper_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_middle_upper_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_0_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_0_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_0_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_1_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_1_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_1_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_2_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_2_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_2_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_3_back_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_3_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_barrier_3_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_board_0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_board_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_board_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_board_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_area_right_drawer_main_padding:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_door:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_door_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_knob_oven:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_knob_stove_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_knob_stove_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_knob_stove_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_knob_stove_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_area_oven_panel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        room_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sink_area:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_door:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_door_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_back_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_front_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_handle_front_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_handle_left_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_handle_right_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_left_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_dish_washer_tray_right_side:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sink_area_left_bottom_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_left_bottom_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_left_middle_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_left_middle_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_left_upper_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_left_upper_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_right_panel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_sink:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_surface:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_trash_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sink_area_trash_drawer_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        table_area_main:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotModel
+      Robot Description: kitchen_description
+      TF Prefix: iai_kitchen
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -569,17 +1132,17 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3503996729850769
+      Pitch: 0.45539963245391846
       Target Frame: <Fixed Frame>
-      Yaw: 3.6435928344726562
+      Yaw: 3.643592119216919
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: true
+    collapsed: false
   Height: 2032
-  Hide Left Dock: true
+  Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd00000004000000000000033a000006e8fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000006e000006e80000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f0000071efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000006e0000071e0000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7000000060fc0100000002fb0000000800540069006d0065010000000000000e700000057100fffffffb0000000800540069006d0065010000000000000450000000000000000000000e70000006e800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000033a000006e8fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e000006e80000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f0000071efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000006e0000071e0000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7000000060fc0100000002fb0000000800540069006d0065010000000000000e700000057100fffffffb0000000800540069006d0065010000000000000450000000000000000000000b2a000006e800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
