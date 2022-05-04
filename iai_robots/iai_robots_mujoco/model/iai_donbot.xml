@@ -1,24 +1,25 @@
 <mujoco model="iai_donbot">
-    <compiler angle="radian"/>
+    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/iai_robots/iai_robots_mujoco/model/iai_donbot/meshes/"/>
     <size njmax="500" nconmax="100"/>
+    <default/>
     <asset>
-        <mesh name="base_without_wheels" file="iai_donbot/meshes/base_without_wheels.stl"/>
-        <mesh name="base" file="iai_donbot/meshes/base.stl"/>
-        <mesh name="shoulder" file="iai_donbot/meshes/shoulder.stl"/>
-        <mesh name="upperarm" file="iai_donbot/meshes/upperarm.stl"/>
-        <mesh name="forearm" file="iai_donbot/meshes/forearm.stl"/>
-        <mesh name="wrist1" file="iai_donbot/meshes/wrist1.stl"/>
-        <mesh name="wrist2" file="iai_donbot/meshes/wrist2.stl"/>
-        <mesh name="wrist3" file="iai_donbot/meshes/wrist3.stl"/>
-        <mesh name="adapter_plate_iso50_kms40_weiss" file="iai_donbot/meshes/adapter_plate_iso50_kms40_weiss.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="kms40_simple" file="iai_donbot/meshes/kms40_simple.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="adapter_kms40_fwk050" file="iai_donbot/meshes/adapter_kms40_fwk050.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="fwk_fwa_050_simple" file="iai_donbot/meshes/fwk_fwa_050_simple.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="adapter_fwa050_wsg50" file="iai_donbot/meshes/adapter_fwa050_wsg50.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="WSG50_110" file="iai_donbot/meshes/WSG50_110.stl"/>
-        <mesh name="GUIDE_WSG50_110" file="iai_donbot/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="WSG-FMF" file="iai_donbot/meshes/WSG-FMF.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="refills_camera_holder_and_camera" file="iai_donbot/meshes/refills_camera_holder_and_camera.stl"/>
+        <mesh name="base_without_wheels" file="base_without_wheels.stl"/>
+        <mesh name="base" file="base.stl"/>
+        <mesh name="shoulder" file="shoulder.stl"/>
+        <mesh name="upperarm" file="upperarm.stl"/>
+        <mesh name="forearm" file="forearm.stl"/>
+        <mesh name="wrist1" file="wrist1.stl"/>
+        <mesh name="wrist2" file="wrist2.stl"/>
+        <mesh name="wrist3" file="wrist3.stl"/>
+        <mesh name="adapter_plate_iso50_kms40_weiss" file="adapter_plate_iso50_kms40_weiss.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="kms40_simple" file="kms40_simple.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="adapter_kms40_fwk050" file="adapter_kms40_fwk050.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="fwk_fwa_050_simple" file="fwk_fwa_050_simple.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="adapter_fwa050_wsg50" file="adapter_fwa050_wsg50.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="WSG50_110" file="WSG50_110.stl"/>
+        <mesh name="GUIDE_WSG50_110" file="GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="WSG-FMF" file="WSG-FMF.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="refills_camera_holder_and_camera" file="refills_camera_holder_and_camera.stl"/>
     </asset>
     <worldbody>
         <geom size="0.0005 0.0005 0.0005" type="box"/>

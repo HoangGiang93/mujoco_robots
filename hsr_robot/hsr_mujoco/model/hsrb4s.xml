@@ -1,23 +1,24 @@
 <mujoco model="hsrb">
-    <compiler angle="radian"/>
+    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/hsr_robot/hsr_mujoco/model/hsrb4s/meshes/"/>
     <size njmax="500" nconmax="100"/>
+    <default/>
     <asset>
-        <mesh name="base" file="hsrb4s/meshes/base.stl"/>
-        <mesh name="laser" file="hsrb4s/meshes/laser.stl"/>
-        <mesh name="torso" file="hsrb4s/meshes/torso.stl"/>
-        <mesh name="head_pan" file="hsrb4s/meshes/head_pan.stl"/>
-        <mesh name="head" file="hsrb4s/meshes/head.stl"/>
-        <mesh name="tablet" file="hsrb4s/meshes/tablet.stl"/>
-        <mesh name="rgbd" file="hsrb4s/meshes/rgbd.stl"/>
-        <mesh name="shoulder" file="hsrb4s/meshes/shoulder.stl"/>
-        <mesh name="arm_flex" file="hsrb4s/meshes/arm_flex.stl"/>
-        <mesh name="arm_roll" file="hsrb4s/meshes/arm_roll.stl"/>
-        <mesh name="wrist_roll" file="hsrb4s/meshes/wrist_roll.stl"/>
-        <mesh name="palm" file="hsrb4s/meshes/palm.stl"/>
-        <mesh name="l_proximal" file="hsrb4s/meshes/l_proximal.stl"/>
-        <mesh name="l_distal" file="hsrb4s/meshes/l_distal.stl"/>
-        <mesh name="r_proximal" file="hsrb4s/meshes/r_proximal.stl"/>
-        <mesh name="r_distal" file="hsrb4s/meshes/r_distal.stl"/>
+        <mesh name="base" file="base.stl"/>
+        <mesh name="laser" file="laser.stl"/>
+        <mesh name="torso" file="torso.stl"/>
+        <mesh name="head_pan" file="head_pan.stl"/>
+        <mesh name="head" file="head.stl"/>
+        <mesh name="tablet" file="tablet.stl"/>
+        <mesh name="rgbd" file="rgbd.stl"/>
+        <mesh name="shoulder" file="shoulder.stl"/>
+        <mesh name="arm_flex" file="arm_flex.stl"/>
+        <mesh name="arm_roll" file="arm_roll.stl"/>
+        <mesh name="wrist_roll" file="wrist_roll.stl"/>
+        <mesh name="palm" file="palm.stl"/>
+        <mesh name="l_proximal" file="l_proximal.stl"/>
+        <mesh name="l_distal" file="l_distal.stl"/>
+        <mesh name="r_proximal" file="r_proximal.stl"/>
+        <mesh name="r_distal" file="r_distal.stl"/>
     </asset>
     <worldbody>
         <geom type="mesh" mesh="base"/>
@@ -84,7 +85,7 @@
             <joint name="arm_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="0 0.69" damping="1"/>
             <geom type="mesh" mesh="shoulder"/>
             <body name="arm_flex_link" pos="0.141 0.078 0">
-                <inertial pos="0.000632 0.006404 0.118529" mass="1.33929" diaginertia="0.01 0.01 0.01"/>
+                <inertial pos="0.000632 0.006404 0.118529" quat="0.999966 -0.00826681 1.5355e-06 -1.33584e-06" mass="1.33929" diaginertia="2.51222 2.51222 2.51222"/>
                 <joint name="arm_flex_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-2.62 0" damping="1"/>
                 <geom type="mesh" mesh="arm_flex"/>
                 <body name="arm_roll_link" pos="0.005 0 0.345">
@@ -115,7 +116,7 @@
                                         <inertial pos="0 0 0" mass="0.15" diaginertia="0.015 0.015 0.015"/>
                                         <joint name="hand_l_mimic_distal_joint" pos="0 0 0" axis="1 0 0" limited="true" range="-0.698 0" damping="1"/>
                                         <body name="hand_l_distal_link" pos="0 0 0">
-                                            <inertial pos="0.010781 0.00403268 0.0340346" quat="0.641751 0.74464 -0.133185 -0.126206" mass="0.327731" diaginertia="0.0400921 0.0400838 0.0400083"/>
+                                            <inertial pos="0.010781 0.00403268 0.0340346" quat="0.641751 0.74464 -0.133185 -0.126206" mass="0.327731" diaginertia="0.0300952 0.0300869 0.0300115"/>
                                             <joint name="hand_l_distal_joint" pos="0 0 0" axis="1 0 0" limited="true" range="-1.24 0.798" damping="1"/>
                                             <geom type="mesh" rgba="0.3333 0.3333 0.3333 1" mesh="l_distal"/>
                                         </body>

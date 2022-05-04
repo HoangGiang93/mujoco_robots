@@ -2,8 +2,8 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <asset>
-        <mesh name="hand" file="dual_panda_arm/meshes/hand.stl" />
-        <mesh name="finger" file="dual_panda_arm/meshes/finger.stl" />
+        <mesh name="hand" file="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/franka/franka_mujoco/model/dual_panda_arm/meshes/hand.stl" />
+        <mesh name="finger" file="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/franka/franka_mujoco/model/dual_panda_arm/meshes/finger.stl" />
     </asset>
     <worldbody>
         <geom size="0.5 1 0.5" pos="0 0 0.5" type="box" rgba="1 1 1 1" />
