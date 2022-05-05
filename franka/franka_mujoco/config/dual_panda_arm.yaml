@@ -14,7 +14,7 @@ joint_inits:
   panda2_joint6: 0
   panda2_joint7: 0
 
-use_odom_joints: false
+add_odom_joints: false
 
 pub_object_marker_array_rate: 60.0
 

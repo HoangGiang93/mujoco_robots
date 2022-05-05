@@ -1,3 +1,43 @@
 joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 60
+
+fl_caster_rotation_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: fl_caster_rotation_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+fr_caster_rotation_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: fr_caster_rotation_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+bl_caster_rotation_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: bl_caster_rotation_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+br_caster_rotation_joint_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: br_caster_rotation_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+fl_caster_wheel_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: fl_caster_wheel_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+fr_caster_wheel_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: fr_caster_wheel_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+bl_caster_wheel_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: bl_caster_wheel_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+br_caster_wheel_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: br_caster_wheel_joint
+  pid: { p: 100, i: 1, d: 0.1 }

@@ -1,4 +1,4 @@
-use_odom_joints: true
+add_odom_joints: true
 
 pub_object_marker_array_rate: 60.0
 

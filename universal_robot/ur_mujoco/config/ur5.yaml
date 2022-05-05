@@ -6,7 +6,7 @@ joint_inits:
   wrist_2_joint: 1
   wrist_3_joint: 1
 
-use_odom_joints: false
+add_odom_joints: false
 
 pub_object_marker_array_rate: 0.0
 
