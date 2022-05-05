@@ -1,5 +1,5 @@
 <mujoco model="tiago_dual">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/tiago/tiago_mujoco/model/tiago/meshes/"/>
+    <compiler angle="radian" meshdir="tiago/meshes/"/>
     <option timestep="0.005"/>
     <size njmax="1000" nconmax="400" />
     <asset>

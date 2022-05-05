@@ -2,12 +2,12 @@
   <option timestep="0.001" integrator="Euler" gravity="0 0 -9.81">
     <flag sensornoise="disable" energy="disable" contact="enable" />
   </option>
-
+  <compiler meshdir="world_dual_panda_arm_with_bowl/meshes/" />
   <asset>
     <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4" />
     <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2" />
-    <mesh name="bowl" file="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/franka/franka_mujoco/model/world_dual_panda_arm_with_bowl/meshes/bowl_side.stl" />
-    <mesh name="bowl_bottom" file="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/franka/franka_mujoco/model/world_dual_panda_arm_with_bowl/meshes/bowl_bottom.stl" />
+    <mesh name="bowl" file="bowl_side.stl" />
+    <mesh name="bowl_bottom" file="bowl_bottom.stl" />
   </asset>
 
   <default>

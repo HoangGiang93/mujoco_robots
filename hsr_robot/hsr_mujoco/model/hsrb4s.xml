@@ -1,5 +1,5 @@
 <mujoco model="hsrb">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/hsr_robot/hsr_mujoco/model/hsrb4s/meshes/"/>
+    <compiler angle="radian" meshdir="hsrb4s/meshes/"/>
     <size njmax="500" nconmax="100"/>
     <default/>
     <asset>

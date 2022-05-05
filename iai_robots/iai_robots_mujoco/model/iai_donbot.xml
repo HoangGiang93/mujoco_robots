@@ -1,5 +1,5 @@
 <mujoco model="iai_donbot">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/iai_robots/iai_robots_mujoco/model/iai_donbot/meshes/"/>
+    <compiler angle="radian" meshdir="iai_donbot/meshes/"/>
     <size njmax="500" nconmax="100"/>
     <default/>
     <asset>
