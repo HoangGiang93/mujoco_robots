@@ -20,7 +20,9 @@ joint_names = [
 
 pubs = {}
 for i in range(len(joint_names)):
-    pubs[joint_names[i]] = rospy.Publisher(joint_names[i] + '_position_controller/command', Float64, queue_size=10)
+    pubs[joint_names[i]] = rospy.Publisher(
+        joint_names[i] + "_position_controller/command", Float64, queue_size=10
+    )
 
 
 def get_joint_state_cb(data):
