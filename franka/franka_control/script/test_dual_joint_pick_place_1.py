@@ -39,7 +39,7 @@ cartesian_goal.type = cartesian_goal.POSE_6D
 
 object = ObjectStatus()
 types = [ObjectInfo.CUBE, ObjectInfo.SPHERE, ObjectInfo.CYLINDER]
-names = ["Cube", "Sphere",  "Cylinder"]
+names = ["Cube", "Sphere", "Cylinder"]
 
 color = [
     ColorRGBA(0, 0, 1, 1),
@@ -50,6 +50,7 @@ color = [
     ColorRGBA(1, 0, 0, 1),
     ColorRGBA(1, 1, 0, 1),
 ]
+
 
 def set_bowl():
     object.info.name = "bowl"
@@ -71,14 +72,13 @@ def set_bowl():
 
     objects = SpawnObjectRequest()
     objects.objects = [object]
-    
+
     try:
-        gen_objects = rospy.ServiceProxy(
-            "/mujoco/spawn_objects", SpawnObject
-        )
+        gen_objects = rospy.ServiceProxy("/mujoco/spawn_objects", SpawnObject)
         gen_objects(objects)
     except rospy.ServiceException as e:
         print("Service call failed: %s" % e)
+
 
 def set_new_object(i):
     idx = randint(0, 2)
@@ -101,9 +101,7 @@ def set_new_object(i):
     objects = SpawnObjectRequest()
     objects.objects = [object]
     try:
-        gen_objects = rospy.ServiceProxy(
-            "/mujoco/spawn_objects", SpawnObject
-        )
+        gen_objects = rospy.ServiceProxy("/mujoco/spawn_objects", SpawnObject)
         gen_objects(objects)
     except rospy.ServiceException as e:
         print("Service call failed: %s" % e)
@@ -275,8 +273,7 @@ if __name__ == "__main__":
     listener = tf.TransformListener()
 
     rospy.wait_for_service("/mujoco/spawn_objects", 1)
-    
-    
+
     set_bowl()
     rospy.sleep(1)
     i = 0
