@@ -2,58 +2,60 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <worldbody>
-        <geom size="0.09 0.015" pos="-0.075 0 0.06" quat="0.707107 0 0.707107 0" type="cylinder" />
-        <geom size="0.09" pos="-0.06 0 0.06" />
-        <geom size="0.09" pos="-0.09 0 0.06" />
-        <body name="panda_link1" pos="0 0 0.333">
-            <inertial pos="0 0 -0.1915" mass="13.3087" diaginertia="0.204715 0.204715 0.0489535" />
-            <joint name="panda_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
-            <geom size="0.09 0.1415" pos="0 0 -0.1915" type="cylinder" />
-            <geom size="0.09" pos="0 0 -0.333" />
-            <geom size="0.09" pos="0 0 -0.05" />
-            <body name="panda_link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
-                <inertial pos="0 0 0" mass="9.16088" diaginertia="0.0516216 0.0516216 0.0321547" />
-                <joint name="panda_joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7628 1.7628" />
-                <geom size="0.09 0.06" type="cylinder" />
-                <geom size="0.09" pos="0 0 -0.06" />
-                <geom size="0.09" pos="0 0 0.06" />
-                <body name="panda_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
-                    <inertial pos="0 0 -0.145" mass="9.92429" diaginertia="0.0690273 0.0690273 0.0352465" />
-                    <joint name="panda_joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
-                    <geom size="0.09 0.075" pos="0 0 -0.145" type="cylinder" />
-                    <geom size="0.09" pos="0 0 -0.22" />
-                    <geom size="0.09" pos="0 0 -0.07" />
-                    <body name="panda_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
-                        <inertial pos="0 0 0" mass="9.16088" diaginertia="0.0516216 0.0516216 0.0321547" />
-                        <joint name="panda_joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0718 -0.0698" />
-                        <geom size="0.09 0.06" type="cylinder" />
-                        <geom size="0.09" pos="0 0 0.06" />
-                        <geom size="0.09" pos="0 0 -0.06" />
-                        <body name="panda_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
-                            <inertial pos="0 0.0191577 -0.228869" quat="0.980145 -0.198283 0 0" mass="11.3762" diaginertia="0.1023 0.0981299 0.0379623" />
-                            <joint name="panda_joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
-                            <geom size="0.09 0.05" pos="0 0 -0.26" type="cylinder" />
-                            <geom size="0.09" pos="0 0 -0.31" />
-                            <geom size="0.09" pos="0 0 -0.21" />
-                            <geom size="0.055 0.07" pos="0 0.08 -0.13" type="cylinder" />
-                            <geom size="0.055" pos="0 0.08 -0.06" />
-                            <geom size="0.055" pos="0 0.08 -0.2" />
-                            <body name="panda_link6" pos="0 0 0" quat="0.707107 0.707107 0 0">
-                                <inertial pos="0 0 -0.03" mass="5.89782" diaginertia="0.021275 0.021275 0.0161278" />
-                                <joint name="panda_joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0175 3.7525" />
-                                <geom size="0.08 0.04" pos="0 0 -0.03" type="cylinder" />
-                                <geom size="0.08" pos="0 0 0.01" />
-                                <geom size="0.08" pos="0 0 -0.07" />
-                                <body name="panda_link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
-                                    <inertial pos="0.0117274 0.0117274 0.0299144" quat="0.910272 -0.140164 0.0571282 -0.385351" mass="6.9513" diaginertia="0.0408884 0.0377691 0.0167385" />
-                                    <joint name="panda_joint7" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
-                                    <geom size="0.07 0.07" pos="0 0 0.01" type="cylinder" />
-                                    <geom size="0.07" pos="0 0 0.08" />
-                                    <geom size="0.07" pos="0 0 -0.06" />
-                                    <geom size="0.06 0.005" pos="0.0424 0.0424 0.082" quat="0.5 0.5 0.5 -0.5" type="cylinder" />
-                                    <geom size="0.06" pos="0.0424 0.0424 0.087" />
-                                    <geom size="0.06" pos="0.0424 0.0424 0.077" />
-                                    <site name="endeff" pos="0 0 0.15" rgba="0 0 .9 1" size="0.05" />
+        <body name="panda_arm">
+            <geom size="0.09 0.015" pos="-0.075 0 0.06" quat="0.707107 0 0.707107 0" type="cylinder" />
+            <geom size="0.09" pos="-0.06 0 0.06" />
+            <geom size="0.09" pos="-0.09 0 0.06" />
+            <body name="panda_link1" pos="0 0 0.333">
+                <inertial pos="0 0 -0.1915" mass="13.3087" diaginertia="0.204715 0.204715 0.0489535" />
+                <joint name="panda_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
+                <geom size="0.09 0.1415" pos="0 0 -0.1915" type="cylinder" />
+                <geom size="0.09" pos="0 0 -0.333" />
+                <geom size="0.09" pos="0 0 -0.05" />
+                <body name="panda_link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                    <inertial pos="0 0 0" mass="9.16088" diaginertia="0.0516216 0.0516216 0.0321547" />
+                    <joint name="panda_joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7628 1.7628" />
+                    <geom size="0.09 0.06" type="cylinder" />
+                    <geom size="0.09" pos="0 0 -0.06" />
+                    <geom size="0.09" pos="0 0 0.06" />
+                    <body name="panda_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+                        <inertial pos="0 0 -0.145" mass="9.92429" diaginertia="0.0690273 0.0690273 0.0352465" />
+                        <joint name="panda_joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
+                        <geom size="0.09 0.075" pos="0 0 -0.145" type="cylinder" />
+                        <geom size="0.09" pos="0 0 -0.22" />
+                        <geom size="0.09" pos="0 0 -0.07" />
+                        <body name="panda_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                            <inertial pos="0 0 0" mass="9.16088" diaginertia="0.0516216 0.0516216 0.0321547" />
+                            <joint name="panda_joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0718 -0.0698" />
+                            <geom size="0.09 0.06" type="cylinder" />
+                            <geom size="0.09" pos="0 0 0.06" />
+                            <geom size="0.09" pos="0 0 -0.06" />
+                            <body name="panda_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                                <inertial pos="0 0.0191577 -0.228869" quat="0.980145 -0.198283 0 0" mass="11.3762" diaginertia="0.1023 0.0981299 0.0379623" />
+                                <joint name="panda_joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
+                                <geom size="0.09 0.05" pos="0 0 -0.26" type="cylinder" />
+                                <geom size="0.09" pos="0 0 -0.31" />
+                                <geom size="0.09" pos="0 0 -0.21" />
+                                <geom size="0.055 0.07" pos="0 0.08 -0.13" type="cylinder" />
+                                <geom size="0.055" pos="0 0.08 -0.06" />
+                                <geom size="0.055" pos="0 0.08 -0.2" />
+                                <body name="panda_link6" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                                    <inertial pos="0 0 -0.03" mass="5.89782" diaginertia="0.021275 0.021275 0.0161278" />
+                                    <joint name="panda_joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0175 3.7525" />
+                                    <geom size="0.08 0.04" pos="0 0 -0.03" type="cylinder" />
+                                    <geom size="0.08" pos="0 0 0.01" />
+                                    <geom size="0.08" pos="0 0 -0.07" />
+                                    <body name="panda_link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                                        <inertial pos="0.0117274 0.0117274 0.0299144" quat="0.910272 -0.140164 0.0571282 -0.385351" mass="6.9513" diaginertia="0.0408884 0.0377691 0.0167385" />
+                                        <joint name="panda_joint7" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" />
+                                        <geom size="0.07 0.07" pos="0 0 0.01" type="cylinder" />
+                                        <geom size="0.07" pos="0 0 0.08" />
+                                        <geom size="0.07" pos="0 0 -0.06" />
+                                        <geom size="0.06 0.005" pos="0.0424 0.0424 0.082" quat="0.5 0.5 0.5 -0.5" type="cylinder" />
+                                        <geom size="0.06" pos="0.0424 0.0424 0.087" />
+                                        <geom size="0.06" pos="0.0424 0.0424 0.077" />
+                                        <site name="endeff" pos="0 0 0.15" rgba="0 0 .9 1" size="0.05" />
+                                    </body>
                                 </body>
                             </body>
                         </body>

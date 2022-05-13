@@ -1,23 +1,28 @@
 <launch>
 
-    <arg name="namespace" default="zoo" />
-    <include file="$(find zoo_mujoco)/launch/zoo_sim.launch">
-        <arg name="namespace" value="$(arg namespace)" />
-    </include>
+    <include file="$(find zoo_mujoco)/launch/zoo_sim.launch" />
 
-    <group ns="$(arg namespace)">
-        <param name="robot_description_ridgeback_panda" command="$(find xacro)/xacro $(find mir_system_description)/urdf/mir_system.xacro" />
-        <param name="robot_description_mir_system" command="$(find xacro)/xacro $(find ridgeback_description)/urdf/ridgeback_panda.urdf" />
-        <node name="robot_state_publisher_ridgeback_panda" pkg="robot_state_publisher" type="robot_state_publisher">
-            <remap from="robot_description" to="robot_description_ridgeback_panda" />
-        </node>
-        <node name="robot_state_publisher_mir_system" pkg="robot_state_publisher" type="robot_state_publisher">
-            <remap from="robot_description" to="robot_description_mir_system" />
-        </node>
+    <group ns="ridgeback_panda">
+        <param name="robot_description" command="$(find xacro)/xacro $(find ridgeback_description)/urdf/ridgeback_panda.urdf" />
 
-        <!-- <include file="$(find mir_system_control)/launch/mir_system_control.launch" /> -->
-        <!-- <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" /> -->
-        <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mir_system_mujoco)/rviz_config/rviz_config.rviz" /> -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+            <param name="tf_prefix" value="ridgeback_panda" />
+            <remap from="/ridgeback_panda/joint_states" to="/joint_states" />
+        </node>
     </group>
+
+    <group ns="mir_system">
+        <param name="robot_description" command="$(find xacro)/xacro $(find mir_system_description)/urdf/mir_system.xacro" />
+
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+            <param name="tf_prefix" value="mir_system" />
+            <remap from="/mir_system/joint_states" to="/joint_states" />
+        </node>
+    </group>
+
+    <include file="$(find zoo_control)/launch/zoo_control.launch" />
+
+    <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find zoo_mujoco)/rviz_config/rviz_config.rviz" />
 
 </launch>

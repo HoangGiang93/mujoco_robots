@@ -9,161 +9,163 @@
         <mesh name="caster_wheel_base" file="caster_wheel_base.stl"/>
     </asset>
     <worldbody>
-        <geom pos="0.037646 0 0" type="mesh" rgba="1 1 1 1" mesh="mir_100_base"/>
-        <geom size="0.0075 0.015 0.0135" pos="-0.020996 0.225017 0.413" quat="0.707388 0 0 0.706825" type="box"/>
-        <geom pos="0.4288 0.2358 0.1914" quat="0 0.92388 0.382683 0" type="mesh" rgba="0.1 0.1 0.1 1" mesh="sick_lms-100"/>
-        <geom pos="-0.3548 -0.2352 0.1914" quat="0 0.382683 -0.92388 0" type="mesh" rgba="0.1 0.1 0.1 1" mesh="sick_lms-100"/>
-        <geom size="0.386 0.03435 0.01848" pos="0.0369998 -0.1933 0.369755" type="box" rgba="1 1 1 1"/>
-        <geom size="0.386 0.03435 0.01848" pos="0.0369998 0.1933 0.369755" type="box" rgba="1 1 1 1"/>
-        <geom size="0.1158 0.02748" pos="0.0653637 -9.1e-06 0.629281" type="cylinder" rgba="1 1 1 1"/>
-        <geom size="0.15826 0.229 0.0385" pos="0.264063 -2.2e-06 0.391374" type="box" rgba="1 1 1 1"/>
-        <geom size="0.18914 0.11908" pos="0.275356 0 0.504775" quat="0.656768 0.656768 0.262024 -0.262024" type="cylinder" rgba="1 1 1 1"/>
-        <geom size="0.03474 0.09618" pos="0.215248 -0.161247 0.48939" quat="0.640856 0.298836 0.640856 0.298836" type="cylinder" rgba="1 1 1 1"/>
-        <geom size="0.03474 0.09618" pos="0.215248 0.161247 0.48939" quat="0.298836 0.640856 0.298836 0.640856" type="cylinder" rgba="1 1 1 1"/>
-        <geom size="0.193 0.02748" pos="0.144432 -2.2e-06 0.474659" quat="0.479078 0.520081 0.520081 0.479078" type="cylinder" rgba="1 1 1 1"/>
-        <body name="left_wheel_link" pos="0 0.222604 0.0625">
-            <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
-            <joint name="left_wheel_joint" pos="0 0 0" axis="0 1 0"/>
-            <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
-        </body>
-        <body name="right_wheel_link" pos="0 -0.222604 0.0625">
-            <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
-            <joint name="right_wheel_joint" pos="0 0 0" axis="0 1 0"/>
-            <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
-        </body>
-        <body name="fl_caster_rotation_link" pos="0.341346 0.203 0.1565">
-            <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
-            <joint name="fl_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
-            <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
-            <body name="fl_caster_wheel_link" pos="-0.0382 0 -0.094">
+        <body name="mir_system">
+            <geom pos="0.037646 0 0" type="mesh" rgba="1 1 1 1" mesh="mir_100_base"/>
+            <geom size="0.0075 0.015 0.0135" pos="-0.020996 0.225017 0.413" quat="0.707388 0 0 0.706825" type="box"/>
+            <geom pos="0.4288 0.2358 0.1914" quat="0 0.92388 0.382683 0" type="mesh" rgba="0.1 0.1 0.1 1" mesh="sick_lms-100"/>
+            <geom pos="-0.3548 -0.2352 0.1914" quat="0 0.382683 -0.92388 0" type="mesh" rgba="0.1 0.1 0.1 1" mesh="sick_lms-100"/>
+            <geom size="0.386 0.03435 0.01848" pos="0.0369998 -0.1933 0.369755" type="box" rgba="1 1 1 1"/>
+            <geom size="0.386 0.03435 0.01848" pos="0.0369998 0.1933 0.369755" type="box" rgba="1 1 1 1"/>
+            <geom size="0.1158 0.02748" pos="0.0653637 -9.1e-06 0.629281" type="cylinder" rgba="1 1 1 1"/>
+            <geom size="0.15826 0.229 0.0385" pos="0.264063 -2.2e-06 0.391374" type="box" rgba="1 1 1 1"/>
+            <geom size="0.18914 0.11908" pos="0.275356 0 0.504775" quat="0.656768 0.656768 0.262024 -0.262024" type="cylinder" rgba="1 1 1 1"/>
+            <geom size="0.03474 0.09618" pos="0.215248 -0.161247 0.48939" quat="0.640856 0.298836 0.640856 0.298836" type="cylinder" rgba="1 1 1 1"/>
+            <geom size="0.03474 0.09618" pos="0.215248 0.161247 0.48939" quat="0.298836 0.640856 0.298836 0.640856" type="cylinder" rgba="1 1 1 1"/>
+            <geom size="0.193 0.02748" pos="0.144432 -2.2e-06 0.474659" quat="0.479078 0.520081 0.520081 0.479078" type="cylinder" rgba="1 1 1 1"/>
+            <body name="left_wheel_link" pos="0 0.222604 0.0625">
                 <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
-                <joint name="fl_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
+                <joint name="left_wheel_joint" pos="0 0 0" axis="0 1 0"/>
                 <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
             </body>
-        </body>
-        <body name="fr_caster_rotation_link" pos="0.341346 -0.203 0.1565">
-            <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
-            <joint name="fr_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
-            <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
-            <body name="fr_caster_wheel_link" pos="-0.0382 0 -0.094">
+            <body name="right_wheel_link" pos="0 -0.222604 0.0625">
                 <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
-                <joint name="fr_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
+                <joint name="right_wheel_joint" pos="0 0 0" axis="0 1 0"/>
                 <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
             </body>
-        </body>
-        <body name="bl_caster_rotation_link" pos="-0.270154 0.203 0.1565">
-            <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
-            <joint name="bl_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
-            <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
-            <body name="bl_caster_wheel_link" pos="-0.0382 0 -0.094">
-                <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
-                <joint name="bl_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
-                <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
-            </body>
-        </body>
-        <body name="br_caster_rotation_link" pos="-0.270154 -0.203 0.1565">
-            <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
-            <joint name="br_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
-            <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
-            <body name="br_caster_wheel_link" pos="-0.0382 0 -0.094">
-                <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
-                <joint name="br_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
-                <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
-            </body>
-        </body>
-        <body name="pan_motor" pos="0.039 -3e-06 0.488363">
-            <inertial pos="-0.0205048 -2.86e-05 -0.0183847" quat="0.897188 -0.00116026 -8.72654e-05 0.441648" mass="5.5" diaginertia="0.00153159 0.00118401 0.000604997"/>
-            <joint name="pan_motor" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708"/>
-            <geom size="0.0589277 0.107319" pos="0 0 -0.0238775" type="cylinder" rgba="0.213371 0.491692 0.423779 1"/>
-            <body name="lift_arm_lower" pos="-0.077511 3.3e-05 -0.0564022" quat="0.707107 0.707107 0 0">
-                <inertial pos="-0.207215 0.10737 3.3e-05" quat="0.389831 0.389831 0.589942 0.589942" mass="1" diaginertia="0.0010124 0.0010124 0.0010124"/>
-                <joint name="lift_arm_lower" pos="0 0 0" axis="0 0 1" limited="true" range="0 0.523599"/>
-                <geom size="0.224175 0.0457501 0.0121924" pos="-0.209331 0.106738 3.33e-05" quat="0.687569 -0.687569 0.165071 -0.165071" type="box" rgba="0.745098 0.213186 0.395682 1"/>
-                <body name="carriage" pos="-0.418597 0.213663 3e-05">
-                    <inertial pos="-0.199252 0.0529229 0.000507036" quat="0.312918 0.630653 -0.316595 0.635709" mass="14.85" diaginertia="1.6737 1.51364 1.1772"/>
-                    <joint name="carriage" pos="0 0 0" axis="0 0 1" limited="true" range="-0.523599 0"/>
-                    <geom size="0.01526 0.067195 0.081422" pos="-0.0424136 0.089503 3.1e-06" quat="0.696364 -0.696364 0.122788 -0.122788" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.0359701 0.069553 0.198466" pos="-0.0538089 -0.13627 0" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.002725 0.068705 0.0432555" pos="-0.0216487 -0.283037 3.1e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.01215 0.136 0.018135" pos="-0.184611 -0.28075 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.05733 0.00272" pos="-0.212973 -0.302873 0.132826" quat="0.920164 -4.60082e-08 -1.95767e-08 0.391534" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.05733 0.00272" pos="-0.212973 -0.302873 -0.132826" quat="0.920164 -4.60082e-08 -1.95767e-08 0.391534" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.00135 0.02856 0.04212" pos="-0.192115 -0.278682 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.04141 0.0366965 0.0168125" pos="-0.241435 -0.331425 -0.0002958" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.0100875 0.00278005" pos="-0.271374 -0.310815 -0.0002958" quat="0.992332 -4.96166e-08 6.18007e-09 -0.123601" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.09999 0.0361405 0.00168125" pos="-0.181923 -0.346613 -0.0002958" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.01919 0.001112 0.168125" pos="-0.106719 -0.181047 0.0360971" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.01919 0.001112 0.168125" pos="-0.106719 -0.181047 -0.036097" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.025 0.060515 0.0017" pos="-0.216423 -0.354515 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.015 0.060515 0.0017" pos="-0.0612574 -0.354515 0" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.097 0.00741 0.0017" pos="-0.14406 -0.355083 -0.053405" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.097 0.00741 0.0017" pos="-0.143986 -0.354515 0.052922" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.002 0.060515 0.0408" pos="-0.0469099 -0.315142 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.1 0.001235 0.01955" pos="-0.145378 -0.336134 0.0588561" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.1 0.001235 0.01955" pos="-0.145378 -0.336134 -0.058856" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.0093432 0.0343279" pos="-0.170188 -0.201547 0.0017018" quat="0.697409 -0.697409 0.116706 -0.116706" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.0216029 0.0680401" pos="-0.138106 -0.101872 0.0017019" quat="0.697409 -0.697409 0.116706 -0.116706" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.0422032 0.0284625 0.0068948" pos="-0.139071 -0.322423 3e-06" quat="0.697712 -0.697712 0.11488 -0.11488" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.0379758 0.0184 0.00889765" pos="-0.137535 -0.248382 3e-06" quat="0.68535 -0.68535 0.174057 -0.174057" type="box" rgba="0.156151 0.241865 0.64 1"/>
-                    <geom size="0.362 0.4075 0.031855" pos="-0.45201 -0.36708 -0.000169967" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.00779 0.02086 0.74902 1"/>
-                    <geom size="0.01072 0.32384" pos="-0.83651 0.85141 -0.00017303" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06" type="cylinder" rgba="0.64 0 0.00462 1"/>
-                    <geom size="0.01072 0.17793" pos="-0.835831 0.676819 -0.315272" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.64 0 0.00462 1"/>
-                    <geom size="0.01072 0.17793" pos="-0.835829 0.676831 0.314928" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.64 0 0.00462 1"/>
-                    <geom size="0.043 0.05075 0.0445" pos="-0.781509 -0.443389 0.281342" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
-                    <geom size="0.043 0.05075 0.0445" pos="-0.781511 -0.443391 -0.280978" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
-                    <geom size="0.04 0.0525 0.00625" pos="-0.120509 -0.405139 0.281329" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
-                    <geom size="0.04 0.0525 0.00625" pos="-0.120511 -0.405141 -0.281331" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
-                    <geom size="0.00986 0.395 0.718905" pos="-0.452519 0.384261 0.344457" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.04 0.23976 0.8 1"/>
-                    <geom size="0.00973 0.137955" pos="0.000311112 0.544061 0.302855" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
-                    <geom size="0.00973 0.02697" pos="-0.0244288 0.413431 0.317526" quat="0.499998 0 0.866027 -3.18109e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
-                    <geom size="0.00973 0.02697" pos="-0.0244288 0.672831 0.317525" quat="0.499998 0 0.866027 -3.18109e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
-                    <geom size="0.009885 0.395 0.718505" pos="-0.452521 0.384269 -0.344803" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.04 0.23976 0.8 1"/>
-                    <geom size="0.00973 0.137955" pos="-0.00720113 0.544109 -0.307535" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
-                    <geom size="0.00973 0.02697" pos="-0.0321412 0.672879 -0.322305" quat="0.866025 0 0.500001 -1.83661e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
-                    <geom size="0.00973 0.02697" pos="-0.0321412 0.413479 -0.322304" quat="0.866025 0 0.500001 -1.83661e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
-                    <body name="castor_rigit_left_wheel" pos="-0.781509 -0.476889 0.281282" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06">
-                        <inertial pos="0 0 0" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
-                        <joint name="castor_rigit_left_wheel" pos="0 0 0" axis="0 0 1"/>
-                        <geom size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
-                    </body>
-                    <body name="castor_rigit_right_wheel" pos="-0.781511 -0.476891 -0.281038" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06">
-                        <inertial pos="0 0 0" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
-                        <joint name="castor_rigit_right_wheel" pos="0 0 0" axis="0 0 1"/>
-                        <geom size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
-                    </body>
-                    <body name="castor_swivel_left_fork" pos="-0.121559 -0.412179 0.281629" quat="0.499998 -0.5 0.500002 0.5">
-                        <inertial pos="-0.00547 -0.01599 -0.02516" mass="0.05" diaginertia="2e-05 2e-05 2e-05"/>
-                        <joint name="castor_swivel_left_fork" pos="0 0 0" axis="0 0 1"/>
-                        <geom size="0.03397 0.043 0.03949" pos="0.00029 -0.01005 -0.03671" type="box" rgba="0.37158 0.38592 0.39753 1"/>
-                        <body name="castor_swivel_left_wheel" pos="0.0003 -0.04105 -0.06471" quat="0.707105 0 0.707108 0">
-                            <inertial pos="0 0 -5e-05" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
-                            <joint name="castor_swivel_left_wheel" pos="0 0 0" axis="0 0 1"/>
-                            <geom size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
-                        </body>
-                    </body>
-                    <body name="castor_swivel_right_fork" pos="-0.120061 -0.416461 -0.280251" quat="0.499998 -0.5 0.500002 0.5">
-                        <inertial pos="-0.00589 -0.01692 -0.02589" mass="0.05" diaginertia="2e-05 2e-05 2e-05"/>
-                        <joint name="castor_swivel_right_fork" pos="0 0 0" axis="0 0 1"/>
-                        <geom size="0.03397 0.043 0.03949" pos="0.00107 -0.00955 -0.03667" type="box" rgba="0.37158 0.38592 0.39753 1"/>
-                        <body name="castor_swivel_right_wheel" pos="0.00108 -0.04055 -0.06467" quat="0.707105 0 0.707108 0">
-                            <inertial pos="0 0 -5e-05" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
-                            <joint name="castor_swivel_right_wheel" pos="0 0 0" axis="0 0 1"/>
-                            <geom size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
-                        </body>
-                    </body>
-                </body>
-                <body name="lift_motor_joint" pos="-0.175601 0.128247 3e-05">
-                    <inertial pos="-0.0288321 0.0338943 0.011049" quat="0.742866 -0.00408051 -0.251094 0.620553" mass="0.55" diaginertia="0.000133267 0.000133267 0.000133267"/>
-                    <joint name="lift_motor_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.523599 0.523599"/>
-                    <geom size="0.0096713 0.0538148" pos="-0.190074 0.149046 3.1e-06" quat="0.308866 -0.308866 0.636083 -0.636083" type="cylinder" rgba="0.037566 0.037566 0.037566 1"/>
-                    <geom size="0.0186919 0.0936599" pos="-0.083919 0.0620954 3.1e-06" quat="0.308866 -0.308866 0.636083 -0.636083" type="cylinder" rgba="0.037566 0.037566 0.037566 1"/>
+            <body name="fl_caster_rotation_link" pos="0.341346 0.203 0.1565">
+                <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
+                <joint name="fl_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
+                <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
+                <body name="fl_caster_wheel_link" pos="-0.0382 0 -0.094">
+                    <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
+                    <joint name="fl_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
+                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
                 </body>
             </body>
-            <body name="lift_arm_upper" pos="-0.0775113 0 0.0832461" quat="0.707107 0.707107 0 0">
-                <inertial pos="-0.139777 0.0769129 -9.87e-05" quat="0.421413 0.43114 0.671004 0.431605" mass="2.2" diaginertia="0.00225857 0.00225857 0.00225857"/>
-                <joint name="lift_arm_upper" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708"/>
-                <geom size="0.0200511 0.0227421" pos="-0.0769995 0.0721075 -0.0002136" quat="0.687569 -0.687569 0.165071 -0.165071" type="cylinder" rgba="0.4 0.107354 0.054022 1"/>
-                <geom size="0.224175 0.0457501 0.0125809" pos="-0.209254 0.10621 0" quat="0.687569 -0.687569 0.165071 -0.165071" type="box" rgba="0.4 0.107354 0.054022 1"/>
+            <body name="fr_caster_rotation_link" pos="0.341346 -0.203 0.1565">
+                <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
+                <joint name="fr_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
+                <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
+                <body name="fr_caster_wheel_link" pos="-0.0382 0 -0.094">
+                    <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
+                    <joint name="fr_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
+                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
+                </body>
+            </body>
+            <body name="bl_caster_rotation_link" pos="-0.270154 0.203 0.1565">
+                <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
+                <joint name="bl_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
+                <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
+                <body name="bl_caster_wheel_link" pos="-0.0382 0 -0.094">
+                    <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
+                    <joint name="bl_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
+                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
+                </body>
+            </body>
+            <body name="br_caster_rotation_link" pos="-0.270154 -0.203 0.1565">
+                <inertial pos="0 0 -0.0425" quat="0.691655 0.147016 0.147016 0.691655" mass="0.309754" diaginertia="0.000584452 0.000528726 0.000179236"/>
+                <joint name="br_caster_rotation_joint" pos="0 0 0" axis="0 0 1" damping="0.01"/>
+                <geom type="mesh" rgba="0.79 0.82 0.93 1" mesh="caster_wheel_base"/>
+                <body name="br_caster_wheel_link" pos="-0.0382 0 -0.094">
+                    <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619"/>
+                    <joint name="br_caster_wheel_joint" pos="0 0 0" axis="0 1 0"/>
+                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel"/>
+                </body>
+            </body>
+            <body name="pan_motor" pos="0.039 -3e-06 0.488363">
+                <inertial pos="-0.0205048 -2.86e-05 -0.0183847" quat="0.897188 -0.00116026 -8.72654e-05 0.441648" mass="5.5" diaginertia="0.00153159 0.00118401 0.000604997"/>
+                <joint name="pan_motor" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708"/>
+                <geom size="0.0589277 0.107319" pos="0 0 -0.0238775" type="cylinder" rgba="0.213371 0.491692 0.423779 1"/>
+                <body name="lift_arm_lower" pos="-0.077511 3.3e-05 -0.0564022" quat="0.707107 0.707107 0 0">
+                    <inertial pos="-0.207215 0.10737 3.3e-05" quat="0.389831 0.389831 0.589942 0.589942" mass="1" diaginertia="0.0010124 0.0010124 0.0010124"/>
+                    <joint name="lift_arm_lower" pos="0 0 0" axis="0 0 1" limited="true" range="0 0.523599"/>
+                    <geom size="0.224175 0.0457501 0.0121924" pos="-0.209331 0.106738 3.33e-05" quat="0.687569 -0.687569 0.165071 -0.165071" type="box" rgba="0.745098 0.213186 0.395682 1"/>
+                    <body name="carriage" pos="-0.418597 0.213663 3e-05">
+                        <inertial pos="-0.199252 0.0529229 0.000507036" quat="0.312918 0.630653 -0.316595 0.635709" mass="14.85" diaginertia="1.6737 1.51364 1.1772"/>
+                        <joint name="carriage" pos="0 0 0" axis="0 0 1" limited="true" range="-0.523599 0"/>
+                        <geom size="0.01526 0.067195 0.081422" pos="-0.0424136 0.089503 3.1e-06" quat="0.696364 -0.696364 0.122788 -0.122788" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.0359701 0.069553 0.198466" pos="-0.0538089 -0.13627 0" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.002725 0.068705 0.0432555" pos="-0.0216487 -0.283037 3.1e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.01215 0.136 0.018135" pos="-0.184611 -0.28075 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.05733 0.00272" pos="-0.212973 -0.302873 0.132826" quat="0.920164 -4.60082e-08 -1.95767e-08 0.391534" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.05733 0.00272" pos="-0.212973 -0.302873 -0.132826" quat="0.920164 -4.60082e-08 -1.95767e-08 0.391534" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.00135 0.02856 0.04212" pos="-0.192115 -0.278682 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.04141 0.0366965 0.0168125" pos="-0.241435 -0.331425 -0.0002958" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.0100875 0.00278005" pos="-0.271374 -0.310815 -0.0002958" quat="0.992332 -4.96166e-08 6.18007e-09 -0.123601" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.09999 0.0361405 0.00168125" pos="-0.181923 -0.346613 -0.0002958" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.01919 0.001112 0.168125" pos="-0.106719 -0.181047 0.0360971" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.01919 0.001112 0.168125" pos="-0.106719 -0.181047 -0.036097" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.025 0.060515 0.0017" pos="-0.216423 -0.354515 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.015 0.060515 0.0017" pos="-0.0612574 -0.354515 0" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.097 0.00741 0.0017" pos="-0.14406 -0.355083 -0.053405" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.097 0.00741 0.0017" pos="-0.143986 -0.354515 0.052922" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.002 0.060515 0.0408" pos="-0.0469099 -0.315142 3e-06" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.1 0.001235 0.01955" pos="-0.145378 -0.336134 0.0588561" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.1 0.001235 0.01955" pos="-0.145378 -0.336134 -0.058856" quat="0.707107 -0.707107 0 0" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.0093432 0.0343279" pos="-0.170188 -0.201547 0.0017018" quat="0.697409 -0.697409 0.116706 -0.116706" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.0216029 0.0680401" pos="-0.138106 -0.101872 0.0017019" quat="0.697409 -0.697409 0.116706 -0.116706" type="cylinder" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.0422032 0.0284625 0.0068948" pos="-0.139071 -0.322423 3e-06" quat="0.697712 -0.697712 0.11488 -0.11488" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.0379758 0.0184 0.00889765" pos="-0.137535 -0.248382 3e-06" quat="0.68535 -0.68535 0.174057 -0.174057" type="box" rgba="0.156151 0.241865 0.64 1"/>
+                        <geom size="0.362 0.4075 0.031855" pos="-0.45201 -0.36708 -0.000169967" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.00779 0.02086 0.74902 1"/>
+                        <geom size="0.01072 0.32384" pos="-0.83651 0.85141 -0.00017303" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06" type="cylinder" rgba="0.64 0 0.00462 1"/>
+                        <geom size="0.01072 0.17793" pos="-0.835831 0.676819 -0.315272" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.64 0 0.00462 1"/>
+                        <geom size="0.01072 0.17793" pos="-0.835829 0.676831 0.314928" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.64 0 0.00462 1"/>
+                        <geom size="0.043 0.05075 0.0445" pos="-0.781509 -0.443389 0.281342" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
+                        <geom size="0.043 0.05075 0.0445" pos="-0.781511 -0.443391 -0.280978" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
+                        <geom size="0.04 0.0525 0.00625" pos="-0.120509 -0.405139 0.281329" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
+                        <geom size="0.04 0.0525 0.00625" pos="-0.120511 -0.405141 -0.281331" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.37158 0.38592 0.39753 1"/>
+                        <geom size="0.00986 0.395 0.718905" pos="-0.452519 0.384261 0.344457" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.04 0.23976 0.8 1"/>
+                        <geom size="0.00973 0.137955" pos="0.000311112 0.544061 0.302855" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
+                        <geom size="0.00973 0.02697" pos="-0.0244288 0.413431 0.317526" quat="0.499998 0 0.866027 -3.18109e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
+                        <geom size="0.00973 0.02697" pos="-0.0244288 0.672831 0.317525" quat="0.499998 0 0.866027 -3.18109e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
+                        <geom size="0.009885 0.395 0.718505" pos="-0.452521 0.384269 -0.344803" quat="0.499998 -0.5 0.500002 0.5" type="box" rgba="0.04 0.23976 0.8 1"/>
+                        <geom size="0.00973 0.137955" pos="-0.00720113 0.544109 -0.307535" quat="0.499998 -0.5 0.500002 0.5" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
+                        <geom size="0.00973 0.02697" pos="-0.0321412 0.672879 -0.322305" quat="0.866025 0 0.500001 -1.83661e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
+                        <geom size="0.00973 0.02697" pos="-0.0321412 0.413479 -0.322304" quat="0.866025 0 0.500001 -1.83661e-06" type="cylinder" rgba="0.54902 0.06118 0.01087 1"/>
+                        <body name="castor_rigit_left_wheel" pos="-0.781509 -0.476889 0.281282" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06">
+                            <inertial pos="0 0 0" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
+                            <joint name="castor_rigit_left_wheel" pos="0 0 0" axis="0 0 1"/>
+                            <geom size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
+                        </body>
+                        <body name="castor_rigit_right_wheel" pos="-0.781511 -0.476891 -0.281038" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06">
+                            <inertial pos="0 0 0" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
+                            <joint name="castor_rigit_right_wheel" pos="0 0 0" axis="0 0 1"/>
+                            <geom size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
+                        </body>
+                        <body name="castor_swivel_left_fork" pos="-0.121559 -0.412179 0.281629" quat="0.499998 -0.5 0.500002 0.5">
+                            <inertial pos="-0.00547 -0.01599 -0.02516" mass="0.05" diaginertia="2e-05 2e-05 2e-05"/>
+                            <joint name="castor_swivel_left_fork" pos="0 0 0" axis="0 0 1"/>
+                            <geom size="0.03397 0.043 0.03949" pos="0.00029 -0.01005 -0.03671" type="box" rgba="0.37158 0.38592 0.39753 1"/>
+                            <body name="castor_swivel_left_wheel" pos="0.0003 -0.04105 -0.06471" quat="0.707105 0 0.707108 0">
+                                <inertial pos="0 0 -5e-05" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
+                                <joint name="castor_swivel_left_wheel" pos="0 0 0" axis="0 0 1"/>
+                                <geom size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
+                            </body>
+                        </body>
+                        <body name="castor_swivel_right_fork" pos="-0.120061 -0.416461 -0.280251" quat="0.499998 -0.5 0.500002 0.5">
+                            <inertial pos="-0.00589 -0.01692 -0.02589" mass="0.05" diaginertia="2e-05 2e-05 2e-05"/>
+                            <joint name="castor_swivel_right_fork" pos="0 0 0" axis="0 0 1"/>
+                            <geom size="0.03397 0.043 0.03949" pos="0.00107 -0.00955 -0.03667" type="box" rgba="0.37158 0.38592 0.39753 1"/>
+                            <body name="castor_swivel_right_wheel" pos="0.00108 -0.04055 -0.06467" quat="0.707105 0 0.707108 0">
+                                <inertial pos="0 0 -5e-05" mass="0.25" diaginertia="3e-05 2e-05 2e-05"/>
+                                <joint name="castor_swivel_right_wheel" pos="0 0 0" axis="0 0 1"/>
+                                <geom size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1"/>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="lift_motor_joint" pos="-0.175601 0.128247 3e-05">
+                        <inertial pos="-0.0288321 0.0338943 0.011049" quat="0.742866 -0.00408051 -0.251094 0.620553" mass="0.55" diaginertia="0.000133267 0.000133267 0.000133267"/>
+                        <joint name="lift_motor_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.523599 0.523599"/>
+                        <geom size="0.0096713 0.0538148" pos="-0.190074 0.149046 3.1e-06" quat="0.308866 -0.308866 0.636083 -0.636083" type="cylinder" rgba="0.037566 0.037566 0.037566 1"/>
+                        <geom size="0.0186919 0.0936599" pos="-0.083919 0.0620954 3.1e-06" quat="0.308866 -0.308866 0.636083 -0.636083" type="cylinder" rgba="0.037566 0.037566 0.037566 1"/>
+                    </body>
+                </body>
+                <body name="lift_arm_upper" pos="-0.0775113 0 0.0832461" quat="0.707107 0.707107 0 0">
+                    <inertial pos="-0.139777 0.0769129 -9.87e-05" quat="0.421413 0.43114 0.671004 0.431605" mass="2.2" diaginertia="0.00225857 0.00225857 0.00225857"/>
+                    <joint name="lift_arm_upper" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708"/>
+                    <geom size="0.0200511 0.0227421" pos="-0.0769995 0.0721075 -0.0002136" quat="0.687569 -0.687569 0.165071 -0.165071" type="cylinder" rgba="0.4 0.107354 0.054022 1"/>
+                    <geom size="0.224175 0.0457501 0.0125809" pos="-0.209254 0.10621 0" quat="0.687569 -0.687569 0.165071 -0.165071" type="box" rgba="0.4 0.107354 0.054022 1"/>
+                </body>
             </body>
         </body>
     </worldbody>

@@ -18,13 +18,13 @@
   </worldbody>
 
   <contact>
-    <exclude body1="world" body2="panda_1_link1" />
-    <exclude body1="world" body2="panda_1_link2" />
-    <exclude body1="world" body2="panda_1_link3" />
-    <exclude body1="world" body2="panda_1_link4" />
-    <exclude body1="world" body2="panda_1_link5" />
-    <exclude body1="world" body2="panda_1_link6" />
-    <exclude body1="world" body2="panda_1_link7" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link1" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link2" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link3" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link4" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link5" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link6" />
+    <exclude body1="dual_panda_arm" body2="panda_1_link7" />
 
     <exclude body1="panda_1_link1" body2="panda_1_link2" />
     <exclude body1="panda_1_link1" body2="panda_1_link3" />
@@ -54,13 +54,13 @@
 
     <exclude body1="panda_1_link6" body2="panda_1_link7" />
 
-    <exclude body1="world" body2="panda_2_link1" />
-    <exclude body1="world" body2="panda_2_link2" />
-    <exclude body1="world" body2="panda_2_link3" />
-    <exclude body1="world" body2="panda_2_link4" />
-    <exclude body1="world" body2="panda_2_link5" />
-    <exclude body1="world" body2="panda_2_link6" />
-    <exclude body1="world" body2="panda_2_link7" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link1" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link2" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link3" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link4" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link5" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link6" />
+    <exclude body1="dual_panda_arm" body2="panda_2_link7" />
 
     <exclude body1="panda_2_link1" body2="panda_2_link2" />
     <exclude body1="panda_2_link1" body2="panda_2_link3" />
@@ -90,5 +90,5 @@
 
     <exclude body1="panda_2_link6" body2="panda_2_link7" />
   </contact>
-  
+
 </mujoco>

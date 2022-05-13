@@ -2,7 +2,7 @@
 
 	<!-- Load controller manager -->
 	<rosparam command="load" file="$(find mir_system_control)/config/default_controllers.yaml" />
-	<node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
+	<node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
 		joint_state_controller
 		fl_caster_rotation_joint_position_controller
 		fr_caster_rotation_joint_position_controller
