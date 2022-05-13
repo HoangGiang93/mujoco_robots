@@ -1,5 +1,5 @@
 <mujoco model="zoo">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/zoo/zoo_mujoco/model/zoo/meshes/" />
+    <compiler angle="radian" meshdir="zoo/meshes/" />
     <size njmax="500" nconmax="100" />
     <default />
     <asset>
@@ -114,7 +114,7 @@
             </body>
         </body>
 
-        <body name="mir_system">
+        <body name="mir_system" pos="0 0 0">
             <geom pos="0.037646 0 0" type="mesh" rgba="1 1 1 1" mesh="mir_100_base" />
             <geom size="0.0075 0.015 0.0135" pos="-0.020996 0.225017 0.413" quat="0.707388 0 0 0.706825" type="box" />
             <geom pos="0.4288 0.2358 0.1914" quat="0 0.92388 0.382683 0" type="mesh" rgba="0.1 0.1 0.1 1" mesh="sick_lms-100" />
