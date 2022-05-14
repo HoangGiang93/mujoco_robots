@@ -6,6 +6,6 @@
 	<node name="controller_manager" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="
 		joint_state_controller
 		joint_trajectory_controller" />
-	<!-- <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen" /> -->
+	<node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen" />
 
 </launch>

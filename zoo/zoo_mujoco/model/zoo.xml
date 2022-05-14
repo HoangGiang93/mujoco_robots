@@ -1,20 +1,20 @@
 <mujoco model="zoo">
-    <compiler angle="radian" meshdir="zoo/meshes/" />
+    <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <default />
     <asset>
-        <mesh name="body-collision" file="body-collision.stl" />
-        <mesh name="top" file="top.stl" />
-        <mesh name="hand" file="hand.stl" />
-        <mesh name="finger" file="finger.stl" />
+        <mesh name="body-collision" file="zoo/meshes/body-collision.stl" />
+        <mesh name="top" file="zoo/meshes/top.stl" />
+        <mesh name="hand" file="zoo/meshes/hand.stl" />
+        <mesh name="finger" file="zoo/meshes/finger.stl" />
 
-        <mesh name="mir_100_base" file="mir_100_base.stl" />
-        <mesh name="sick_lms-100" file="sick_lms-100.stl" />
-        <mesh name="wheel" file="wheel.stl" />
-        <mesh name="caster_wheel_base" file="caster_wheel_base.stl" />
+        <mesh name="mir_100_base" file="zoo/meshes/mir_100_base.stl" />
+        <mesh name="sick_lms-100" file="zoo/meshes/sick_lms-100.stl" />
+        <mesh name="wheel" file="zoo/meshes/wheel.stl" />
+        <mesh name="caster_wheel_base" file="zoo/meshes/caster_wheel_base.stl" />
     </asset>
     <worldbody>
-        <body name="ridgeback_panda" pos="1 1 0">
+        <body name="ridgeback_panda" pos="0 1 0">
             <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="body-collision" />
             <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="top" />
             <geom size="0.025 0.025 0.035" pos="0.3932 0 0.2208" type="box" rgba="0.2 0.2 0.2 1" />
