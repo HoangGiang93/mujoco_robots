@@ -7,8 +7,9 @@
 
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
             <param name="tf_prefix" value="ridgeback_panda" />
-            <remap from="/ridgeback_panda/joint_states" to="/joint_states" />
         </node>
+
+        <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
     </group>
 
     <group ns="mir_system">
@@ -16,11 +17,10 @@
 
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
             <param name="tf_prefix" value="mir_system" />
-            <remap from="/mir_system/joint_states" to="/joint_states" />
         </node>
-    </group>
 
-    <include file="$(find zoo_control)/launch/zoo_control.launch" />
+        <include file="$(find mir_system_control)/launch/mir_system_control.launch" />
+    </group>
 
     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find zoo_mujoco)/rviz_config/rviz_config.rviz" />

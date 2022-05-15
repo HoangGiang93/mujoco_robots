@@ -9,7 +9,7 @@
         <param name="robot_description" command="$(find xacro)/xacro '$(find ridgeback_description)/urdf/ridgeback_panda.urdf'" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-        <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_traj_control.launch" />
+        <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
         <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
 
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ridgeback_panda_mujoco)/rviz_config/rviz_config.rviz" />
