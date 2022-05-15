@@ -6,23 +6,48 @@
   <arg name="navigation_map" default="$(find zoo_mujoco)/map/WaterFront.yaml" />
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg navigation_map)" />
 
-  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <remap from="/odom" to="/mir_system/base_footprint" />
-    <remap from="/cmd_vel" to="/mir_system/cmd_vel" />
-    <param name="base_global_planner" value="$(arg base_global_planner)" />
-    <param name="base_local_planner" value="$(arg base_local_planner)" />
+  <group ns="ridgeback_panda">
+    <node pkg="move_base" type="move_base" respawn="false" name="ridgeback_panda_move_base" output="screen">
+      <remap from="map" to="/map" />
+      <remap from="odom" to="/ridgeback_panda/base_link" />
+      <remap from="cmd_vel" to="/ridgeback_panda/cmd_vel" />
+      <param name="base_global_planner" value="$(arg base_global_planner)" />
+      <param name="base_local_planner" value="$(arg base_local_planner)" />
 
-    <rosparam file="$(find mir_system_mujoco)/config/move_base_params.yaml" command="load" />
+      <rosparam file="$(find ridgeback_panda_mujoco)/config/move_base_params.yaml" command="load" />
 
-    <!-- observation sources located in costmap_common.yaml -->
-    <rosparam file="$(find zoo_mujoco)/config/mir_system_costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find zoo_mujoco)/config/mir_system_costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <!-- observation sources located in costmap_common.yaml -->
+      <rosparam file="$(find zoo_mujoco)/config/ridgeback_panda_costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find zoo_mujoco)/config/ridgeback_panda_costmap_common_params.yaml" command="load" ns="local_costmap" />
 
-    <!-- local costmap, needs size -->
-    <rosparam file="$(find mir_system_mujoco)/config/costmap_local_params.yaml" command="load" />
+      <!-- local costmap, needs size -->
+      <rosparam file="$(find ridgeback_panda_mujoco)/config/costmap_local_params.yaml" command="load" />
 
-    <!-- static global costmap, static map provides size -->
-    <rosparam file="$(find mir_system_mujoco)/config/costmap_global_params.yaml" command="load" />
-  </node>
+      <!-- static global costmap, static map provides size -->
+      <rosparam file="$(find ridgeback_panda_mujoco)/config/costmap_global_params.yaml" command="load" />
+    </node>
+  </group>
+
+  <group ns="mir_system">
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <remap from="map" to="/map" />
+      <remap from="odom" to="/mir_system/base_footprint" />
+      <remap from="cmd_vel" to="/mir_system/cmd_vel" />
+      <param name="base_global_planner" value="$(arg base_global_planner)" />
+      <param name="base_local_planner" value="$(arg base_local_planner)" />
+
+      <rosparam file="$(find mir_system_mujoco)/config/move_base_params.yaml" command="load" />
+
+      <!-- observation sources located in costmap_common.yaml -->
+      <rosparam file="$(find zoo_mujoco)/config/mir_system_costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find zoo_mujoco)/config/mir_system_costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+      <!-- local costmap, needs size -->
+      <rosparam file="$(find mir_system_mujoco)/config/costmap_local_params.yaml" command="load" />
+
+      <!-- static global costmap, static map provides size -->
+      <rosparam file="$(find mir_system_mujoco)/config/costmap_global_params.yaml" command="load" />
+    </node>
+  </group>
 
 </launch>

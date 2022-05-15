@@ -1,6 +1,6 @@
 <mujoco model="zoo">
     <compiler angle="radian" />
-    <size njmax="500" nconmax="100" />
+    <size njmax="5000" nconmax="1000" />
     <default />
     <asset>
         <mesh name="body-collision" file="zoo/meshes/body-collision.stl" />
