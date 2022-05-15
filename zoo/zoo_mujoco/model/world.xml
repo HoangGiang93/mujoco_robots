@@ -38,6 +38,7 @@
     <mesh name="ShelfSystemH200T6L12W" file="world/meshes/ShelfSystemH200T6L12W.stl" />
     <mesh name="ShelfSystemH200T6L7W" file="world/meshes/ShelfSystemH200T6L7W.stl" />
     <mesh name="ShelfSystemH200T7L10W" file="world/meshes/ShelfSystemH200T7L10W.stl" />
+    <mesh name="ShelfSystemH200T7L12W" file="world/meshes/ShelfSystemH200T7L12W.stl" />
   </asset>
 
   <worldbody>

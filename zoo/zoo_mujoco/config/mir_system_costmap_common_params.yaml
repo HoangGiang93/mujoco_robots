@@ -1,0 +1,31 @@
+global_frame: map
+robot_base_frame: mir_system/base_footprint
+
+update_frequency: 5.0
+publish_frequency: 5.0
+
+obstacle_range: 5
+raytrace_range: 6
+footprint: [[-0.6, -0.4], [-0.6, 0.4], [0.6, 0.4], [0.6, -0.4]]
+
+inflation:
+  inflation_radius: 0.4
+
+obstacles_laser:
+  observation_sources: laser_front laser_back
+  laser_front:
+    {
+      sensor_frame: front_laser_link,
+      data_type: LaserScan,
+      topic: laser_front,
+      marking: true,
+      clearing: true,
+    }
+  laser_back:
+    {
+      sensor_frame: back_laser_link,
+      data_type: LaserScan,
+      topic: laser_back,
+      marking: true,
+      clearing: true,
+    }

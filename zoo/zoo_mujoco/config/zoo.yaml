@@ -17,7 +17,7 @@ joint_ignores:
 
 add_odom_joints: true
 
-pub_object_marker_array_rate: 60.0
+pub_object_marker_array_rate: 0.0
 
 pub_object_tf_rate: 60.0
 
