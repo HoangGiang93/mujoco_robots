@@ -149,4 +149,13 @@
             </body>
         </body>
     </worldbody>
+    <equality>
+        <joint joint1="hand_l_distal_joint" joint2="hand_motor_joint" polycoef="-0.087000 -1.000000  0 0 0"/>
+        <joint joint1="hand_l_mimic_distal_joint" joint2="hand_l_spring_proximal_joint" polycoef="0.000000 -1.000000  0 0 0"/>
+        <joint joint1="hand_l_proximal_joint" joint2="hand_motor_joint" polycoef="0.000000 1.000000  0 0 0"/>
+        <joint joint1="hand_r_distal_joint" joint2="hand_motor_joint" polycoef="-0.087000 -1.000000  0 0 0"/>
+        <joint joint1="hand_r_mimic_distal_joint" joint2="hand_r_spring_proximal_joint" polycoef="0.000000 -1.000000  0 0 0"/>
+        <joint joint1="hand_r_proximal_joint" joint2="hand_motor_joint" polycoef="0.000000 1.000000  0 0 0"/>
+        <joint joint1="torso_lift_joint" joint2="arm_lift_joint" polycoef="0.000000 0.500000  0 0 0"/>
+    </equality>
 </mujoco>

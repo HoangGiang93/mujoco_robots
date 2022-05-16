@@ -44,7 +44,7 @@
                 <body name="fl_caster_wheel_link" pos="-0.0382 0 -0.094">
                     <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619" />
                     <joint name="fl_caster_wheel_joint" pos="0 0 0" axis="0 1 0" />
-                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
+                    <geom name="fl_caster_wheel_link" type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
                 </body>
             </body>
             <body name="fr_caster_rotation_link" pos="0.341346 -0.203 0.1565">
@@ -54,7 +54,7 @@
                 <body name="fr_caster_wheel_link" pos="-0.0382 0 -0.094">
                     <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619" />
                     <joint name="fr_caster_wheel_joint" pos="0 0 0" axis="0 1 0" />
-                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
+                    <geom name="fr_caster_wheel_link" type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
                 </body>
             </body>
             <body name="bl_caster_rotation_link" pos="-0.270154 0.203 0.1565">
@@ -64,7 +64,7 @@
                 <body name="bl_caster_wheel_link" pos="-0.0382 0 -0.094">
                     <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619" />
                     <joint name="bl_caster_wheel_joint" pos="0 0 0" axis="0 1 0" />
-                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
+                    <geom name="bl_caster_wheel_link" type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
                 </body>
             </body>
             <body name="br_caster_rotation_link" pos="-0.270154 -0.203 0.1565">
@@ -74,7 +74,7 @@
                 <body name="br_caster_wheel_link" pos="-0.0382 0 -0.094">
                     <inertial pos="0 0 0" quat="0 0.707107 -0.707107 0" mass="1" diaginertia="0.00195312 0.0010619 0.0010619" />
                     <joint name="br_caster_wheel_joint" pos="0 0 0" axis="0 1 0" />
-                    <geom type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
+                    <geom name="br_caster_wheel_link" type="mesh" rgba="0.3 0.3 0.3 1" mesh="wheel" />
                 </body>
             </body>
             <body name="pan_motor" pos="0.039 -3e-06 0.488363">
@@ -130,12 +130,12 @@
                         <body name="castor_rigit_left_wheel" pos="-0.781509 -0.476889 0.281282" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06">
                             <inertial pos="0 0 0" mass="0.25" diaginertia="3e-05 2e-05 2e-05" />
                             <joint name="castor_rigit_left_wheel" pos="0 0 0" axis="0 0 1" />
-                            <geom size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
+                            <geom name="castor_rigit_left_wheel" size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
                         </body>
                         <body name="castor_rigit_right_wheel" pos="-0.781511 -0.476891 -0.281038" quat="-3.89602e-06 -0.707107 0.707107 -1.29867e-06">
                             <inertial pos="0 0 0" mass="0.25" diaginertia="3e-05 2e-05 2e-05" />
                             <joint name="castor_rigit_right_wheel" pos="0 0 0" axis="0 0 1" />
-                            <geom size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
+                            <geom name="castor_rigit_right_wheel" size="0.0495 0.019945" pos="-5e-05 0 0" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
                         </body>
                         <body name="castor_swivel_left_fork" pos="-0.121559 -0.412179 0.281629" quat="0.499998 -0.5 0.500002 0.5">
                             <inertial pos="-0.00547 -0.01599 -0.02516" mass="0.05" diaginertia="2e-05 2e-05 2e-05" />
@@ -144,7 +144,7 @@
                             <body name="castor_swivel_left_wheel" pos="0.0003 -0.04105 -0.06471" quat="0.707105 0 0.707108 0">
                                 <inertial pos="0 0 -5e-05" mass="0.25" diaginertia="3e-05 2e-05 2e-05" />
                                 <joint name="castor_swivel_left_wheel" pos="0 0 0" axis="0 0 1" />
-                                <geom size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
+                                <geom name="castor_swivel_left_wheel" size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
                             </body>
                         </body>
                         <body name="castor_swivel_right_fork" pos="-0.120061 -0.416461 -0.280251" quat="0.499998 -0.5 0.500002 0.5">
@@ -154,7 +154,7 @@
                             <body name="castor_swivel_right_wheel" pos="0.00108 -0.04055 -0.06467" quat="0.707105 0 0.707108 0">
                                 <inertial pos="0 0 -5e-05" mass="0.25" diaginertia="3e-05 2e-05 2e-05" />
                                 <joint name="castor_swivel_right_wheel" pos="0 0 0" axis="0 0 1" />
-                                <geom size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
+                                <geom name="castor_swivel_right_wheel" size="0.0495 0.019945" type="cylinder" rgba="0.93333 0.76027 0.01116 1" />
                             </body>
                         </body>
                     </body>
@@ -274,4 +274,10 @@
             </body>
         </body>
     </worldbody>
+
+    <equality>
+        <joint joint1="carriage" joint2="lift_arm_lower" polycoef="0.000000 -1.000000  0 0 0" />
+        <joint joint1="lift_arm_upper" joint2="lift_arm_lower" polycoef="0.000000 1.000000  0 0 0" />
+        <joint joint1="lift_motor_joint" joint2="lift_arm_lower" polycoef="0.000000 -0.500000  0 0 0" />
+    </equality>
 </mujoco>

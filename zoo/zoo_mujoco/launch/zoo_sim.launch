@@ -3,7 +3,7 @@
     <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
         <arg name="config" value="$(find zoo_mujoco)/config/zoo.yaml" />
         <arg name="robot" value="$(find zoo_mujoco)/model/zoo.xml" />
-        <arg name="world" value="$(find zoo_mujoco)/model/world.xml" />
+        <arg name="world" value="$(find mujoco_world)/model/waterfront/world.xml" />
     </include>
 
 </launch>

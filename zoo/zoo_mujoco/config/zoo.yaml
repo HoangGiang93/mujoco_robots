@@ -3,6 +3,17 @@ robots:
   - mir_system
 
 joint_ignores:
+  - left_wheel_joint
+  - right_wheel_joint
+  - fl_caster_rotation_joint
+  - fl_caster_wheel_link
+  - fr_caster_rotation_joint
+  - fr_caster_wheel_joint
+  - bl_caster_rotation_joint
+  - bl_caster_wheel_link
+  - br_caster_rotation_joint
+  - br_caster_wheel_joint
+
   - carriage
   - lift_arm_lower
   - lift_arm_upper
