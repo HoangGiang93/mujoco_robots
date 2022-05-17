@@ -9,7 +9,7 @@ raytrace_range: 6
 footprint: [[-0.6, -0.4], [-0.6, 0.4], [0.6, 0.4], [0.6, -0.4]]
 
 inflation:
-  inflation_radius: 0.5
+  inflation_radius: 1.0
 
 obstacles_laser:
   observation_sources: laser_front laser_rear
