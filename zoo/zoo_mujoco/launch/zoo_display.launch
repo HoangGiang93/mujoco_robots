@@ -2,6 +2,10 @@
 
     <include file="$(find zoo_mujoco)/launch/zoo_sim.launch" />
 
+    <node pkg="tf" type="static_transform_publisher" name="odom_publisher" args="0 0 0 0 0 0 map odom 60" />
+
+    <node pkg="tf" type="static_transform_publisher" name="panda_hand_publisher" args="0 0 0 0 0 0 ridgeback_panda/panda_hand panda_hand 60" />
+
     <group ns="ridgeback_panda">
         <param name="robot_description" command="$(find xacro)/xacro $(find ridgeback_description)/urdf/ridgeback_panda.urdf" />
 
@@ -10,6 +14,10 @@
         </node>
 
         <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
+
+        <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
+            <remap from="/robot_description" to="robot_description" />
+        </include>
     </group>
 
     <group ns="mir_system">

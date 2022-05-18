@@ -5,14 +5,20 @@
         <arg name="namespace" value="$(arg namespace)" />
     </include>
 
+    <node pkg="tf" type="static_transform_publisher" name="odom_publisher" args="0 0 0 0 0 0 map odom 60" />
+
     <group ns="$(arg namespace)">
         <param name="robot_description" command="$(find xacro)/xacro '$(find ridgeback_description)/urdf/ridgeback_panda.urdf'" />
+
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
-        <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
 
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ridgeback_panda_mujoco)/rviz_config/rviz_config.rviz" />
+
+        <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
+            <remap from="/robot_description" to="robot_description" />
+        </include>
     </group>
 
 </launch>

@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /Polygon1
         - /Polygon2
+        - /InteractiveMarkers1
       Splitter Ratio: 0.27359551191329956
     Tree Height: 1520
   - Class: rviz/Selection
@@ -713,6 +714,30 @@ Visualization Manager:
       Topic: /ridgeback_panda/ridgeback_panda_move_base/global_costmap/footprint
       Unreliable: false
       Value: true
+    - Class: rviz/InteractiveMarkers
+      Enable Transparency: true
+      Enabled: true
+      Name: InteractiveMarkers
+      Show Axes: false
+      Show Descriptions: true
+      Show Visual Aids: false
+      Update Topic: /ridgeback_panda/eef_control/update
+      Value: true
+    - Class: rviz/TF
+      Enabled: false
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        {}
+      Update Interval: 0
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -734,7 +759,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 7.942889213562012
+      Distance: 9.3642578125
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -742,17 +767,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 1.6321539878845215
-        Y: 1.563476800918579
-        Z: 2.025587320327759
+        X: 0.5576372742652893
+        Y: 0.24274152517318726
+        Z: 1.1693575382232666
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 0.7297973036766052
       Target Frame: <Fixed Frame>
-      Yaw: 3.133561611175537
+      Yaw: 3.113568067550659
     Saved: ~
 Window Geometry:
   Displays:

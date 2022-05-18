@@ -3,6 +3,7 @@ robots:
   - mir_system
 
 joint_ignores:
+  # mir
   - left_wheel_joint
   - right_wheel_joint
   - fl_caster_rotation_joint
@@ -13,7 +14,7 @@ joint_ignores:
   - bl_caster_wheel_link
   - br_caster_rotation_joint
   - br_caster_wheel_joint
-
+  # hook + trailer
   - carriage
   - lift_arm_lower
   - lift_arm_upper
@@ -32,7 +33,7 @@ pub_object_marker_array_rate: 0.0
 
 pub_object_tf_rate: 60.0
 
-pub_object_state_array_rate: 60.0
+pub_object_state_array_rate: 0.0
 
 pub_world_joint_state_rate: 0.0
 
@@ -40,4 +41,6 @@ pub_base_pose_rate: 60.0
 
 spawn_and_destroy_objects_rate: 600.0
 
-root_frame_id: map
+spawn_object_count_per_cycle: 20
+
+root_frame_id: odom

@@ -5,6 +5,7 @@
 	<node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
 		joint_state_controller 
 		joint_trajectory_controller" />
+	<!-- <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" /> -->
 	<node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen" />
 
 </launch>
