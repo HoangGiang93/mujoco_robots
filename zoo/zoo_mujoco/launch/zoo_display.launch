@@ -11,6 +11,8 @@
 
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
             <param name="tf_prefix" value="ridgeback_panda" />
+            <param name="ignore_timestamp" value="true" />
+            <param name="use_tf_static" value="false" />
         </node>
 
         <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
@@ -25,6 +27,8 @@
 
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
             <param name="tf_prefix" value="mir_system" />
+            <param name="ignore_timestamp" value="true" />
+            <param name="use_tf_static" value="false" />
         </node>
 
         <include file="$(find mir_system_control)/launch/mir_system_control.launch" />

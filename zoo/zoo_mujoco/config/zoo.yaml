@@ -27,13 +27,22 @@ joint_ignores:
   - castor_swivel_right_fork
   - castor_swivel_right_wheel
 
+  # ridgeback
+  - front_rocker
+  - front_left_wheel
+  - front_right_wheel
+  - rear_left_wheel
+  - rear_right_wheel
+
+max_time_step: 0.02
+
 add_odom_joints: true
 
-pub_object_marker_array_rate: 0.0
+pub_object_marker_array_rate: 60.0
 
-pub_object_tf_rate: 60.0
+pub_object_tf_rate: 10.0
 
-pub_object_state_array_rate: 60.0
+pub_object_state_array_rate: 0.0
 
 pub_world_joint_state_rate: 0.0
 
