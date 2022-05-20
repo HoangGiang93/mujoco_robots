@@ -1,7 +1,6 @@
 <mujoco model="zoo">
     <compiler angle="radian" />
     <size njmax="5000" nconmax="1000" />
-    <default />
     <asset>
         <mesh name="body-collision" file="zoo/meshes/body-collision.stl" />
         <mesh name="top" file="zoo/meshes/top.stl" />
@@ -259,11 +258,11 @@
                                         <geom pos="0 0 0.107" quat="0.92388 0 0 -0.382683" type="mesh" mesh="hand" />
                                         <body name="panda_leftfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
                                             <joint name="panda_finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0 0.04" />
-                                            <geom type="mesh" mesh="finger" />
+                                            <geom type="mesh" mesh="finger" condim="4" solimp="0.99 0.99 0" solref="0.01 1" />
                                         </body>
                                         <body name="panda_rightfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683">
                                             <joint name="panda_finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" limited="true" range="0 0.04" />
-                                            <geom quat="0 0 0 1" type="mesh" mesh="finger" />
+                                            <geom quat="0 0 0 1" type="mesh" mesh="finger" condim="4" solimp="0.99 0.99 0" solref="0.01 1" />
                                         </body>
                                     </body>
                                 </body>
@@ -279,5 +278,6 @@
         <joint joint1="carriage" joint2="lift_arm_lower" polycoef="0.000000 -1.000000  0 0 0" />
         <joint joint1="lift_arm_upper" joint2="lift_arm_lower" polycoef="0.000000 1.000000  0 0 0" />
         <joint joint1="lift_motor_joint" joint2="lift_arm_lower" polycoef="0.000000 -0.500000  0 0 0" />
+        <joint joint1="panda_finger_joint1" joint2="panda_finger_joint2" polycoef="0.000000 1.000000  0 0 0" />
     </equality>
 </mujoco>
