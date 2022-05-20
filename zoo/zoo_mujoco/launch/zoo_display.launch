@@ -2,7 +2,7 @@
 
     <include file="$(find zoo_mujoco)/launch/zoo_sim.launch" />
 
-    <node pkg="tf" type="static_transform_publisher" name="odom_publisher" args="0 0 0 0 0 0 map odom 60" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_publisher" args="0 0 0 0 0 0 map odom" />
 
     <node pkg="tf" type="static_transform_publisher" name="panda_hand_publisher" args="0 0 0 0 0 0 ridgeback_panda/panda_hand panda_hand 60" />
 
