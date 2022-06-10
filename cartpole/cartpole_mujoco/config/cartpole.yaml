@@ -1,0 +1,19 @@
+joint_ignores:
+  - cart_to_pole_x
+  - pole_x_to_pole
+
+add_odom_joints: false
+
+pub_object_marker_array_rate: 0.0
+
+pub_object_tf_rate: 0.0
+
+pub_object_state_array_rate: 0.0
+
+pub_world_joint_state_rate: 0.0
+
+pub_base_pose_rate: 0.0
+
+spawn_and_destroy_objects_rate: 0.0
+
+root_frame_id: map

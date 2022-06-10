@@ -1,0 +1,28 @@
+<mujoco model="physics">
+    <compiler angle="radian" meshdir="/home/giangnguyen/Workspace/mujoco_ws/src/mujoco_robots/cartpole/cartpole_mujoco/model/cartpole/meshes/"/>
+    <size njmax="500" nconmax="100"/>
+    <default/>
+    <worldbody>
+        <body name="cartpole">
+            <body name="odom_x" pos="0 0 0">
+                <inertial pos="0 0 0" mass="0.01" diaginertia="0.01 0.01 0.01"/>
+                <joint name="odom_x_joint" pos="0 0 0" axis="1 0 0" type="slide" limited="true" range="-1 1"/>
+                <body name="cart" pos="0 0 0">
+                    <inertial pos="0 0 0" mass="1" diaginertia="1 1 1"/>
+                    <joint name="odom_y_joint" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="-1 1"/>
+                    <geom size="0.1" rgba="0 0 0.8 1"/>
+                    <body name="pole_x" pos="0 0 0">
+                        <inertial pos="0 0 0" mass="0.01" diaginertia="0.01 0.01 0.01"/>
+                        <joint name="cart_to_pole_x" pos="0 0 0" axis="1 0 0" limited="true" range="-6.28 6.28"/>
+                        <body name="pole" pos="0 0 0">
+                            <inertial pos="0 0 0.6" mass="10" diaginertia="1 1 1"/>
+                            <joint name="pole_x_to_pole" pos="0 0 0" axis="0 1 0" limited="true" range="-6.28 6.28"/>
+                            <geom size="0.025 0.025 0.5" pos="0 0 0.6" type="box" rgba="1 1 1 1"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <equality/>
+</mujoco>

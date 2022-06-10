@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="namespace" default="cartpole" />
+  <arg name="config" default="$(find cartpole_mujoco)/config/cartpole.yaml" />
+
+  <group ns="$(arg namespace)">
+      <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+          <arg name="config" value="$(arg config)" />
+          <arg name="robot" value="$(find cartpole_mujoco)/model/cartpole.xml" />
+          <arg name="world" value="$(find cartpole_mujoco)/model/world.xml" />
+      </include>
+  </group>
+
+</launch>
