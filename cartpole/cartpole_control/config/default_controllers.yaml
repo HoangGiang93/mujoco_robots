@@ -1,0 +1,21 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 60
+
+odom_x_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: odom_x_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+odom_y_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: odom_y_joint
+  pid: { p: 100, i: 1, d: 0.1 }
+
+odom_x_joint_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: odom_x_joint
+
+odom_y_joint_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: odom_y_joint

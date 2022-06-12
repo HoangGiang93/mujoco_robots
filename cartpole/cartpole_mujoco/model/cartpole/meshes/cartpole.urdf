@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="physics">
     <mujoco>
-        <compiler meshdir="/home/giangnguyen/Workspace/mujoco_ws/src/mujoco_robots/cartpole/cartpole_mujoco/model/cartpole/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
+        <compiler meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/cartpole/cartpole_mujoco/model/cartpole/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
     </mujoco>
     <link name="root"/>
     <link name="odom_x">
@@ -35,7 +35,7 @@
     <link name="pole">
         <visual>
             <geometry>
-                <box size="0.05 0.05 1.0"/>
+                <cylinder radius="0.05" length="1.0"/>
             </geometry>
             <origin xyz="0 0 0.6"/>
             <material name="white">
@@ -49,7 +49,7 @@
         </inertial>
         <collision>
             <geometry>
-                <box size="0.05 0.05 1.0"/>
+                <cylinder radius="0.05" length="1.0"/>
             </geometry>
             <origin xyz="0 0 0.6"/>
         </collision>
@@ -75,18 +75,16 @@
         <child link="cart"/>
         <limit effort="100" lower="-1" upper="1" velocity="1"/>
     </joint>
-    <joint name="cart_to_pole_x" type="revolute">
+    <joint name="cart_to_pole_x" type="continuous">
         <axis xyz="1 0 0"/>
         <origin xyz="0.0 0.0 0.0"/>
         <parent link="cart"/>
         <child link="pole_x"/>
-        <limit effort="100" lower="-6.28" upper="6.28" velocity="3.14"/>
     </joint>
-    <joint name="pole_x_to_pole" type="revolute">
+    <joint name="pole_x_to_pole" type="continuous">
         <axis xyz="0 1 0"/>
         <origin xyz="0.0 0.0 0"/>
         <parent link="pole_x"/>
         <child link="pole"/>
-        <limit effort="100" lower="-6.28" upper="6.28" velocity="3.14"/>
     </joint>
 </robot>

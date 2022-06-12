@@ -1,0 +1,16 @@
+<launch>
+
+    <arg name="namespace" default="cartpole" />
+    <include file="$(find cartpole_mujoco)/launch/cartpole_sim.launch">
+        <arg name="namespace" value="$(arg namespace)" />
+    </include>
+
+    <group ns="$(arg namespace)">
+        <param name="robot_description" command="$(find xacro)/xacro $(find cartpole_mujoco)/urdf/cartpole.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+        <include file="$(find cartpole_control)/launch/cartpole_effort_control.launch" />
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cartpole_mujoco)/rviz_config/rviz_config.rviz" />
+    </group>
+
+</launch>
