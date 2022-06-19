@@ -34,9 +34,15 @@ joint_ignores:
   - rear_left_wheel
   - rear_right_wheel
 
-max_time_step: 0.02
+max_time_step: 0.005
 
-add_odom_joints: true
+add_odom_joints:
+  lin_odom_x_joint: true
+  lin_odom_y_joint: true
+  lin_odom_z_joint: true
+  ang_odom_x_joint: false
+  ang_odom_y_joint: false
+  ang_odom_z_joint: true
 
 pub_object_marker_array_rate: 0.0
 

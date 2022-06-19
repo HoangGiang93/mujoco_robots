@@ -9,7 +9,7 @@
         <param name="robot_description" command="$(find xacro)/xacro $(find cartpole_mujoco)/urdf/cartpole.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-        <include file="$(find cartpole_control)/launch/cartpole_effort_control.launch" />
+        <include file="$(find cartpole_control)/launch/cartpole_vel_control.launch" />
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cartpole_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 
