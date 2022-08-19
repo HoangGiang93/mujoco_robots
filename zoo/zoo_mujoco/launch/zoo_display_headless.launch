@@ -1,0 +1,37 @@
+<launch>
+
+    <include file="$(find zoo_mujoco)/launch/zoo_sim_headless.launch" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_publisher" args="0 0 0 0 0 0 map odom" />
+
+    <node pkg="tf" type="static_transform_publisher" name="panda_hand_publisher" args="0 0 0 0 0 0 ridgeback_panda/panda_hand panda_hand 60" />
+
+    <group ns="ridgeback_panda">
+        <param name="robot_description" command="$(find xacro)/xacro $(find ridgeback_description)/urdf/ridgeback_panda.urdf" />
+
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+            <param name="tf_prefix" value="ridgeback_panda" />
+            <param name="ignore_timestamp" value="true" />
+            <param name="use_tf_static" value="false" />
+        </node>
+
+        <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
+
+        <!-- <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
+            <remap from="/robot_description" to="robot_description" />
+        </include> -->
+    </group>
+
+    <group ns="mir_system">
+        <param name="robot_description" command="$(find xacro)/xacro $(find mir_system_description)/urdf/mir_system.xacro" />
+
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+            <param name="tf_prefix" value="mir_system" />
+            <param name="ignore_timestamp" value="true" />
+            <param name="use_tf_static" value="false" />
+        </node>
+
+        <include file="$(find mir_system_control)/launch/mir_system_control.launch" />
+    </group>
+
+</launch>

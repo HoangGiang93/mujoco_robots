@@ -7,6 +7,6 @@
 		joint_trajectory_controller
 		gripper_controller" />
 	<!-- <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" /> -->
-	<node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen" />
+	<!-- <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen" /> -->
 
 </launch>
