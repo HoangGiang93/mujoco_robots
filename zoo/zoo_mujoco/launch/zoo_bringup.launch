@@ -1,0 +1,12 @@
+<launch>
+
+	<!-- rosbridge -->
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+		<arg name="port" value="9393" />
+	</include>
+
+	<include file="$(find zoo_mujoco)/launch/zoo_display_headless.launch" />
+
+  <include file="$(find zoo_mujoco)/launch/zoo_move_base.launch" />
+	
+</launch>
