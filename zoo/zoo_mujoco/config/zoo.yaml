@@ -34,7 +34,7 @@ joint_ignores:
   - rear_left_wheel
   - rear_right_wheel
 
-max_time_step: 0.005
+max_time_step: 0.01
 
 add_odom_joints:
   lin_odom_x_joint: true
