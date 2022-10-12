@@ -1,5 +1,6 @@
 <launch>
-
+    <node pkg="tf" type="static_transform_publisher" name="fake_odometry" output="screen" args="0 0 0 0 0 0 1 map odom 10" />
+    
     <arg name="namespace" default="hsrb4s" />
     <include file="$(find hsr_mujoco)/launch/hsrb4s_sim.launch">
         <arg name="namespace" value="$(arg namespace)" />

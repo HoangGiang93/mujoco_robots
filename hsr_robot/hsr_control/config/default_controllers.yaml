@@ -63,14 +63,12 @@ arm_trajectory_controller:
     - arm_roll_joint
     - wrist_flex_joint
     - wrist_roll_joint
-    - torso_lift_joint
   gains:
     arm_flex_joint: {p: 2000, i: 100, d: 50, i_clamp: 10}
     arm_lift_joint: {p: 2000, i: 100, d: 50, i_clamp: 10}
     arm_roll_joint: {p: 2000, i: 100, d: 50, i_clamp: 10}
     wrist_flex_joint: {p: 2000, i: 100, d: 50, i_clamp: 10}
     wrist_roll_joint: {p: 2000, i: 100, d: 50, i_clamp: 10}
-    torso_lift_joint: {p: 2000, i: 100, d: 50, i_clamp: 10}
   constraints:
     stopped_velocity_tolerance: 0
 
