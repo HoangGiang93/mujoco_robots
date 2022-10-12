@@ -1,0 +1,17 @@
+<launch>
+
+    <arg name="namespace" default="hsrb4s" />
+    <include file="$(find hsr_mujoco)/launch/hsrb4s_sim.launch">
+        <arg name="namespace" value="$(arg namespace)" />
+    </include>
+
+    <group ns="$(arg namespace)">
+        <param name="robot_description" command="$(find xacro)/xacro $(find hsr_description)/robots/hsrb4s.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+        <include file="$(find hsr_control)/launch/hsr_follow_joint_trajectory_controller.launch" />
+        <!-- <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" /> -->
+        <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hsr_mujoco)/rviz_config/rviz_config.rviz" /> -->
+    </group>
+
+</launch>
