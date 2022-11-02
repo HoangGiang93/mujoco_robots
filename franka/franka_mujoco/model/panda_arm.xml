@@ -64,4 +64,9 @@
             </body>
         </body>
     </worldbody>
+
+    <sensor>
+        <force site="endeff" />
+        <torque site="endeff" />
+    </sensor>
 </mujoco>
