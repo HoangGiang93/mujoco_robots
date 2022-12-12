@@ -1,5 +1,4 @@
 <launch>
-  	<node pkg="tf" type="static_transform_publisher" name="fake_odometry" output="screen" args="0 0 0 0 0 0 1 map odom 10" />
 
 	<!-- Load controller manager -->
 	<rosparam command="load" file="$(find hsr_control)/config/default_controllers.yaml" />
