@@ -1,0 +1,10 @@
+<launch>
+
+	<!-- rosbridge -->
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+		<arg name="port" value="9393" />
+	</include>
+
+	<include file="$(find hsr_mujoco)/launch/hsrb4s_display_with_apartment_headless.launch" />
+	
+</launch>
