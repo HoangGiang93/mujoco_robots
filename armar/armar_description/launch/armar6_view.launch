@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find armar_description)/launch/armar6_upload.launch" />
+
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find armar_description)/rviz_config/rviz_config.rviz" />
+
+</launch>

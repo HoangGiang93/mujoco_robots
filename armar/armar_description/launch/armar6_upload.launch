@@ -1,0 +1,5 @@
+<launch>
+
+  <param name="robot_description" command="xacro '$(find armar_description)/urdf/armar6.urdf'" />
+  
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+
+    <arg name="namespace" default="armar6" />
+
+    <group ns="$(arg namespace)">
+        <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="config" value="$(find armar_mujoco)/config/armar6.yaml" />
+            <arg name="robot" value="$(find armar_description)/urdf/armar6.urdf" />
+            <arg name="world" value="$(find ur_mujoco)/model/world.xml" />
+            <arg name="use_urdf" value="true" />
+        </include>
+    </group>
+
+</launch>

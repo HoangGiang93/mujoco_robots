@@ -1,0 +1,74 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 60
+
+torso_controller:
+  type: "effort_controllers/JointTrajectoryController"
+  joints:
+    - torso_joint
+  gains:
+    torso_joint: &pid_gains {p: 2000, i: 100, d: 50}
+
+head_controller:
+  type: "effort_controllers/JointTrajectoryController"
+  joints:
+    - middle_neck_joint
+    - upper_neck_joint
+  gains:
+    middle_neck_joint: *pid_gains
+    upper_neck_joint: *pid_gains
+
+arm_left_controller:
+  type: "effort_controllers/JointTrajectoryController"
+  joints:
+    - arm_t12_joint_r0
+    - arm_t23_joint_r0
+    - arm_t34_joint_r0
+    - arm_t45_joint_r0
+    - arm_t56_joint_r0
+    - arm_t67_joint_r0
+    - arm_t78_joint_r0
+    - arm_t8_joint_r0 
+  gains:
+    arm_t12_joint_r0: *pid_gains
+    arm_t23_joint_r0: *pid_gains
+    arm_t34_joint_r0: *pid_gains
+    arm_t45_joint_r0: *pid_gains
+    arm_t56_joint_r0: *pid_gains
+    arm_t67_joint_r0: *pid_gains
+    arm_t78_joint_r0: *pid_gains
+    arm_t8_joint_r0: *pid_gains
+
+arm_right_controller:
+  type: "effort_controllers/JointTrajectoryController"
+  joints:
+    - arm_t12_joint_r1
+    - arm_t23_joint_r1
+    - arm_t34_joint_r1
+    - arm_t45_joint_r1
+    - arm_t56_joint_r1
+    - arm_t67_joint_r1
+    - arm_t78_joint_r1
+    - arm_t8_joint_r1
+  gains:
+    arm_t12_joint_r1: *pid_gains
+    arm_t23_joint_r1: *pid_gains
+    arm_t34_joint_r1: *pid_gains
+    arm_t45_joint_r1: *pid_gains
+    arm_t56_joint_r1: *pid_gains
+    arm_t67_joint_r1: *pid_gains
+    arm_t78_joint_r1: *pid_gains
+    arm_t8_joint_r1: *pid_gains
+
+# gripper_left_left_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_left_left_finger_joint
+# gripper_left_right_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_left_right_finger_joint
+# gripper_right_left_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_right_left_finger_joint
+# gripper_right_right_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_right_right_finger_joint
