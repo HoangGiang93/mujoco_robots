@@ -1,0 +1,23 @@
+global_frame: map
+robot_base_frame: base_footprint
+
+update_frequency: 5.0
+publish_frequency: 5.0
+
+obstacle_range: 5
+raytrace_range: 6
+footprint: [[-0.6, -0.4], [-0.6, 0.4], [0.6, 0.4], [0.6, -0.4]]
+
+inflation:
+  inflation_radius: 0.4
+
+obstacles_laser:
+  observation_sources: base_scan
+  base_scan:
+    {
+      sensor_frame: base_range_sensor_link,
+      data_type: LaserScan,
+      topic: hsrb/base_scan,
+      marking: true,
+      clearing: true,
+    }

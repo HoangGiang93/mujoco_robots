@@ -1,0 +1,29 @@
+<launch>
+
+  <arg name="namespace" default="hsrb4s" />
+  <arg name="base_global_planner" default="navfn/NavfnROS" />
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS" />
+
+  <arg name="navigation_map" default="$(find iai_apartment)/maps/apartment_unreal_10cm.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg navigation_map)" />
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <remap from="/odom" to="/$(arg namespace)/base_footprint" />
+    <remap from="/cmd_vel" to="/$(arg namespace)/cmd_vel" />
+    <param name="base_global_planner" value="$(arg base_global_planner)" />
+    <param name="base_local_planner" value="$(arg base_local_planner)" />
+
+    <rosparam file="$(find hsr_mujoco)/config/move_base_params.yaml" command="load" />
+
+    <!-- observation sources located in costmap_common.yaml -->
+    <rosparam file="$(find hsr_mujoco)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find hsr_mujoco)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+    <!-- local costmap, needs size -->
+    <rosparam file="$(find hsr_mujoco)/config/costmap_local_params.yaml" command="load" />
+
+    <!-- static global costmap, static map provides size -->
+    <rosparam file="$(find hsr_mujoco)/config/costmap_global_params.yaml" command="load" />
+  </node>
+
+</launch>
