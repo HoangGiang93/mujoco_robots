@@ -7,7 +7,7 @@
 
 	<include file="$(find hsr_mujoco)/launch/hsrb4s_display_with_apartment_headless.launch" />
 
-	<include file="$(find hsr_mujoco)/launch/hsrb4s_display_move_base.launch" />
+	<include file="$(find hsr_mujoco)/launch/hsrb4s_move_base.launch" />
 
 	<include file="$(find unreal_vision_bridge)/launch/unreal_vision_bridge.launch" />
 	
