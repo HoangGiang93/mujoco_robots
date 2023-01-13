@@ -1,12 +1,13 @@
 <launch>
 
   <arg name="namespace" default="tiago" />
+  <arg name="world" default="$(find tiago_mujoco)/model/world.xml" />
 
   <group ns="$(arg namespace)">
     <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
       <arg name="config" value="$(find tiago_mujoco)/config/tiago.yaml" />
       <arg name="robot" value="$(find tiago_mujoco)/model/tiago.xml" />
-      <arg name="world" value="$(find tiago_mujoco)/model/world.xml" />
+      <arg name="world" value="$(arg world)" />
     </include>
   </group>
 

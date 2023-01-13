@@ -102,15 +102,39 @@ arm_right_controller:
     arm_right_7_joint:
       goal: 0.02
 
-gripper_left_left_finger_effort_controller:
-  type: effort_controllers/JointEffortController
+gripper_left_left_finger:
+  type: effort_controllers/GripperActionController
   joint: gripper_left_left_finger_joint
-gripper_left_right_finger_effort_controller:
-  type: effort_controllers/JointEffortController
+  gains:
+    gripper_left_left_finger_joint: *pid_gains
+
+gripper_left_right_finger:
+  type: effort_controllers/GripperActionController
   joint: gripper_left_right_finger_joint
-gripper_right_left_finger_effort_controller:
-  type: effort_controllers/JointEffortController
+  gains:
+    gripper_left_right_finger_joint: *pid_gains
+
+gripper_right_left_finger:
+  type: effort_controllers/GripperActionController
   joint: gripper_right_left_finger_joint
-gripper_right_right_finger_effort_controller:
-  type: effort_controllers/JointEffortController
+  gains:
+    gripper_right_left_finger_joint: *pid_gains
+
+gripper_right_right_finger:
+  type: effort_controllers/GripperActionController
   joint: gripper_right_right_finger_joint
+  gains:
+    gripper_right_right_finger_joint: *pid_gains
+
+# gripper_left_left_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_left_left_finger_joint
+# gripper_left_right_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_left_right_finger_joint
+# gripper_right_left_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_right_left_finger_joint
+# gripper_right_right_finger_effort_controller:
+#   type: effort_controllers/JointEffortController
+#   joint: gripper_right_right_finger_joint
