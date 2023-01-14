@@ -3,6 +3,7 @@
     <arg name="namespace" default="tiago" />
     <include file="$(find tiago_mujoco)/launch/tiago_sim.launch">
         <arg name="namespace" value="$(arg namespace)" />
+        <arg name="config" default="$(find tiago_mujoco)/config/tiago_in_apartment.yaml" />
         <arg name="world" value="$(find mujoco_world)/model/iai_apartment/iai_apartment_with_window4.xml" />
     </include>
 
