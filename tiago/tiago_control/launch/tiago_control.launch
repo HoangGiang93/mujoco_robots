@@ -13,6 +13,4 @@
 		gripper_right_right_finger
 		gripper_right_left_finger" />
 
-	<!-- <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" /> -->
-
 </launch>

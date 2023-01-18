@@ -25,6 +25,7 @@
 
         <include file="$(find tiago_control)/launch/tiago_control.launch" />
         <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+        <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" />
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tiago_mujoco)/rviz_config/rviz_config2.rviz" />
     </group>
 

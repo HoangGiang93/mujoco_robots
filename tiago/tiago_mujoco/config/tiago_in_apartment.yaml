@@ -1,4 +1,4 @@
-pos_init: 
+pose_init: 
   tiago: [12.5, 2.5, 0.0, 0.0, 0.0, 3.1415]
 
 add_odom_joints: true
