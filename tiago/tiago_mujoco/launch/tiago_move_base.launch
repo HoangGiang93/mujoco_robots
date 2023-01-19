@@ -5,7 +5,12 @@
   <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS" />
 
   <arg name="navigation_map" default="$(find iai_apartment)/maps/apartment_unreal_10cm.yaml" />
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg navigation_map)" />
+  	<node name="map_server" pkg="map_server" type="map_server" args="$(arg navigation_map)" />
+
+	<node pkg="amcl" type="amcl" name="amcl">
+		<rosparam file="$(find tiago_mujoco)/config/amcl_params.yaml" command="load" />
+		<remap from="scan" to="/tiago/base_laser" />
+	</node>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <remap from="/odom" to="/$(arg namespace)/base_footprint" />
