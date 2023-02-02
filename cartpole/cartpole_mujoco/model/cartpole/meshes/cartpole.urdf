@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="physics">
     <mujoco>
-        <compiler meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/cartpole/cartpole_mujoco/model/cartpole/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
+        <compiler meshdir="cartpole/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
     </mujoco>
     <link name="root"/>
     <link name="odom_x">

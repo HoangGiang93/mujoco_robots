@@ -5,7 +5,7 @@
 <!-- =================================================================================== -->
 <robot name="iai_donbot" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor">
     <mujoco>
-        <compiler meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/iai_robots/iai_robots_mujoco/model/iai_donbot/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
+        <compiler meshdir="iai_donbot/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
     </mujoco>
     <material name="grey">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>

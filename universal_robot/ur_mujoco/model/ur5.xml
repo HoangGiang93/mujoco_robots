@@ -1,5 +1,5 @@
 <mujoco model="ur5">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/universal_robot/ur_mujoco/model/ur5/meshes/" />
+    <compiler angle="radian" meshdir="ur5/meshes/" />
     <size njmax="500" nconmax="100" />
     <default />
     <asset>

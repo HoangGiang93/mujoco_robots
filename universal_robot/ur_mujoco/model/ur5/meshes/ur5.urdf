@@ -5,7 +5,7 @@
 <!-- =================================================================================== -->
 <robot name="ur5">
     <mujoco>
-        <compiler meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/universal_robot/ur_mujoco/model/ur5/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
+        <compiler meshdir="ur5/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
     </mujoco>
     <!-- common stuff -->
     <!-- <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" /> -->
