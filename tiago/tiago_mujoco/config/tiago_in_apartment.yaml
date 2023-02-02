@@ -29,4 +29,4 @@ pub_base_pose_rate: 60.0
 
 spawn_and_destroy_objects_rate: 60.0
 
-root_frame_id: odom
+root_frame_id: map

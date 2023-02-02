@@ -4,7 +4,7 @@
 <!-- |EDITING THIS FILE BY HAND IS NOT RECOMMENDED | -->
 <!-- =================================================================================== -->
 <!--Copyright (c) 2019, PAL Robotics, S.L.All rights reserved.This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter toCreative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.-->
-<robot name="tiago_dual">
+<robot name="tiago">
   <material name="Hey5DarkGrey">
     <color rgba="0.1 0.1 0.1 1.0" />
   </material> <!--TODO: Check-->

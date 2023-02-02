@@ -4,7 +4,7 @@
 <!-- |EDITING THIS FILE BY HAND IS NOT RECOMMENDED | -->
 <!-- =================================================================================== -->
 <!--Copyright (c) 2019, PAL Robotics, S.L.All rights reserved.This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter toCreative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.-->
-<robot name="tiago_dual">
+<robot name="tiago">
   <contact>
     <exclude body1="arm_left_7_link" body2="gripper_left_left_finger_link" />
     <exclude body1="arm_left_7_link" body2="gripper_left_right_finger_link" />

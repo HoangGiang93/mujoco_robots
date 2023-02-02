@@ -1,4 +1,4 @@
-<mujoco model="tiago_dual">
+<mujoco model="tiago">
     <compiler angle="radian" meshdir="tiago/meshes/" />
     <option timestep="0.005" />
     <size njmax="1000" nconmax="400" />
