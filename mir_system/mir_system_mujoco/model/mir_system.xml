@@ -1,5 +1,5 @@
 <mujoco model="mir_system">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/mir_system/mir_system_mujoco/model/mir_system/meshes/" />
+    <compiler angle="radian" meshdir="mir_system/meshes/" />
     <size njmax="500" nconmax="100" />
     <default />
     <asset>

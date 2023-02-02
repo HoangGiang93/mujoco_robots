@@ -1,5 +1,5 @@
 <mujoco model="ridgeback">
-    <compiler angle="radian" meshdir="/home/giang/Workspace/mujoco_ws/src/mujoco_robots/ridgeback_panda/ridgeback_panda_mujoco/model/ridgeback_panda/meshes/"/>
+    <compiler angle="radian" meshdir="ridgeback_panda/meshes/"/>
     <size njmax="500" nconmax="100"/>
     <default/>
     <asset>

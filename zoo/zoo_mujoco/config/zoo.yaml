@@ -2,6 +2,10 @@ robots:
   - ridgeback_panda
   - mir_system
 
+pose_init:
+  ridgeback_panda: [0, 1, 0, 0, 0, 0]
+  mir_system: [0, 0, 0, 0, 0, 0]
+
 joint_ignores:
   # mir
   - left_wheel_joint
@@ -44,20 +48,21 @@ add_odom_joints:
   ang_odom_y_joint: false
   ang_odom_z_joint: true
 
-
-
 pub_tf:
   world_bodies_rate: 10.0
+  spawned_object_bodies_rate: 0.0
 
 pub_object_state_array:
-  world_bodies_rate:  60.0
+  world_bodies_rate:  10.0
+  spawned_object_bodies_rate: 0.0
 
 pub_joint_states:
   world_bodies_rate:  0.0
+  spawned_object_bodies_rate: 0.0
 
-pub_base_pose_rate: 60.0
+pub_base_pose_rate: 10.0
 
-spawn_and_destroy_objects_rate: 600.0
+spawn_and_destroy_objects_rate: 60.0
 
 spawn_object_count_per_cycle: 20
 

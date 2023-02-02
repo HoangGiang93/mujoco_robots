@@ -16,9 +16,9 @@
 
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ridgeback_panda_mujoco)/rviz_config/rviz_config.rviz" />
 
-        <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
+        <!-- <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
             <remap from="/robot_description" to="robot_description" />
-        </include>
+        </include> -->
     </group>
 
 </launch>

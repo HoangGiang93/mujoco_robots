@@ -17,9 +17,9 @@
 
         <include file="$(find ridgeback_panda_control)/launch/ridgeback_panda_control.launch" />
 
-        <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
+        <!-- <include file="$(find giskardpy)/launch/giskardpy_ridgeback_panda.launch">
             <remap from="/robot_description" to="robot_description" />
-        </include>
+        </include> -->
     </group>
 
     <group ns="mir_system">
