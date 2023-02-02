@@ -44,13 +44,16 @@ add_odom_joints:
   ang_odom_y_joint: false
   ang_odom_z_joint: true
 
-pub_object_marker_array_rate: 0.0
 
-pub_object_tf_rate: 10.0
 
-pub_object_state_array_rate: 60.0
+pub_tf:
+  world_bodies_rate: 10.0
 
-pub_world_joint_states_rate: 0.0
+pub_object_state_array:
+  world_bodies_rate:  60.0
+
+pub_joint_states:
+  world_bodies_rate:  0.0
 
 pub_base_pose_rate: 60.0
 

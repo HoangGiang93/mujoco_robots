@@ -16,13 +16,17 @@ joint_inits:
 
 add_odom_joints: false
 
-pub_object_marker_array_rate: 60.0
+pub_object_marker_array:
+  world_bodies_rate:  60.0
 
-pub_object_tf_rate: 60.0
+pub_tf:
+  world_bodies_rate: 60.0
 
-pub_object_state_array_rate: 60.0
+pub_object_state_array:
+  world_bodies_rate:  60.0
 
-pub_world_joint_states_rate: 0.0
+pub_joint_states:
+  world_bodies_rate:  0.0
 
 pub_base_pose_rate: 60.0
 
