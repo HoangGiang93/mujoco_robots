@@ -2,7 +2,7 @@
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
     <worldbody>
-        <body name="panda_arm">
+        <body name="panda">
             <geom size="0.09 0.015" pos="-0.075 0 0.06" quat="0.707107 0 0.707107 0" type="cylinder" />
             <geom size="0.09" pos="-0.06 0 0.06" />
             <geom size="0.09" pos="-0.09 0 0.06" />
