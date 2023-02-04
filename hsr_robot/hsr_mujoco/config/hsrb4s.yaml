@@ -1,8 +1,8 @@
+robots: [hsrb4s]
+
 max_time_step: 0.005
 
 add_odom_joints: true
-
-
 
 pub_tf:
   world_bodies_rate: 0.0
