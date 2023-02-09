@@ -22,3 +22,6 @@
 [submodule "tiago/iai_tiago"]
 	path = tiago/iai_tiago
 	url = git@github.com:code-iai/iai_tiago.git
+[submodule "armar/armar_description/models"]
+	path = armar/armar_description/models
+	url = https://git.h2t.iar.kit.edu/sw/armarx-integration/robots/armar6/models.git
