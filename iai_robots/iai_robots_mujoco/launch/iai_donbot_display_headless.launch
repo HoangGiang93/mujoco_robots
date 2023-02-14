@@ -1,0 +1,17 @@
+<launch>
+
+    <arg name="namespace" default="iai_donbot" />
+    <include file="$(find iai_robots_mujoco)/launch/iai_donbot_sim_headless.launch">
+        <arg name="namespace" value="$(arg namespace)" />
+    </include>
+
+    <group ns="$(arg namespace)">
+        <param name="robot_description" command="$(find xacro)/xacro '$(find iai_robots_mujoco)/model/iai_donbot.urdf'" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+        <include file="$(find iai_robots_control)/launch/iai_donbot_traj_control.launch" />
+
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find iai_robots_mujoco)/rviz_config/rviz_config.rviz" />
+    </group>
+
+</launch>
