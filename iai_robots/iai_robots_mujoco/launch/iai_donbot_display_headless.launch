@@ -10,8 +10,6 @@
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find iai_robots_control)/launch/iai_donbot_traj_control.launch" />
-
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find iai_robots_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 
 </launch>
