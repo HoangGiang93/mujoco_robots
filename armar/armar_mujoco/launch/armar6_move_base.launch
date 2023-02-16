@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="namespace" default="tiago" />
+  <arg name="namespace" default="armar6" />
   <arg name="base_global_planner" default="navfn/NavfnROS" />
   <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS" />
 
