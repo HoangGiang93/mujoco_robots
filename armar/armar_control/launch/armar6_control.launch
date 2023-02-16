@@ -9,6 +9,4 @@
 		arm_left_controller
 		arm_right_controller" />
 
-	<node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" />
-
 </launch>

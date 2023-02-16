@@ -1,3 +1,5 @@
+robots: [armar6]
+
 add_odom_joints: true
 
 pub_object_marker_array_rate: 0.0

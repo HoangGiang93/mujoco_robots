@@ -8,7 +8,7 @@
             <arg name="robot" value="$(find armar_description)/urdf/armar6_clean.urdf" />
             <arg name="world" value="$(find ur_mujoco)/model/world.xml" />
             <arg name="use_urdf" value="true" />
-            <arg name="disable_parent_child_collision_level" value="3" />
+            <arg name="disable_parent_child_collision_level" value="2" />
         </include>
     </group>
 

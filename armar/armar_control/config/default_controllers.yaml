@@ -5,60 +5,60 @@ joint_state_controller:
 torso_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
-    - torso_joint
+    - TorsoJoint
   gains:
-    torso_joint: &pid_gains {p: 2000, i: 100, d: 50}
+    TorsoJoint: &pid_gains {p: 2000, i: 100, d: 50}
 
 head_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
-    - middle_neck_joint
-    - upper_neck_joint
+    - Neck_1_Yaw
+    - Neck_2_Pitch
   gains:
-    middle_neck_joint: *pid_gains
-    upper_neck_joint: *pid_gains
+    Neck_1_Yaw: *pid_gains
+    Neck_2_Pitch: *pid_gains
 
 arm_left_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
-    - arm_t12_joint_r0
-    - arm_t23_joint_r0
-    - arm_t34_joint_r0
-    - arm_t45_joint_r0
-    - arm_t56_joint_r0
-    - arm_t67_joint_r0
-    - arm_t78_joint_r0
-    - arm_t8_joint_r0 
+    - ArmL1_Cla1
+    - ArmL2_Sho1
+    - ArmL3_Sho2
+    - ArmL4_Sho3
+    - ArmL5_Elb1
+    - ArmL6_Elb2
+    - ArmL7_Wri1
+    - ArmL8_Wri2 
   gains:
-    arm_t12_joint_r0: *pid_gains
-    arm_t23_joint_r0: *pid_gains
-    arm_t34_joint_r0: *pid_gains
-    arm_t45_joint_r0: *pid_gains
-    arm_t56_joint_r0: *pid_gains
-    arm_t67_joint_r0: *pid_gains
-    arm_t78_joint_r0: *pid_gains
-    arm_t8_joint_r0: *pid_gains
+    ArmL1_Cla1: *pid_gains
+    ArmL2_Sho1: *pid_gains
+    ArmL3_Sho2: *pid_gains
+    ArmL4_Sho3: *pid_gains
+    ArmL5_Elb1: *pid_gains
+    ArmL6_Elb2: *pid_gains
+    ArmL7_Wri1: *pid_gains
+    ArmL8_Wri2: *pid_gains
 
 arm_right_controller:
   type: "effort_controllers/JointTrajectoryController"
   joints:
-    - arm_t12_joint_r1
-    - arm_t23_joint_r1
-    - arm_t34_joint_r1
-    - arm_t45_joint_r1
-    - arm_t56_joint_r1
-    - arm_t67_joint_r1
-    - arm_t78_joint_r1
-    - arm_t8_joint_r1
+    - ArmR1_Cla1
+    - ArmR2_Sho1
+    - ArmR3_Sho2
+    - ArmR4_Sho3
+    - ArmR5_Elb1
+    - ArmR6_Elb2
+    - ArmR7_Wri1
+    - ArmR8_Wri2 
   gains:
-    arm_t12_joint_r1: *pid_gains
-    arm_t23_joint_r1: *pid_gains
-    arm_t34_joint_r1: *pid_gains
-    arm_t45_joint_r1: *pid_gains
-    arm_t56_joint_r1: *pid_gains
-    arm_t67_joint_r1: *pid_gains
-    arm_t78_joint_r1: *pid_gains
-    arm_t8_joint_r1: *pid_gains
+    ArmR1_Cla1: *pid_gains
+    ArmR2_Sho1: *pid_gains
+    ArmR3_Sho2: *pid_gains
+    ArmR4_Sho3: *pid_gains
+    ArmR5_Elb1: *pid_gains
+    ArmR6_Elb2: *pid_gains
+    ArmR7_Wri1: *pid_gains
+    ArmR8_Wri2: *pid_gains
 
 # gripper_left_left_finger_effort_controller:
 #   type: effort_controllers/JointEffortController

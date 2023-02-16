@@ -9,8 +9,8 @@
 
 	<include file="$(find tiago_mujoco)/launch/tiago_move_base.launch" />
 
-	<include file="$(find unreal_vision_bridge)/launch/unreal_vision_bridge.launch">
+	<!-- <include file="$(find unreal_vision_bridge)/launch/unreal_vision_bridge.launch">
 		<arg name="address" value="$(optenv HOST_IP 172.17.0.1)" />
-	</include>
+	</include> -->
 
 </launch>

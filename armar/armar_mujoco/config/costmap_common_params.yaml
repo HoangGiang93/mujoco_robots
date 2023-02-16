@@ -1,0 +1,17 @@
+global_frame: map
+robot_base_frame: Armar6
+
+update_frequency: 5.0
+publish_frequency: 5.0
+
+obstacle_range: 5
+raytrace_range: 6
+footprint: [[-0.6, -0.4], [-0.6, 0.4], [0.6, 0.4], [0.6, -0.4]]
+
+inflation:
+  inflation_radius: 0.4
+
+obstacles_laser:
+  observation_sources: lidar_front lidar_back
+  lidar_front: {sensor_frame: LidarFront, data_type: LaserScan, topic: /armar6/lidar_front, marking: true, clearing: true}
+  lidar_back: {sensor_frame: LidarBack, data_type: LaserScan, topic: /armar6/lidar_back, marking: true, clearing: true}
