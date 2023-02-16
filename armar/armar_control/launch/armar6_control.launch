@@ -7,6 +7,34 @@
 		torso_controller
 		head_controller
 		arm_left_controller
-		arm_right_controller" />
+		arm_right_controller
+		Thumb_L_1_Joint_controller
+		Thumb_L_2_Joint_controller
+		Index_L_1_Joint_controller
+		Index_L_2_Joint_controller
+		Index_L_3_Joint_controller
+		Middle_L_1_Joint_controller
+		Middle_L_2_Joint_controller
+		Middle_L_3_Joint_controller
+		Ring_L_1_Joint_controller
+		Ring_L_2_Joint_controller
+		Ring_L_3_Joint_controller
+		Pinky_L_1_Joint_controller
+		Pinky_L_2_Joint_controller
+		Pinky_L_3_Joint_controller
+		Thumb_R_1_Joint_controller
+		Thumb_R_2_Joint_controller
+		Index_R_1_Joint_controller
+		Index_R_2_Joint_controller
+		Index_R_3_Joint_controller
+		Middle_R_1_Joint_controller
+		Middle_R_2_Joint_controller
+		Middle_R_3_Joint_controller
+		Ring_R_1_Joint_controller
+		Ring_R_2_Joint_controller
+		Ring_R_3_Joint_controller
+		Pinky_R_1_Joint_controller
+		Pinky_R_2_Joint_controller
+		Pinky_R_3_Joint_controller" />
 
 </launch>

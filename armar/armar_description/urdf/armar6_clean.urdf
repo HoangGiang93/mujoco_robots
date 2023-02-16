@@ -376,7 +376,7 @@
     </collision>
   </link>
   <link name="link0_30" />
-  <link name="Index L 1 Joint~Index L 1 Body">
+  <link name="Index_L_1_Joint~Index L 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -398,7 +398,7 @@
     </collision>
   </link>
   <link name="link0_32" />
-  <link name="Index L 2 Joint~Index L 2 Body">
+  <link name="Index_L_2_Joint~Index L 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -420,7 +420,7 @@
     </collision>
   </link>
   <link name="link0_34" />
-  <link name="Index L 3 Joint~Index L 3 Body">
+  <link name="Index_L_3_Joint~Index L 3 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -458,7 +458,7 @@
     </inertial>
   </link>
   <link name="link0_40" />
-  <link name="Middle L 1 Joint~Middle L 1 Body">
+  <link name="Middle_L_1_Joint~Middle L 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -480,7 +480,7 @@
     </collision>
   </link>
   <link name="link0_42" />
-  <link name="Middle L 2 Joint~Middle L 2 Body">
+  <link name="Middle_L_2_Joint~Middle L 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -502,7 +502,7 @@
     </collision>
   </link>
   <link name="link0_44" />
-  <link name="Middle L 3 Joint~Middle L 3 Body">
+  <link name="Middle_L_3_Joint~Middle L 3 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -524,7 +524,7 @@
     </collision>
   </link>
   <link name="link0_46" />
-  <link name="Pinky L 1 Joint~Pinky L 1 Body">
+  <link name="Pinky_L_1_Joint~Pinky L 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -546,7 +546,7 @@
     </collision>
   </link>
   <link name="link0_48" />
-  <link name="Pinky L 2 Joint~Pinky L 2 Body">
+  <link name="Pinky_L_2_Joint~Pinky L 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -568,7 +568,7 @@
     </collision>
   </link>
   <link name="link0_50" />
-  <link name="Pinky L 3 Joint~Pinky L 3 Body">
+  <link name="Pinky_L_3_Joint~Pinky L 3 Body">
     <visual>
       <origin rpy="-3.14159 -0.00000 3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -590,7 +590,7 @@
     </collision>
   </link>
   <link name="link0_52" />
-  <link name="Ring L 1 Joint~Ring L 1 Body">
+  <link name="Ring_L_1_Joint~Ring L 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -612,7 +612,7 @@
     </collision>
   </link>
   <link name="link0_54" />
-  <link name="Ring L 2 Joint~Ring L 2 Body">
+  <link name="Ring_L_2_Joint~Ring L 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -634,7 +634,7 @@
     </collision>
   </link>
   <link name="link0_56" />
-  <link name="Ring L 3 Joint~Ring L 3 Body">
+  <link name="Ring_L_3_Joint~Ring L 3 Body">
     <visual>
       <origin rpy="1.57080 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -656,7 +656,7 @@
     </collision>
   </link>
   <link name="link0_58" />
-  <link name="Thumb L 1 Joint~Thumb L 1 Body">
+  <link name="Thumb_L_1_Joint~Thumb L 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -678,7 +678,7 @@
     </collision>
   </link>
   <link name="link0_60" />
-  <link name="Thumb L 2 Joint~Thumb L 2 Body">
+  <link name="Thumb_L_2_Joint~Thumb L 2 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -977,7 +977,7 @@
     </collision>
   </link>
   <link name="link0_82" />
-  <link name="Index R 1 Joint~Index R 1 Body">
+  <link name="Index_R_1_Joint~Index R 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -999,7 +999,7 @@
     </collision>
   </link>
   <link name="link0_84" />
-  <link name="Index R 2 Joint~Index R 2 Body">
+  <link name="Index_R_2_Joint~Index R 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1021,7 +1021,7 @@
     </collision>
   </link>
   <link name="link0_86" />
-  <link name="Index R 3 Joint~Index R 3 Body">
+  <link name="Index_R_3_Joint~Index R 3 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1043,7 +1043,7 @@
     </collision>
   </link>
   <link name="link0_88" />
-  <link name="Middle R 1 Joint~Middle R 1 Body">
+  <link name="Middle_R_1_Joint~Middle R 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1065,7 +1065,7 @@
     </collision>
   </link>
   <link name="link0_90" />
-  <link name="Middle R 2 Joint~Middle R 2 Body">
+  <link name="Middle_R_2_Joint~Middle R 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1087,7 +1087,7 @@
     </collision>
   </link>
   <link name="link0_92" />
-  <link name="Middle R 3 Joint~Middle R 3 Body">
+  <link name="Middle_R_3_Joint~Middle R 3 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1109,7 +1109,7 @@
     </collision>
   </link>
   <link name="link0_94" />
-  <link name="Pinky R 1 Joint~Pinky R 1 Body">
+  <link name="Pinky_R_1_Joint~Pinky R 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1131,7 +1131,7 @@
     </collision>
   </link>
   <link name="link0_96" />
-  <link name="Pinky R 2 Joint~Pinky R 2 Body">
+  <link name="Pinky_R_2_Joint~Pinky R 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1153,7 +1153,7 @@
     </collision>
   </link>
   <link name="link0_98" />
-  <link name="Pinky R 3 Joint~Pinky R 3 Body">
+  <link name="Pinky_R_3_Joint~Pinky R 3 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1191,7 +1191,7 @@
     </inertial>
   </link>
   <link name="link0_104" />
-  <link name="Ring R 1 Joint~Ring R 1 Body">
+  <link name="Ring_R_1_Joint~Ring R 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1213,7 +1213,7 @@
     </collision>
   </link>
   <link name="link0_106" />
-  <link name="Ring R 2 Joint~Ring R 2 Body">
+  <link name="Ring_R_2_Joint~Ring R 2 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1235,7 +1235,7 @@
     </collision>
   </link>
   <link name="link0_108" />
-  <link name="Ring R 3 Joint~Ring R 3 Body">
+  <link name="Ring_R_3_Joint~Ring R 3 Body">
     <visual>
       <origin rpy="1.57080 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1257,7 +1257,7 @@
     </collision>
   </link>
   <link name="link0_110" />
-  <link name="Thumb R 1 Joint~Thumb R 1 Body">
+  <link name="Thumb_R_1_Joint~Thumb R 1 Body">
     <visual>
       <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
       <geometry>
@@ -1279,7 +1279,7 @@
     </collision>
   </link>
   <link name="link0_112" />
-  <link name="Thumb R 2 Joint~Thumb R 2 Body">
+  <link name="Thumb_R_2_Joint~Thumb R 2 Body">
     <visual>
       <origin rpy="3.14159 -0.00000 3.14159" xyz="0.00002 0.00000 -0.00003" />
       <geometry>
@@ -1552,7 +1552,7 @@
     <child link="Hand L Palm" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Index L 1 Joint" type="continuous">
+  <joint name="Index_L_1_Joint" type="continuous">
     <parent link="Hand L Palm" />
     <child link="link0_30" />
     <origin rpy="-1.57081 1.48348 -0.00001" xyz="0.14531 -0.00000 0.03922" />
@@ -1560,29 +1560,29 @@
   </joint>
   <joint name="jointfix_3_30" type="fixed">
     <parent link="link0_30" />
-    <child link="Index L 1 Joint~Index L 1 Body" />
+    <child link="Index_L_1_Joint~Index L 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Index L 2 Joint" type="continuous">
-    <parent link="Index L 1 Joint~Index L 1 Body" />
+  <joint name="Index_L_2_Joint" type="continuous">
+    <parent link="Index_L_1_Joint~Index L 1 Body" />
     <child link="link0_32" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.05595 -0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_2_32" type="fixed">
     <parent link="link0_32" />
-    <child link="Index L 2 Joint~Index L 2 Body" />
+    <child link="Index_L_2_Joint~Index L 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Index L 3 Joint" type="continuous">
-    <parent link="Index L 2 Joint~Index L 2 Body" />
+  <joint name="Index_L_3_Joint" type="continuous">
+    <parent link="Index_L_2_Joint~Index L 2 Body" />
     <child link="link0_34" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.03197 -0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_1_34" type="fixed">
     <parent link="link0_34" />
-    <child link="Index L 3 Joint~Index L 3 Body" />
+    <child link="Index_L_3_Joint~Index L 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
   <joint name="LeftHandFingers" type="continuous">
@@ -1607,7 +1607,7 @@
     <child link="LeftHandThumb" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Middle L 1 Joint" type="continuous">
+  <joint name="Middle_L_1_Joint" type="continuous">
     <parent link="Hand L Palm" />
     <child link="link0_40" />
     <origin rpy="0.00000 1.57080 -4.71239" xyz="0.15172 0.00000 0.00750" />
@@ -1615,32 +1615,32 @@
   </joint>
   <joint name="jointfix_8_40" type="fixed">
     <parent link="link0_40" />
-    <child link="Middle L 1 Joint~Middle L 1 Body" />
+    <child link="Middle_L_1_Joint~Middle L 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Middle L 2 Joint" type="continuous">
-    <parent link="Middle L 1 Joint~Middle L 1 Body" />
+  <joint name="Middle_L_2_Joint" type="continuous">
+    <parent link="Middle_L_1_Joint~Middle L 1 Body" />
     <child link="link0_42" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.06000 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_7_42" type="fixed">
     <parent link="link0_42" />
-    <child link="Middle L 2 Joint~Middle L 2 Body" />
+    <child link="Middle_L_2_Joint~Middle L 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Middle L 3 Joint" type="continuous">
-    <parent link="Middle L 2 Joint~Middle L 2 Body" />
+  <joint name="Middle_L_3_Joint" type="continuous">
+    <parent link="Middle_L_2_Joint~Middle L 2 Body" />
     <child link="link0_44" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.03900 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_6_44" type="fixed">
     <parent link="link0_44" />
-    <child link="Middle L 3 Joint~Middle L 3 Body" />
+    <child link="Middle_L_3_Joint~Middle L 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Pinky L 1 Joint" type="continuous">
+  <joint name="Pinky_L_1_Joint" type="continuous">
     <parent link="Hand L Palm" />
     <child link="link0_46" />
     <origin rpy="1.57080 1.16969 3.14159" xyz="0.13032 -0.00000 -0.05530" />
@@ -1648,32 +1648,32 @@
   </joint>
   <joint name="jointfix_11_46" type="fixed">
     <parent link="link0_46" />
-    <child link="Pinky L 1 Joint~Pinky L 1 Body" />
+    <child link="Pinky_L_1_Joint~Pinky L 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Pinky L 2 Joint" type="continuous">
-    <parent link="Pinky L 1 Joint~Pinky L 1 Body" />
+  <joint name="Pinky_L_2_Joint" type="continuous">
+    <parent link="Pinky_L_1_Joint~Pinky L 1 Body" />
     <child link="link0_48" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.04610 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_10_48" type="fixed">
     <parent link="link0_48" />
-    <child link="Pinky L 2 Joint~Pinky L 2 Body" />
+    <child link="Pinky_L_2_Joint~Pinky L 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Pinky L 3 Joint" type="continuous">
-    <parent link="Pinky L 2 Joint~Pinky L 2 Body" />
+  <joint name="Pinky_L_3_Joint" type="continuous">
+    <parent link="Pinky_L_2_Joint~Pinky L 2 Body" />
     <child link="link0_50" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.02706 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_9_50" type="fixed">
     <parent link="link0_50" />
-    <child link="Pinky L 3 Joint~Pinky L 3 Body" />
+    <child link="Pinky_L_3_Joint~Pinky L 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Ring L 1 Joint" type="continuous">
+  <joint name="Ring_L_1_Joint" type="continuous">
     <parent link="Hand L Palm" />
     <child link="link0_52" />
     <origin rpy="1.57080 1.39616 3.14159" xyz="0.14652 0.00000 -0.02630" />
@@ -1681,32 +1681,32 @@
   </joint>
   <joint name="jointfix_14_52" type="fixed">
     <parent link="link0_52" />
-    <child link="Ring L 1 Joint~Ring L 1 Body" />
+    <child link="Ring_L_1_Joint~Ring L 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Ring L 2 Joint" type="continuous">
-    <parent link="Ring L 1 Joint~Ring L 1 Body" />
+  <joint name="Ring_L_2_Joint" type="continuous">
+    <parent link="Ring_L_1_Joint~Ring L 1 Body" />
     <child link="link0_54" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.05506 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_13_54" type="fixed">
     <parent link="link0_54" />
-    <child link="Ring L 2 Joint~Ring L 2 Body" />
+    <child link="Ring_L_2_Joint~Ring L 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Ring L 3 Joint" type="continuous">
-    <parent link="Ring L 2 Joint~Ring L 2 Body" />
+  <joint name="Ring_L_3_Joint" type="continuous">
+    <parent link="Ring_L_2_Joint~Ring L 2 Body" />
     <child link="link0_56" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.03704 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_12_56" type="fixed">
     <parent link="link0_56" />
-    <child link="Ring L 3 Joint~Ring L 3 Body" />
+    <child link="Ring_L_3_Joint~Ring L 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Thumb L 1 Joint" type="continuous">
+  <joint name="Thumb_L_1_Joint" type="continuous">
     <parent link="Hand L Palm" />
     <child link="link0_58" />
     <origin rpy="-0.22370 -1.18631 0.20756" xyz="0.08111 -0.04691 0.03950" />
@@ -1714,18 +1714,18 @@
   </joint>
   <joint name="jointfix_16_58" type="fixed">
     <parent link="link0_58" />
-    <child link="Thumb L 1 Joint~Thumb L 1 Body" />
+    <child link="Thumb_L_1_Joint~Thumb L 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Thumb L 2 Joint" type="continuous">
-    <parent link="Thumb L 1 Joint~Thumb L 1 Body" />
+  <joint name="Thumb_L_2_Joint" type="continuous">
+    <parent link="Thumb_L_1_Joint~Thumb L 1 Body" />
     <child link="link0_60" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00002 -0.04408 -0.00005" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_15_60" type="fixed">
     <parent link="link0_60" />
-    <child link="Thumb L 2 Joint~Thumb L 2 Body" />
+    <child link="Thumb_L_2_Joint~Thumb L 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_55_8" type="fixed">
@@ -1836,7 +1836,7 @@
     <child link="Hand R Palm" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Index R 1 Joint" type="continuous">
+  <joint name="Index_R_1_Joint" type="continuous">
     <parent link="Hand R Palm" />
     <child link="link0_82" />
     <origin rpy="1.57081 1.48348 -3.14158" xyz="0.14531 0.00000 -0.03922" />
@@ -1844,32 +1844,32 @@
   </joint>
   <joint name="jointfix_31_82" type="fixed">
     <parent link="link0_82" />
-    <child link="Index R 1 Joint~Index R 1 Body" />
+    <child link="Index_R_1_Joint~Index R 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Index R 2 Joint" type="continuous">
-    <parent link="Index R 1 Joint~Index R 1 Body" />
+  <joint name="Index_R_2_Joint" type="continuous">
+    <parent link="Index_R_1_Joint~Index R 1 Body" />
     <child link="link0_84" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.05595 -0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_30_84" type="fixed">
     <parent link="link0_84" />
-    <child link="Index R 2 Joint~Index R 2 Body" />
+    <child link="Index_R_2_Joint~Index R 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Index R 3 Joint" type="continuous">
-    <parent link="Index R 2 Joint~Index R 2 Body" />
+  <joint name="Index_R_3_Joint" type="continuous">
+    <parent link="Index_R_2_Joint~Index R 2 Body" />
     <child link="link0_86" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.03197 -0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_29_86" type="fixed">
     <parent link="link0_86" />
-    <child link="Index R 3 Joint~Index R 3 Body" />
+    <child link="Index_R_3_Joint~Index R 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Middle R 1 Joint" type="continuous">
+  <joint name="Middle_R_1_Joint" type="continuous">
     <parent link="Hand R Palm" />
     <child link="link0_88" />
     <origin rpy="0.00000 1.57080 -4.71239" xyz="0.15172 0.00000 -0.00750" />
@@ -1877,32 +1877,32 @@
   </joint>
   <joint name="jointfix_34_88" type="fixed">
     <parent link="link0_88" />
-    <child link="Middle R 1 Joint~Middle R 1 Body" />
+    <child link="Middle_R_1_Joint~Middle R 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Middle R 2 Joint" type="continuous">
-    <parent link="Middle R 1 Joint~Middle R 1 Body" />
+  <joint name="Middle_R_2_Joint" type="continuous">
+    <parent link="Middle_R_1_Joint~Middle R 1 Body" />
     <child link="link0_90" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.06000 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_33_90" type="fixed">
     <parent link="link0_90" />
-    <child link="Middle R 2 Joint~Middle R 2 Body" />
+    <child link="Middle_R_2_Joint~Middle R 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Middle R 3 Joint" type="continuous">
-    <parent link="Middle R 2 Joint~Middle R 2 Body" />
+  <joint name="Middle_R_3_Joint" type="continuous">
+    <parent link="Middle_R_2_Joint~Middle R 2 Body" />
     <child link="link0_92" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.03900 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_32_92" type="fixed">
     <parent link="link0_92" />
-    <child link="Middle R 3 Joint~Middle R 3 Body" />
+    <child link="Middle_R_3_Joint~Middle R 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Pinky R 1 Joint" type="continuous">
+  <joint name="Pinky_R_1_Joint" type="continuous">
     <parent link="Hand R Palm" />
     <child link="link0_94" />
     <origin rpy="-1.57080 1.16969 0.00000" xyz="0.13032 0.00000 0.05530" />
@@ -1910,29 +1910,29 @@
   </joint>
   <joint name="jointfix_37_94" type="fixed">
     <parent link="link0_94" />
-    <child link="Pinky R 1 Joint~Pinky R 1 Body" />
+    <child link="Pinky_R_1_Joint~Pinky R 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Pinky R 2 Joint" type="continuous">
-    <parent link="Pinky R 1 Joint~Pinky R 1 Body" />
+  <joint name="Pinky_R_2_Joint" type="continuous">
+    <parent link="Pinky_R_1_Joint~Pinky R 1 Body" />
     <child link="link0_96" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.04610 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_36_96" type="fixed">
     <parent link="link0_96" />
-    <child link="Pinky R 2 Joint~Pinky R 2 Body" />
+    <child link="Pinky_R_2_Joint~Pinky R 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Pinky R 3 Joint" type="continuous">
-    <parent link="Pinky R 2 Joint~Pinky R 2 Body" />
+  <joint name="Pinky_R_3_Joint" type="continuous">
+    <parent link="Pinky_R_2_Joint~Pinky R 2 Body" />
     <child link="link0_98" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.02706 -0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_35_98" type="fixed">
     <parent link="link0_98" />
-    <child link="Pinky R 3 Joint~Pinky R 3 Body" />
+    <child link="Pinky_R_3_Joint~Pinky R 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
   <joint name="RightHandFingers" type="continuous">
@@ -1957,7 +1957,7 @@
     <child link="RightHandThumb" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Ring R 1 Joint" type="continuous">
+  <joint name="Ring_R_1_Joint" type="continuous">
     <parent link="Hand R Palm" />
     <child link="link0_104" />
     <origin rpy="-1.57080 1.39616 0.00000" xyz="0.14652 0.00000 0.02630" />
@@ -1965,32 +1965,32 @@
   </joint>
   <joint name="jointfix_42_104" type="fixed">
     <parent link="link0_104" />
-    <child link="Ring R 1 Joint~Ring R 1 Body" />
+    <child link="Ring_R_1_Joint~Ring R 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Ring R 2 Joint" type="continuous">
-    <parent link="Ring R 1 Joint~Ring R 1 Body" />
+  <joint name="Ring_R_2_Joint" type="continuous">
+    <parent link="Ring_R_1_Joint~Ring R 1 Body" />
     <child link="link0_106" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.05506 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_41_106" type="fixed">
     <parent link="link0_106" />
-    <child link="Ring R 2 Joint~Ring R 2 Body" />
+    <child link="Ring_R_2_Joint~Ring R 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Ring R 3 Joint" type="continuous">
-    <parent link="Ring R 2 Joint~Ring R 2 Body" />
+  <joint name="Ring_R_3_Joint" type="continuous">
+    <parent link="Ring_R_2_Joint~Ring R 2 Body" />
     <child link="link0_108" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.03704 0.00000" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_40_108" type="fixed">
     <parent link="link0_108" />
-    <child link="Ring R 3 Joint~Ring R 3 Body" />
+    <child link="Ring_R_3_Joint~Ring R 3 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Thumb R 1 Joint" type="continuous">
+  <joint name="Thumb_R_1_Joint" type="continuous">
     <parent link="Hand R Palm" />
     <child link="link0_110" />
     <origin rpy="2.91903 -1.18743 -2.93505" xyz="0.08111 -0.04691 -0.03950" />
@@ -1998,18 +1998,18 @@
   </joint>
   <joint name="jointfix_44_110" type="fixed">
     <parent link="link0_110" />
-    <child link="Thumb R 1 Joint~Thumb R 1 Body" />
+    <child link="Thumb_R_1_Joint~Thumb R 1 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
-  <joint name="Thumb R 2 Joint" type="continuous">
-    <parent link="Thumb R 1 Joint~Thumb R 1 Body" />
+  <joint name="Thumb_R_2_Joint" type="continuous">
+    <parent link="Thumb_R_1_Joint~Thumb R 1 Body" />
     <child link="link0_112" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00002 -0.04408 -0.00005" />
     <axis xyz="1.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_43_112" type="fixed">
     <parent link="link0_112" />
-    <child link="Thumb R 2 Joint~Thumb R 2 Body" />
+    <child link="Thumb_R_2_Joint~Thumb R 2 Body" />
     <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000" />
   </joint>
   <joint name="jointfix_63_8" type="fixed">

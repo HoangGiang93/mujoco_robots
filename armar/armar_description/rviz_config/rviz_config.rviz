@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
         - /RobotModel1/Links1
         - /TF1
         - /TF1/Frames1
@@ -189,6 +188,16 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        LidarBack:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LidarFront:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
         Middle L 1 Joint~Middle L 1 Body:
           Alpha: 1
@@ -454,10 +463,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        link0_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         link0_21:
           Alpha: 1
           Show Axes: false
@@ -467,10 +472,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         link0_25:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        link0_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -491,10 +492,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         link0_38:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        link0_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -625,260 +622,10 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        ArmL1_Cla1~ArmL1_Cla1_body:
-          Value: true
-        ArmL4_Sho3~ArmL4_Sho3_body:
-          Value: true
-        ArmL6_Elb2~ArmL6_Elb2_body:
-          Value: true
-        ArmL8_Wri2~ArmL8_Wri2_body:
-          Value: true
-        ArmR1_Cla1~ArmR1_Cla1_body:
-          Value: true
-        ArmR4_Sho3~ArmR4_Sho3_body:
-          Value: true
-        ArmR6_Elb2~ArmR6_Elb2_body:
-          Value: true
-        ArmR8_Wri2~ArmR8_Wri2_body:
-          Value: true
-        Armar6:
-          Value: true
-        CenterArms:
-          Value: true
-        DepthCamera:
-          Value: true
-        FleaCamerasCenter:
-          Value: true
-        Hand L Col:
-          Value: true
-        Hand L Palm:
-          Value: true
-        Hand R Col:
-          Value: true
-        Hand R Palm:
-          Value: true
-        HandL_Base~Hand L Root:
-          Value: true
-        HandR_Base~Hand R Root:
-          Value: true
-        Head Base:
-          Value: true
-        Index L 1 Joint~Index L 1 Body:
-          Value: true
-        Index L 2 Joint~Index L 2 Body:
-          Value: true
-        Index L 3 Joint~Index L 3 Body:
-          Value: true
-        Index R 1 Joint~Index R 1 Body:
-          Value: true
-        Index R 2 Joint~Index R 2 Body:
-          Value: true
-        Index R 3 Joint~Index R 3 Body:
-          Value: true
-        LeftHandFingers:
-          Value: true
-        LeftHandThumb:
-          Value: true
-        Middle L 1 Joint~Middle L 1 Body:
-          Value: true
-        Middle L 2 Joint~Middle L 2 Body:
-          Value: true
-        Middle L 3 Joint~Middle L 3 Body:
-          Value: true
-        Middle R 1 Joint~Middle R 1 Body:
-          Value: true
-        Middle R 2 Joint~Middle R 2 Body:
-          Value: true
-        Middle R 3 Joint~Middle R 3 Body:
-          Value: true
-        Neck_1_Yaw~Neck_1_Yaw_body:
-          Value: true
-        Neck_2_Pitch~Neck_2_Pitch_body:
-          Value: true
-        Node_ArmL_Cla:
-          Value: true
-        Node_ArmL_Elb~ArmL5_Elb1~ArmL5_Elb1_body:
-          Value: true
-        Node_ArmL_Sho_B~ArmL3_Sho2~ArmL3_Sho2_body:
-          Value: true
-        Node_ArmL_Sho~ArmL2_Sho1~ArmL2_Sho1_body:
-          Value: true
-        Node_ArmL_Wri~ArmL7_Wri1~ArmL7_Wri1_body:
-          Value: true
-        Node_ArmR_Cla:
-          Value: true
-        Node_ArmR_Elb~ArmR5_Elb1~ArmR5_Elb1_body:
-          Value: true
-        Node_ArmR_Sho_B~ArmR3_Sho2~ArmR3_Sho2_body:
-          Value: true
-        Node_ArmR_Sho~ArmR2_Sho1~ArmR2_Sho1_body:
-          Value: true
-        Node_ArmR_Wri~ArmR7_Wri1~ArmR7_Wri1_body:
-          Value: true
-        Pinky L 1 Joint~Pinky L 1 Body:
-          Value: true
-        Pinky L 2 Joint~Pinky L 2 Body:
-          Value: true
-        Pinky L 3 Joint~Pinky L 3 Body:
-          Value: true
-        Pinky R 1 Joint~Pinky R 1 Body:
-          Value: true
-        Pinky R 2 Joint~Pinky R 2 Body:
-          Value: true
-        Pinky R 3 Joint~Pinky R 3 Body:
-          Value: true
-        Platform:
-          Value: true
-        RightHandFingers:
-          Value: true
-        RightHandThumb:
-          Value: true
-        Ring L 1 Joint~Ring L 1 Body:
-          Value: true
-        Ring L 2 Joint~Ring L 2 Body:
-          Value: true
-        Ring L 3 Joint~Ring L 3 Body:
-          Value: true
-        Ring R 1 Joint~Ring R 1 Body:
-          Value: true
-        Ring R 2 Joint~Ring R 2 Body:
-          Value: true
-        Ring R 3 Joint~Ring R 3 Body:
-          Value: true
-        Roboception:
-          Value: true
-        Thumb L 1 Joint~Thumb L 1 Body:
-          Value: true
-        Thumb L 2 Joint~Thumb L 2 Body:
-          Value: true
-        Thumb R 1 Joint~Thumb R 1 Body:
-          Value: true
-        Thumb R 2 Joint~Thumb R 2 Body:
-          Value: true
-        TorsoJoint~TorsoJoint_body:
-          Value: true
-        VirtualCentralGaze:
-          Value: true
-        VirtualCentralGazeDepthCamera:
-          Value: true
-        link0_100:
-          Value: true
-        link0_102:
-          Value: true
-        link0_104:
-          Value: true
-        link0_106:
-          Value: true
-        link0_108:
-          Value: true
-        link0_11:
-          Value: true
-        link0_110:
-          Value: true
-        link0_112:
-          Value: true
-        link0_115:
-          Value: true
-        link0_117:
-          Value: true
-        link0_120:
-          Value: true
-        link0_124:
-          Value: true
-        link0_13:
-          Value: true
-        link0_15:
-          Value: true
-        link0_17:
-          Value: true
-        link0_19:
-          Value: true
-        link0_2:
-          Value: true
-        link0_21:
-          Value: true
-        link0_23:
-          Value: true
-        link0_25:
-          Value: true
-        link0_3:
-          Value: true
-        link0_30:
-          Value: true
-        link0_32:
-          Value: true
-        link0_34:
-          Value: true
-        link0_36:
-          Value: true
-        link0_38:
-          Value: true
-        link0_4:
-          Value: true
-        link0_40:
-          Value: true
-        link0_42:
-          Value: true
-        link0_44:
-          Value: true
-        link0_46:
-          Value: true
-        link0_48:
-          Value: true
-        link0_50:
-          Value: true
-        link0_52:
-          Value: true
-        link0_54:
-          Value: true
-        link0_56:
-          Value: true
-        link0_58:
-          Value: true
-        link0_60:
-          Value: true
-        link0_63:
-          Value: true
-        link0_65:
-          Value: true
-        link0_67:
-          Value: true
-        link0_69:
-          Value: true
-        link0_7:
-          Value: true
-        link0_71:
-          Value: true
-        link0_73:
-          Value: true
-        link0_75:
-          Value: true
-        link0_77:
-          Value: true
-        link0_82:
-          Value: true
-        link0_84:
-          Value: true
-        link0_86:
-          Value: true
-        link0_88:
-          Value: true
-        link0_90:
-          Value: true
-        link0_92:
-          Value: true
-        link0_94:
-          Value: true
-        link0_96:
-          Value: true
-        link0_98:
-          Value: true
-        root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel:
-          Value: true
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -886,152 +633,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        Armar6:
-          link0_2:
-            link0_3:
-              link0_4:
-                root~Dummy_Platform~X_Platform~Y_Platform~Yaw_Platform~Platform-colmodel:
-                  Platform:
-                    link0_7:
-                      TorsoJoint~TorsoJoint_body:
-                        CenterArms:
-                          Head Base:
-                            link0_115:
-                              Neck_1_Yaw~Neck_1_Yaw_body:
-                                link0_117:
-                                  Neck_2_Pitch~Neck_2_Pitch_body:
-                                    DepthCamera:
-                                      link0_120:
-                                        VirtualCentralGazeDepthCamera:
-                                          {}
-                                    FleaCamerasCenter:
-                                      {}
-                                    Roboception:
-                                      link0_124:
-                                        VirtualCentralGaze:
-                                          {}
-                          Node_ArmL_Cla:
-                            link0_11:
-                              ArmL1_Cla1~ArmL1_Cla1_body:
-                                link0_13:
-                                  Node_ArmL_Sho~ArmL2_Sho1~ArmL2_Sho1_body:
-                                    link0_15:
-                                      Node_ArmL_Sho_B~ArmL3_Sho2~ArmL3_Sho2_body:
-                                        link0_17:
-                                          ArmL4_Sho3~ArmL4_Sho3_body:
-                                            link0_19:
-                                              Node_ArmL_Elb~ArmL5_Elb1~ArmL5_Elb1_body:
-                                                link0_21:
-                                                  ArmL6_Elb2~ArmL6_Elb2_body:
-                                                    link0_23:
-                                                      Node_ArmL_Wri~ArmL7_Wri1~ArmL7_Wri1_body:
-                                                        link0_25:
-                                                          ArmL8_Wri2~ArmL8_Wri2_body:
-                                                            HandL_Base~Hand L Root:
-                                                              Hand L Col:
-                                                                {}
-                                                              Hand L Palm:
-                                                                link0_30:
-                                                                  Index L 1 Joint~Index L 1 Body:
-                                                                    link0_32:
-                                                                      Index L 2 Joint~Index L 2 Body:
-                                                                        link0_34:
-                                                                          Index L 3 Joint~Index L 3 Body:
-                                                                            {}
-                                                                link0_36:
-                                                                  LeftHandFingers:
-                                                                    {}
-                                                                link0_38:
-                                                                  LeftHandThumb:
-                                                                    {}
-                                                                link0_40:
-                                                                  Middle L 1 Joint~Middle L 1 Body:
-                                                                    link0_42:
-                                                                      Middle L 2 Joint~Middle L 2 Body:
-                                                                        link0_44:
-                                                                          Middle L 3 Joint~Middle L 3 Body:
-                                                                            {}
-                                                                link0_46:
-                                                                  Pinky L 1 Joint~Pinky L 1 Body:
-                                                                    link0_48:
-                                                                      Pinky L 2 Joint~Pinky L 2 Body:
-                                                                        link0_50:
-                                                                          Pinky L 3 Joint~Pinky L 3 Body:
-                                                                            {}
-                                                                link0_52:
-                                                                  Ring L 1 Joint~Ring L 1 Body:
-                                                                    link0_54:
-                                                                      Ring L 2 Joint~Ring L 2 Body:
-                                                                        link0_56:
-                                                                          Ring L 3 Joint~Ring L 3 Body:
-                                                                            {}
-                                                                link0_58:
-                                                                  Thumb L 1 Joint~Thumb L 1 Body:
-                                                                    link0_60:
-                                                                      Thumb L 2 Joint~Thumb L 2 Body:
-                                                                        {}
-                          Node_ArmR_Cla:
-                            link0_63:
-                              ArmR1_Cla1~ArmR1_Cla1_body:
-                                link0_65:
-                                  Node_ArmR_Sho~ArmR2_Sho1~ArmR2_Sho1_body:
-                                    link0_67:
-                                      Node_ArmR_Sho_B~ArmR3_Sho2~ArmR3_Sho2_body:
-                                        link0_69:
-                                          ArmR4_Sho3~ArmR4_Sho3_body:
-                                            link0_71:
-                                              Node_ArmR_Elb~ArmR5_Elb1~ArmR5_Elb1_body:
-                                                link0_73:
-                                                  ArmR6_Elb2~ArmR6_Elb2_body:
-                                                    link0_75:
-                                                      Node_ArmR_Wri~ArmR7_Wri1~ArmR7_Wri1_body:
-                                                        link0_77:
-                                                          ArmR8_Wri2~ArmR8_Wri2_body:
-                                                            HandR_Base~Hand R Root:
-                                                              Hand R Col:
-                                                                {}
-                                                              Hand R Palm:
-                                                                link0_100:
-                                                                  RightHandFingers:
-                                                                    {}
-                                                                link0_102:
-                                                                  RightHandThumb:
-                                                                    {}
-                                                                link0_104:
-                                                                  Ring R 1 Joint~Ring R 1 Body:
-                                                                    link0_106:
-                                                                      Ring R 2 Joint~Ring R 2 Body:
-                                                                        link0_108:
-                                                                          Ring R 3 Joint~Ring R 3 Body:
-                                                                            {}
-                                                                link0_110:
-                                                                  Thumb R 1 Joint~Thumb R 1 Body:
-                                                                    link0_112:
-                                                                      Thumb R 2 Joint~Thumb R 2 Body:
-                                                                        {}
-                                                                link0_82:
-                                                                  Index R 1 Joint~Index R 1 Body:
-                                                                    link0_84:
-                                                                      Index R 2 Joint~Index R 2 Body:
-                                                                        link0_86:
-                                                                          Index R 3 Joint~Index R 3 Body:
-                                                                            {}
-                                                                link0_88:
-                                                                  Middle R 1 Joint~Middle R 1 Body:
-                                                                    link0_90:
-                                                                      Middle R 2 Joint~Middle R 2 Body:
-                                                                        link0_92:
-                                                                          Middle R 3 Joint~Middle R 3 Body:
-                                                                            {}
-                                                                link0_94:
-                                                                  Pinky R 1 Joint~Pinky R 1 Body:
-                                                                    link0_96:
-                                                                      Pinky R 2 Joint~Pinky R 2 Body:
-                                                                        link0_98:
-                                                                          Pinky R 3 Joint~Pinky R 3 Body:
-                                                                            {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -1060,7 +664,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.086756229400635
+      Distance: 2.7850098609924316
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -1076,9 +680,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.46039843559265137
+      Pitch: 0.2953985631465912
       Target Frame: <Fixed Frame>
-      Yaw: 1.230412244796753
+      Yaw: 0.825412392616272
     Saved: ~
 Window Geometry:
   Displays:
