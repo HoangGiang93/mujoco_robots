@@ -37,4 +37,6 @@
 		Pinky_R_2_Joint_controller
 		Pinky_R_3_Joint_controller" />
 
+	<node name="fingers_control" type="fingers_control.py" pkg="armar_control" />
+	
 </launch>
