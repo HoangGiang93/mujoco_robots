@@ -46,41 +46,51 @@ for joint_name in left_finger_names + left_thumb_names + right_finger_names + ri
     pubs[joint_name] = rospy.Publisher(
         joint_name + '_controller/gripper_cmd/goal', GripperCommandActionGoal, queue_size=10)
 
+seq = {}
+for joint_name in left_finger_names + left_thumb_names + right_finger_names + right_thumb_names:
+    seq[joint_name] = 0
+
+
 def left_fingers_control(data: Float64):
     control_msg = GripperCommandActionGoal()
-    control_msg.header.seq += 1
     control_msg.header.stamp = rospy.Time().now()
     control_msg.goal_id.stamp = control_msg.header.stamp
-    
+
     for joint_name in left_finger_names:
+        control_msg.header.seq = seq[joint_name]
+        seq[joint_name] += 1
         control_msg.header.frame_id = joint_name
         control_msg.goal_id.id = str(control_msg.header.seq)
         control_msg.goal.command.position = data.data
         control_msg.goal.command.max_effort = 100
         control_msg_tmp = copy.deepcopy(control_msg)
         pubs[joint_name].publish(control_msg_tmp)
+
 
 def left_thumb_control(data: Float64):
     control_msg = GripperCommandActionGoal()
-    control_msg.header.seq += 1
     control_msg.header.stamp = rospy.Time().now()
     control_msg.goal_id.stamp = control_msg.header.stamp
-    
+
     for joint_name in left_thumb_names:
+        control_msg.header.seq = seq[joint_name]
+        seq[joint_name] += 1
         control_msg.header.frame_id = joint_name
         control_msg.goal_id.id = str(control_msg.header.seq)
         control_msg.goal.command.position = data.data
         control_msg.goal.command.max_effort = 100
         control_msg_tmp = copy.deepcopy(control_msg)
         pubs[joint_name].publish(control_msg_tmp)
+
 
 def right_fingers_control(data: Float64):
     control_msg = GripperCommandActionGoal()
-    control_msg.header.seq += 1
     control_msg.header.stamp = rospy.Time().now()
     control_msg.goal_id.stamp = control_msg.header.stamp
-    
+
     for joint_name in right_finger_names:
+        control_msg.header.seq = seq[joint_name]
+        seq[joint_name] += 1
         control_msg.header.frame_id = joint_name
         control_msg.goal_id.id = str(control_msg.header.seq)
         control_msg.goal.command.position = data.data
@@ -88,19 +98,22 @@ def right_fingers_control(data: Float64):
         control_msg_tmp = copy.deepcopy(control_msg)
         pubs[joint_name].publish(control_msg_tmp)
 
+
 def right_thumb_control(data: Float64):
     control_msg = GripperCommandActionGoal()
-    control_msg.header.seq += 1
     control_msg.header.stamp = rospy.Time().now()
     control_msg.goal_id.stamp = control_msg.header.stamp
-    
+
     for joint_name in right_thumb_names:
+        control_msg.header.seq = seq[joint_name]
+        seq[joint_name] += 1
         control_msg.header.frame_id = joint_name
         control_msg.goal_id.id = str(control_msg.header.seq)
         control_msg.goal.command.position = data.data
         control_msg.goal.command.max_effort = 100
         control_msg_tmp = copy.deepcopy(control_msg)
         pubs[joint_name].publish(control_msg_tmp)
+
 
 if __name__ == '__main__':
     rospy.init_node('fingers_control', anonymous=True)
