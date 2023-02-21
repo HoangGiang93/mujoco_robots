@@ -1,5 +1,5 @@
 <mujoco model="ridgeback">
-    <compiler angle="radian" meshdir="ridgeback_panda/meshes/"/>
+    <compiler angle="radian" meshdir="ridgeback_panda/stl/"/>
     <size njmax="500" nconmax="100"/>
     <default/>
     <asset>

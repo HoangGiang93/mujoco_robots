@@ -1,7 +1,7 @@
 <mujoco model="panda">
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
-    <compiler meshdir="dual_panda_arm/meshes/" />
+    <compiler meshdir="dual_panda_arm/stl/" />
     <asset>
         <mesh name="hand" file="hand.stl" />
         <mesh name="finger" file="finger.stl" />

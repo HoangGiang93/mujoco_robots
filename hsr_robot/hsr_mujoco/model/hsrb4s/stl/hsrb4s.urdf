@@ -33,7 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 -->
 <robot name="hsrb" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor">
     <mujoco>
-        <compiler meshdir="hsrb4s/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
+        <compiler meshdir="hsrb4s/stl" strippath="false" balanceinertia="true" discardvisual="true"/>
     </mujoco>
     <material name="body_main">
         <color rgba="1.0 0.0 0.0 1.0"/>

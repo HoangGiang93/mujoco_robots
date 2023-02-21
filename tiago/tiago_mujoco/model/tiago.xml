@@ -1,5 +1,5 @@
 <mujoco model="tiago">
-    <compiler angle="radian" meshdir="tiago/meshes/" />
+    <compiler angle="radian" meshdir="tiago/stl/" />
     <option timestep="0.005" />
     <size njmax="1000" nconmax="400" />
     <asset>

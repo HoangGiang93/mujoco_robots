@@ -6,7 +6,6 @@
     <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
       <arg name="config" value="$(find mir_system_mujoco)/config/mir.yaml" />
       <arg name="robot" value="$(find mir_description)/urdf/mir.urdf" />
-      <arg name="world" value="$(find mir_system_mujoco)/model/world.xml" />
       <arg name="use_urdf" value="true" />
     </include>
   </group>
