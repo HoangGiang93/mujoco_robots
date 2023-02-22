@@ -1,7 +1,7 @@
 <mujoco>
     <compiler angle="radian" />
     <size njmax="500" nconmax="100" />
-    <compiler meshdir="world_dual_panda_arm_with_bowl/meshes/" />
+    <compiler meshdir="world_dual_panda_arm_with_bowl/stl/" />
     <asset>
         <mesh name="bowl" file="bowl_side.stl" />
         <mesh name="bowl_bottom" file="bowl_bottom.stl" />

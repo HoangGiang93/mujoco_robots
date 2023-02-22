@@ -1,5 +1,5 @@
 <mujoco model="physics">
-    <compiler angle="radian" meshdir="cartpole/meshes/"/>
+    <compiler angle="radian" meshdir="cartpole/stl/"/>
     <size njmax="500" nconmax="100"/>
     <default/>
     <worldbody>

@@ -5,7 +5,7 @@
 <!-- =================================================================================== -->
 <robot name="mir_system">
     <mujoco>
-        <compiler meshdir="mir_system/meshes" strippath="false" balanceinertia="true" discardvisual="true"/>
+        <compiler meshdir="mir_system/stl" strippath="false" balanceinertia="true" discardvisual="true"/>
     </mujoco>
     <joint name="camera_joint" type="fixed">
         <origin rpy="0 0 1.57" xyz="0.0 0.22 0.4"/>
