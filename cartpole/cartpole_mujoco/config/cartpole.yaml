@@ -1,7 +1,3 @@
-joint_ignores:
-  - cart_to_pole_x
-  - pole_x_to_pole
-
 add_odom_joints: false
 
 
