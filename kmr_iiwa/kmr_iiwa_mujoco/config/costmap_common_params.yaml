@@ -1,0 +1,19 @@
+
+global_frame: map
+robot_base_frame: base_link
+
+update_frequency: 5.0
+publish_frequency: 5.0
+
+obstacle_range: 5
+raytrace_range: 6
+footprint: [[-0.6, -0.4], [-0.6, 0.4], [0.6, 0.4], [0.6, -0.4]]
+#robot_radius: ir_of_robot
+
+inflation:
+  inflation_radius: 0.5
+
+obstacles_laser:
+  observation_sources: laser_scan_sensor_front laser_scan_sensor_back
+  laser_scan_sensor_front: {sensor_frame: front_laser, data_type: LaserScan, topic: front_laser, marking: true, clearing: true}
+  laser_scan_sensor_back: {sensor_frame: back_laser, data_type: LaserScan, topic: back_laser, marking: true, clearing: true}

@@ -1,0 +1,14 @@
+<launch>
+
+    <arg name="namespace" default="kmr_iiwa" />
+
+    <group ns="$(arg namespace)">
+        <include file="$(find mujoco_sim)/launch/mujoco_sim_headless.launch">
+            <arg name="config" value="$(find kmr_iiwa_mujoco)/config/kmr_iiwa.yaml" />
+            <arg name="robot" value="$(find kmr_iiwa_mujoco)/model/kmr_iiwa.urdf" />
+            <arg name="world" value="$(find kmr_iiwa_mujoco)/model/world.xml" />
+            <arg name="use_urdf" value="true" />
+        </include>
+    </group>
+
+</launch>

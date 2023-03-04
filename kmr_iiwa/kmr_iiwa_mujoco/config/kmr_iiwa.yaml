@@ -1,12 +1,6 @@
-joint_inits:
-  shoulder_pan_joint: 1
-  shoulder_lift_joint: -1
-  elbow_joint: -1
-  wrist_1_joint: -1
-  wrist_2_joint: 1
-  wrist_3_joint: 1
+pose_init: [5.0, 6.5, 0.0, 0.0, 0.0, 0.0]
 
-add_odom_joints: false
+add_odom_joints: true
 
 pub_tf:
   world_bodies_rate: 0.0

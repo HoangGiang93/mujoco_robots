@@ -1,0 +1,16 @@
+<launch>
+
+	<!-- rosbridge -->
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+		<arg name="port" value="9393" />
+	</include>
+
+	<include file="$(find kmr_iiwa_mujoco)/launch/kmr_iiwa_display_headless.launch" />
+
+	<include file="$(find kmr_iiwa_mujoco)/launch/kmr_iiwa_move_base.launch" />
+
+	<include file="$(find unreal_vision_bridge)/launch/unreal_vision_bridge.launch">
+		<arg name="address" value="$(optenv HOST_IP 172.17.0.1)" />
+	</include>
+
+</launch>
