@@ -1,6 +1,6 @@
 <launch>
   <arg name="localization" default="false" />
-  <arg name="args" default="" />
+  <arg name="args" default="--delete_db_on_start" />
 
   <group ns="rtabmap">
     <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="$(arg args)">

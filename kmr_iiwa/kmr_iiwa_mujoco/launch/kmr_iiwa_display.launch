@@ -10,7 +10,7 @@
 
         <include file="$(find kmr_iiwa_control)/launch/kmr_iiwa_control.launch" />
 
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_mujoco)/rviz_config/rviz_config.rviz" />
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find kmr_iiwa_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 
 </launch>
