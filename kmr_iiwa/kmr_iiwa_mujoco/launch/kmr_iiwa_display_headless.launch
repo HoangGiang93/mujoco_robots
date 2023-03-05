@@ -9,8 +9,6 @@
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find kmr_iiwa_control)/launch/kmr_iiwa_control.launch" />
-
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find kmr_iiwa_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 
 </launch>
