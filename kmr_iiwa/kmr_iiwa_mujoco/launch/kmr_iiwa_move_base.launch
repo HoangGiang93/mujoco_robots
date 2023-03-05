@@ -4,15 +4,15 @@
   <arg name="base_global_planner" default="navfn/NavfnROS" />
   <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS" />
 
-  <arg name="navigation_map" default="$(find iai_refills_lab)/maps/refills_lab_unreal_10cm.yaml" />
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg navigation_map)" />
+  <!-- <arg name="navigation_map" default="$(find iai_refills_lab)/maps/refills_lab_unreal_10cm.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg navigation_map)" /> -->
 
   <node pkg="topic_tools" type="relay" name="relay_laser_front" args="/front_laser /scan"/>
 	<node pkg="topic_tools" type="relay" name="relay_laser_back" args="/back_laser /scan"/>
 
-  <node pkg="amcl" type="amcl" name="amcl">
+  <!-- <node pkg="amcl" type="amcl" name="amcl">
 		<rosparam file="$(find kmr_iiwa_mujoco)/config/amcl_params.yaml" command="load" />
-	</node>
+	</node> -->
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <remap from="/odom" to="/$(arg namespace)/base_link" />
