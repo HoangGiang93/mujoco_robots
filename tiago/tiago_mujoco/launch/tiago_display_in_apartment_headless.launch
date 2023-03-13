@@ -4,13 +4,15 @@
     <include file="$(find tiago_mujoco)/launch/tiago_sim_headless.launch">
         <arg name="namespace" value="$(arg namespace)" />
         <arg name="config" default="$(find tiago_mujoco)/config/tiago_in_apartment.yaml" />
-        <arg name="world" value="$(find mujoco_world)/model/iai_apartment/iai_apartment_with_window4.xml" />
+        <arg name="world"
+            value="$(find mujoco_world)/model/iai_apartment/iai_apartment_with_window4.xml" />
     </include>
 
     <arg name="model" default="$(find iai_apartment)/urdf/apartment_unreal_with_window4.xacro" />
     <param name="apartment_description" command="$(find xacro)/xacro '$(arg model)'" />
 
-    <node pkg="tf" type="static_transform_publisher" name="iai_apartment_room_link_broadcaster" args="0 0 0 0 0 0 map iai_apartment/apartment_root 25"></node>
+    <node pkg="tf" type="static_transform_publisher" name="iai_apartment_room_link_broadcaster"
+        args="0 0 0 0 0 0 map iai_apartment/apartment_root 25"></node>
 
     <node name="apartment_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
         <remap from="robot_description" to="apartment_description" />
@@ -19,11 +21,24 @@
         <param name="publish_frequency" value="60" />
     </node>
 
-    <group ns="$(arg namespace)">
-        <param name="robot_description" command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago.urdf" />
+    <group if="$(eval true if (namespace != '') else false)">
+        <group ns="$(arg namespace)">
+            <param name="robot_description"
+                command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago.urdf" />
+            <node name="robot_state_publisher" pkg="robot_state_publisher"
+                type="robot_state_publisher" />
+
+            <include file="$(find tiago_control)/launch/tiago_control.launch" />
+        </group>
+    </group>
+
+    <group unless="$(eval true if (namespace != '') else false)">
+        <param name="robot_description"
+            command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find tiago_control)/launch/tiago_control.launch" />
     </group>
+
 
 </launch>
