@@ -9,7 +9,7 @@
 
 	<node pkg="amcl" type="amcl" name="amcl">
 		<rosparam file="$(find tiago_mujoco)/config/amcl_params.yaml" command="load" />
-		<remap from="scan" to="/$(arg namespace)/base_laser" />
+		<remap from="scan" to="/tiago/base_laser" />
 	</node>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
