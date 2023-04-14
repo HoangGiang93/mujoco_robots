@@ -1,14 +1,14 @@
 <launch>
 
-  <arg name="namespace" default="tiago" />
-  <arg name="config" default="$(find tiago_mujoco)/config/tiago.yaml" />
+  <arg name="namespace" default="tiago_dual" />
+  <arg name="config" default="$(find tiago_mujoco)/config/tiago_dual_in_apartment.yaml" />
   <arg name="world" default="$(find tiago_mujoco)/model/world.xml" />
 
   <group if="$(eval true if (namespace != '') else false)">
     <group ns="$(arg namespace)">
       <include file="$(find mujoco_sim)/launch/mujoco_sim_headless.launch">
         <arg name="config" value="$(arg config)" />
-        <arg name="robot" value="$(find tiago_mujoco)/model/tiago.xml" />
+        <arg name="robot" value="$(find tiago_mujoco)/model/tiago_dual.xml" />
         <arg name="world" value="$(arg world)" />
       </include>
     </group>
@@ -17,7 +17,7 @@
   <group unless="$(eval true if (namespace != '') else false)">
     <include file="$(find mujoco_sim)/launch/mujoco_sim_headless.launch">
       <arg name="config" value="$(arg config)" />
-      <arg name="robot" value="$(find tiago_mujoco)/model/tiago.xml" />
+      <arg name="robot" value="$(find tiago_mujoco)/model/tiago_dual.xml" />
       <arg name="world" value="$(arg world)" />
     </include>
   </group>

@@ -1,9 +1,9 @@
 <launch>
 
-    <arg name="namespace" default="tiago" />
-    <include file="$(find tiago_mujoco)/launch/tiago_sim_headless.launch">
+    <arg name="namespace" default="tiago_dual" />
+    <include file="$(find tiago_mujoco)/launch/tiago_dual_sim_headless.launch">
         <arg name="namespace" value="$(arg namespace)" />
-        <arg name="config" default="$(find tiago_mujoco)/config/tiago_in_apartment.yaml" />
+        <arg name="config" default="$(find tiago_mujoco)/config/tiago_dual_in_apartment.yaml" />
         <arg name="world"
             value="$(find mujoco_world)/model/iai_apartment/iai_apartment_with_window4.xml" />
     </include>
@@ -24,7 +24,7 @@
     <group if="$(eval true if (namespace != '') else false)">
         <group ns="$(arg namespace)">
             <param name="robot_description"
-                command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago.urdf" />
+                command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago_dual.urdf" />
             <node name="robot_state_publisher" pkg="robot_state_publisher"
                 type="robot_state_publisher" />
 
@@ -34,7 +34,7 @@
 
     <group unless="$(eval true if (namespace != '') else false)">
         <param name="robot_description"
-            command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago.urdf" />
+            command="$(find xacro)/xacro $(find tiago_mujoco)/model/tiago_dual.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <include file="$(find tiago_control)/launch/tiago_control.launch" />

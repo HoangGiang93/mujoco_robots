@@ -1,0 +1,32 @@
+pose_init: 
+  tiago_dual: [12.5, 2.5, 0.0, 0.0, 0.0, 3.1415]
+
+add_odom_joints: true
+
+pub_object_marker_array:
+  free_bodies_only: False # Only publish the marker array of free objects
+  robot_bodies_rate: 0.0 # The frequency to publish the marker array of robot
+  world_bodies_rate: 0.0 # The frequency to publish the marker array of world
+  spawned_object_bodies_rate: 60.0 # The frequency to publish the marker array of spawned objects
+
+pub_tf:
+  free_bodies_only: True # Only publish the tf of free objects
+  robot_bodies_rate: 0.0 # The frequency to publish the tf of robot
+  world_bodies_rate: 0.0 # The frequency to publish the tf of world
+  spawned_object_bodies_rate: 60.0 # The frequency to publish the tf of spawned objects
+
+pub_object_state_array:
+  free_bodies_only: True # Only publish the object state of free objects
+  robot_bodies_rate: 0.0 # The frequency to publish the object state of robot
+  world_bodies_rate: 0.0 # The frequency to publish the object state of world
+  spawned_object_bodies_rate: 60.0 # The frequency to publish the object state of spawned objects
+
+pub_joint_states: 
+  world_bodies_rate: 60.0
+  spawned_object_bodies_rate: 60.0
+
+pub_base_pose_rate: 60.0
+
+spawn_and_destroy_objects_rate: 60.0
+
+root_frame_id: odom

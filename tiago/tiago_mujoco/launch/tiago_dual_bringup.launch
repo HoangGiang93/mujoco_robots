@@ -5,11 +5,11 @@
 		<arg name="port" value="9393" />
 	</include>
 
-	<include file="$(find tiago_mujoco)/launch/tiago_display_in_apartment_headless.launch" >
+	<include file="$(find tiago_mujoco)/launch/tiago_dual_display_in_apartment_headless.launch" >
 		<arg name="namespace" value="" />
 	</include>
 
-	<include file="$(find tiago_mujoco)/launch/tiago_move_base.launch" >
+	<include file="$(find tiago_mujoco)/launch/tiago_dual_move_base.launch" >
 		<arg name="namespace" value="" />
 	</include>
 

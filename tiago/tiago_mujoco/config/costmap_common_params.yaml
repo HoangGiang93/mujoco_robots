@@ -17,7 +17,7 @@ obstacles_laser:
     {
       sensor_frame: base_laser_link,
       data_type: LaserScan,
-      topic: tiago/base_laser,
+      topic: tiago_dual/base_laser,
       marking: true,
       clearing: true,
     }
