@@ -1,6 +1,6 @@
 add_odom_joints: false
 
-
+disable_gravity: false
 
 pub_tf:
   world_bodies_rate: 0.0

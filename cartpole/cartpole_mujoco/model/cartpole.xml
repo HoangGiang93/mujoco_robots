@@ -1,4 +1,4 @@
-<mujoco model="physics">
+<mujoco model="cartpole">
     <compiler angle="radian" meshdir="cartpole/stl/"/>
     <size njmax="500" nconmax="100"/>
     <default/>
