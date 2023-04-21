@@ -1,9 +1,9 @@
 <launch>
 
-    <arg name="namespace" default="dual_panda_arm" />
-    <arg name="world" default="$(find franka_mujoco)/model/world_dual_panda_arm.xml" />
+    <arg name="namespace" default="dual_panda" />
+    <arg name="world" default="$(find franka_mujoco)/model/world_dual_panda.xml" />
 
-    <include file="$(find franka_mujoco)/launch/dual_panda_arm_sim.launch">
+    <include file="$(find franka_mujoco)/launch/dual_panda_sim.launch">
         <arg name="namespace" value="$(arg namespace)" />
         <arg name="world" value="$(arg world)" />
     </include>
@@ -12,7 +12,7 @@
         <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/dual_panda_arm.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-        <include file="$(find franka_control)/launch/dual_panda_arm_traj_control.launch" />
+        <include file="$(find franka_control)/launch/dual_panda_traj_control.launch" />
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_mujoco)/rviz_config/rviz_config.rviz" />
     </group>
 

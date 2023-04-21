@@ -17,7 +17,10 @@ joint_inits:
 add_odom_joints: false
 
 pub_object_marker_array:
-  world_bodies_rate:  60.0
+  free_bodies_only: True
+  robot_bodies_rate: 0.0
+  world_bodies_rate: 0.0
+  spawned_object_bodies_rate: 60.0
 
 pub_tf:
   world_bodies_rate: 60.0
