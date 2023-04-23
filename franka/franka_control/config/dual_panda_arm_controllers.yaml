@@ -58,18 +58,14 @@ panda_2_joint_trajectory_controller:
     panda_2_joint6: { goal: 0.05 }
     panda_2_joint7: { goal: 0.05 }
 
-panda_1_finger_joint1_effort_controller:
-  type: effort_controllers/JointEffortController
+panda_1_gripper_controller:
+  type: effort_controllers/GripperActionController
   joint: panda_1_finger_joint1
+  gains:
+    panda_1_finger_joint1: { p: 20000, i: 100, d: 50 }
 
-panda_1_finger_joint2_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: panda_1_finger_joint2
-
-panda_2_finger_joint1_effort_controller:
-  type: effort_controllers/JointEffortController
+panda_2_gripper_controller:
+  type: effort_controllers/GripperActionController
   joint: panda_2_finger_joint1
-
-panda_2_finger_joint2_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: panda_2_finger_joint2
+  gains:
+    panda_2_finger_joint1: { p: 20000, i: 100, d: 50 }

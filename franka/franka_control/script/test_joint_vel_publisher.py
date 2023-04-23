@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import Float64
 import math
 
-pubs = [rospy.Publisher('/panda_arm/panda_joint' + str(i) + '_velocity_controller/command', Float64, queue_size=10) for i in range(1,8)]
+pubs = [rospy.Publisher('/panda/panda_joint' + str(i) + '_velocity_controller/command', Float64, queue_size=10) for i in range(1,8)]
 
 if __name__ == '__main__':
     rospy.init_node('joint_vel_command', anonymous=True)

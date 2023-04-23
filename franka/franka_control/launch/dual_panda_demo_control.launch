@@ -5,6 +5,8 @@
 	<node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn 
 		joint_state_controller 
 		panda_1_joint_trajectory_controller
-		panda_2_joint_trajectory_controller" />
+		panda_2_joint_trajectory_controller
+		panda_1_gripper_controller
+		panda_2_gripper_controller" />
 
 </launch>
