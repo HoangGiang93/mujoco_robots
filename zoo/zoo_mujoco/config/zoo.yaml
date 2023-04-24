@@ -8,6 +8,8 @@ pose_init:
 
 max_time_step: 0.01
 
+disable_gravity: false
+
 add_odom_joints:
   lin_odom_x_joint: true
   lin_odom_y_joint: true
