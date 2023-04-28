@@ -62,12 +62,12 @@ def set_bowl():
     except rospy.ServiceException as error:
         print(f'Service call failed: {error}')
 
-    spawned_object.info.mesh = "bowl.xml"
-    try:
-        gen_objects = rospy.ServiceProxy("/unreal/spawn_objects", SpawnObject)
-        gen_objects(objects)
-    except rospy.ServiceException as error:
-        print(f'Service call failed: {error}')
+    # spawned_object.info.mesh = "bowl.xml"
+    # try:
+    #     gen_objects = rospy.ServiceProxy("/mujoco/spawn_objects", SpawnObject)
+    #     gen_objects(objects)
+    # except rospy.ServiceException as error:
+    #     print(f'Service call failed: {error}')
 
 
 def set_new_object(object_id):
@@ -118,6 +118,11 @@ def set_new_object(object_id):
     except rospy.ServiceException as error:
         print(f'Service call failed: {error}')
 
+    # try:
+    #     gen_objects = rospy.ServiceProxy("/mujoco/spawn_objects", SpawnObject)
+    #     gen_objects(objects)
+    # except rospy.ServiceException as error:
+    #     print(f'Service call failed: {error}')
 
 def execute_joint_goal(joint_names, joint_positions):
     giskard_wrapper.set_joint_goal(dict(zip(joint_names, joint_positions)))

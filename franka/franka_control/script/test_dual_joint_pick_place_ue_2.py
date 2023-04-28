@@ -1,45 +1,28 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
+from random import uniform, randint
+import math
+import tf
+from tf2_ros import TransformException
 
 import rospy
-from std_msgs.msg import Float64, ColorRGBA
+from geometry_msgs.msg import PoseStamped
+from std_msgs.msg import ColorRGBA
 
-from giskard_msgs.msg import MoveCmd, JointConstraint
-from giskard_msgs.msg import MoveResult, CartesianConstraint, CollisionEntry
-from giskard_msgs.msg import MoveAction
-from giskard_msgs.msg import MoveGoal
+from giskardpy.python_interface import GiskardWrapper
+
+from control_msgs.msg import GripperCommandAction, GripperCommandGoal
 
 # Brings in the SimpleActionClient
 import actionlib
-from giskard_msgs.msg import MoveResult
 
-from mujoco_msgs.msg import ObjectStatus, ObjectInfo, ObjectState
+from mujoco_msgs.msg import ObjectStatus, ObjectInfo
 from mujoco_msgs.srv import SpawnObject, SpawnObjectRequest
 
-import tf
 
-import math
-from random import random, uniform, randint
-
-hand_2_pub = [
-    rospy.Publisher(
-        "dual_panda_arm/panda_2_finger_joint" + str(i) + "_effort_controller/command",
-        Float64,
-        queue_size=10,
-    )
-    for i in range(1, 3)
-]
-
-# Creates the SimpleActionClient, passing the type of the action
-# (MoveAction) to the constructor.
-client = actionlib.SimpleActionClient("/giskard_2/command", MoveAction)
-
-cartesian_goal = CartesianConstraint()
-
-cartesian_goal.type = cartesian_goal.POSE_6D
-
-object = ObjectStatus()
+spawned_object = ObjectStatus()
 types = [ObjectInfo.CUBE, ObjectInfo.SPHERE, ObjectInfo.CYLINDER]
-names = ["Cube", "Sphere",  "Cylinder"]
+names = ["Cube", "Sphere", "Cylinder"]
 
 color = [
     ColorRGBA(0, 0, 1, 1),
@@ -52,205 +35,171 @@ color = [
 ]
 
 
-def set_new_object(i):
+def set_new_object(object_id):
     idx = randint(0, 2)
-    object.info.name = names[idx] + "_2_" + str(i)
-    object.info.type = types[idx]
-    object.info.movable = True
-    object.pose.position.x = uniform(-0.2, 0.2)
-    object.pose.position.y = 0.8
-    object.pose.position.z = 1.5
-    object.pose.orientation.x = 0.0
-    object.pose.orientation.y = 0.0
-    object.pose.orientation.z = 0.0
-    object.pose.orientation.w = 1.0
+    spawned_object.info.name = names[idx] + "_2_" + str(object_id)
+    spawned_object.info.type = types[idx]
+    spawned_object.info.movable = True
+    spawned_object.info.size.x = 0.025
+    spawned_object.info.size.y = 0.025
+    spawned_object.info.size.z = 0.025
+    spawned_object.info.rgba = color[randint(0, len(color) - 1)]
+    spawned_object.info.inertial.m = 0.01
+    if spawned_object.info.type == ObjectInfo.CUBE:
+        i_rr = 1/6 * spawned_object.info.inertial.m * \
+            spawned_object.info.size.x * spawned_object.info.size.x
+        spawned_object.info.inertial.ixx = i_rr
+        spawned_object.info.inertial.iyy = i_rr
+        spawned_object.info.inertial.izz = i_rr
+    elif spawned_object.info.type == ObjectInfo.SPHERE:
+        i_rr = 2/5 * spawned_object.info.inertial.m * \
+            spawned_object.info.size.x * spawned_object.info.size.x
+        spawned_object.info.inertial.ixx = i_rr
+        spawned_object.info.inertial.iyy = i_rr
+        spawned_object.info.inertial.izz = i_rr
+    elif spawned_object.info.type == ObjectInfo.CYLINDER:
+        i_rr = 1/12 * spawned_object.info.inertial.m * \
+            (3 * spawned_object.info.size.x * spawned_object.info.size.x +
+             spawned_object.info.size.z * spawned_object.info.size.z)
+        i_zz = 1/2 * spawned_object.info.inertial.m * \
+            spawned_object.info.size.x * spawned_object.info.size.x
+        spawned_object.info.inertial.ixx = i_rr
+        spawned_object.info.inertial.iyy = i_rr
+        spawned_object.info.inertial.izz = i_zz
 
-    object.info.size.x = 0.025
-    object.info.size.y = 0.025
-    object.info.size.z = 0.025
-    object.info.rgba = color[randint(0, len(color) - 1)]
-    
+    spawned_object.pose.position.x = uniform(-0.2, 0.2)
+    spawned_object.pose.position.y = 0.8
+    spawned_object.pose.position.z = 1.2
+    spawned_object.pose.orientation.x = 0.0
+    spawned_object.pose.orientation.y = 0.0
+    spawned_object.pose.orientation.z = 0.0
+    spawned_object.pose.orientation.w = 1.0
+
     objects = SpawnObjectRequest()
-    objects.objects = [object]
+    objects.objects = [spawned_object]
     try:
-        gen_objects = rospy.ServiceProxy(
-            "/unreal/spawn_objects", SpawnObject
-        )
+        gen_objects = rospy.ServiceProxy("/unreal/spawn_objects", SpawnObject)
         gen_objects(objects)
-    except rospy.ServiceException as e:
-        print("Service call failed: %s" % e)
+    except rospy.ServiceException as error:
+        print(f'Service call failed: {error}')
 
+    # try:
+    #     gen_objects = rospy.ServiceProxy("/mujoco/spawn_objects", SpawnObject)
+    #     gen_objects(objects)
+    # except rospy.ServiceException as error:
+    #     print(f'Service call failed: {error}')
 
-def execute_joint_goal(joint_names, position):
-    # Waits until the action server has started up and started
-    # listening for goals.
-    print("waiting for giskard")
-    client.wait_for_server()
-    print("connected to giskard")
-
-    # Creates a goal to send to the action server.
-    action_goal = MoveGoal()
-
-    action_goal.type = MoveGoal.PLAN_AND_EXECUTE
-
-    joint_goal = JointConstraint()
-
-    joint_goal.type = JointConstraint.JOINT
-
-    # this can be any subset of the robots joints
-    # joint_goal.goal_state is a normal sensor_msgs/JointState
-    joint_goal.goal_state.name = joint_names
-
-    joint_goal.goal_state.position = position
-
-    goal = MoveCmd()
-    # allow all collision
-    ce = CollisionEntry()
-    ce.robot_links = [CollisionEntry.ALL]
-    ce.body_b = CollisionEntry.ALL
-    ce.link_bs = [CollisionEntry.ALL]
-    ce.type = CollisionEntry.ALLOW_COLLISION
-    goal.collisions = [ce]
-
-    goal.joint_constraints = [joint_goal]
-    action_goal.cmd_seq = [goal]
-
-    # Sends the goal to the action server.
-    client.send_goal(action_goal)
-
-    # Waits for the server to finish performing the action.
-    client.wait_for_result()
-
-    result = client.get_result()  # type: MoveResult
-    if result.error_codes[0] == MoveResult.SUCCESS:
-        print("giskard returned success")
-    else:
-        print("something went wrong")
+def execute_joint_goal(joint_names, joint_positions):
+    giskard_wrapper.set_joint_goal(dict(zip(joint_names, joint_positions)))
+    giskard_wrapper.plan_and_execute(wait=True)
 
 
 def execute_cartesian_goal(root_link, tip_link, position, orientation):
-    # Waits until the action server has started up and started
-    # listening for goals.
-    print("waiting for giskard")
-    client.wait_for_server()
-    print("connected to giskard")
-
-    # Creates a goal to send to the action server.
-    action_goal = MoveGoal()
-
-    action_goal.type = MoveGoal.PLAN_AND_EXECUTE
-
-    # specify the kinematic chain
-    cartesian_goal.root_link = root_link
-    cartesian_goal.tip_link = tip_link
-
-    cartesian_goal.goal.header.frame_id = tip_link
-    cartesian_goal.goal.pose.position.x = position[0]
-    cartesian_goal.goal.pose.position.y = position[1]
-    cartesian_goal.goal.pose.position.z = position[2]
-    cartesian_goal.goal.pose.orientation.x = orientation[0]
-    cartesian_goal.goal.pose.orientation.y = orientation[1]
-    cartesian_goal.goal.pose.orientation.z = orientation[2]
-    cartesian_goal.goal.pose.orientation.w = orientation[3]
-
-    goal = MoveCmd()
-    # allow all collision
-    ce = CollisionEntry()
-    ce.robot_links = [CollisionEntry.ALL]
-    ce.body_b = CollisionEntry.ALL
-    ce.link_bs = [CollisionEntry.ALL]
-    ce.type = CollisionEntry.ALLOW_COLLISION
-    goal.collisions = [ce]
-
-    goal.cartesian_constraints = [cartesian_goal]
-
-    action_goal.cmd_seq = [goal]
-
-    # Sends the goal to the action server.
-    client.send_goal(action_goal)
-
-    # Waits for the server to finish performing the action.
-    client.wait_for_result()
-
-    result = client.get_result()  # type: MoveResult
-    if result.error_codes[0] == MoveResult.SUCCESS:
-        print("giskard returned success")
-    else:
-        print("something went wrong")
+    rospy.loginfo('Move ' + tip_link + ' to ' + str(position))
+    goal_pose = PoseStamped()
+    goal_pose.header.stamp = rospy.Time.now()
+    goal_pose.header.frame_id = tip_link
+    goal_pose.pose.position.x = position[0]
+    goal_pose.pose.position.y = position[1]
+    goal_pose.pose.position.z = position[2]
+    goal_pose.pose.orientation.x = orientation[0]
+    goal_pose.pose.orientation.y = orientation[1]
+    goal_pose.pose.orientation.z = orientation[2]
+    goal_pose.pose.orientation.w = orientation[3]
+    giskard_wrapper.set_cart_goal(
+        goal_pose=goal_pose, tip_link=tip_link, root_link=root_link)
+    giskard_wrapper.plan_and_execute(wait=True)
 
 
-def move_to_pre_pick(root_link, hand, object):
+def move_to_pre_pick(root_link, hand, obj):
     while not rospy.is_shutdown():
         try:
-            (trans, _) = listener.lookupTransform(hand, object, rospy.Time(0))
-        except (
-            tf.LookupException,
-            tf.ConnectivityException,
-            tf.ExtrapolationException,
-        ):
+            tf_listener.waitForTransform(
+                hand, obj, rospy.Time(), rospy.Duration(5)
+            )
+        except TransformException:
+            rospy.logwarn(hand + " or " + obj + " not found")
+            return
+
+        trans, _ = tf_listener.lookupTransform(
+            hand, obj, rospy.Time(0))
+        if abs(trans[0]) > 0.5 or abs(trans[2]) > 0.5:
+            rospy.logwarn('wtf...')
             continue
 
         trans[2] -= 0.1
         execute_cartesian_goal(root_link, hand, trans, [0, 0, 0, 1])
-        if abs(trans[0]) < 0.01 and abs(trans[1]) < 0.01:
+        if abs(trans[0]) < 0.1 and abs(trans[1]) < 0.1:
             return
 
 
-def move_to_pick(root_link, hand, object):
+def move_to_pick(root_link, hand, obj):
     while not rospy.is_shutdown():
         try:
-            (trans, _) = listener.lookupTransform(hand, object, rospy.Time(0))
-        except (
-            tf.LookupException,
-            tf.ConnectivityException,
-            tf.ExtrapolationException,
-        ):
+            tf_listener.waitForTransform(
+                hand, obj, rospy.Time(), rospy.Duration(5)
+            )
+        except TransformException:
+            rospy.logwarn(hand + " or " + obj + " not found")
+            return
+
+        trans, _ = tf_listener.lookupTransform(
+            hand, obj, rospy.Time(0))
+
+        if abs(trans[0]) > 0.5 or abs(trans[2]) > 0.5:
+            rospy.logwarn('wtf...')
             continue
 
         execute_cartesian_goal(root_link, hand, trans, [0, 0, 0, 1])
-        if abs(trans[0]) < 0.01 and abs(trans[1]) < 0.01 and abs(trans[2]) < 0.01:
+        if abs(trans[0]) < 0.1 and abs(trans[1]) < 0.1 and abs(trans[2]) < 0.1:
             return
 
 
-def move_to_post_pick(root_link, hand, object):
+def move_to_post_pick(root_link, hand, obj):
     while not rospy.is_shutdown():
         try:
-            (trans, _) = listener.lookupTransform(hand, object, rospy.Time(0))
-        except (
-            tf.LookupException,
-            tf.ConnectivityException,
-            tf.ExtrapolationException,
-        ):
-            continue
+            tf_listener.waitForTransform(
+                hand, obj, rospy.Time(), rospy.Duration(5)
+            )
+        except TransformException:
+            rospy.logwarn(hand + " or " + obj + " not found")
+            return
+
+        trans, _ = tf_listener.lookupTransform(
+            hand, obj, rospy.Time(0))
 
         trans[2] -= 0.2
+
         execute_cartesian_goal(root_link, hand, trans, [0, 0, 0, 1])
         return
 
 
-def panda_2_open():
-    hand_2_pub[0].publish(300)
-    hand_2_pub[1].publish(300)
-    return
-
-
-def panda_2_close():
-    hand_2_pub[0].publish(0)
-    hand_2_pub[1].publish(0)
-    return
+def control_gripper(client: actionlib.SimpleActionClient, open_gripper: bool):
+    if open_gripper:
+        rospy.loginfo("Open gripper")
+    else:
+        rospy.loginfo("Close gripper")
+    client.wait_for_server()
+    gripper_cmd_goal = GripperCommandGoal()
+    gripper_cmd_goal.command.position = open_gripper * 0.04
+    gripper_cmd_goal.command.max_effort = 1000.0
+    client.send_goal(gripper_cmd_goal)
 
 
 if __name__ == "__main__":
-    rospy.init_node("test_dual_joint_pick_place_2")
+    rospy.init_node("test_dual_joint_pick_place_ue_2")
     rospy.sleep(1)
 
-    listener = tf.TransformListener()
+    tf_listener = tf.TransformListener()
 
     rospy.wait_for_service("/unreal/spawn_objects", 1)
+    rospy.wait_for_service("/mujoco/spawn_objects", 1)
 
-    i = 0
-    set_new_object(i)
-    i = i + 1
+    gripper_2_client = actionlib.SimpleActionClient(
+        "/dual_panda/panda_2_gripper_controller/gripper_cmd", GripperCommandAction
+    )
+
+    giskard_wrapper = GiskardWrapper(node_name='giskard_2')
     execute_joint_goal(
         [
             "panda_2_joint1",
@@ -263,14 +212,33 @@ if __name__ == "__main__":
         ],
         [math.pi / 2, 0.37, 0.0, -2.22, 0, 2.56, 0.8],
     )
+
+    i = 0
+    set_new_object(i)
+    i = i + 1
+
     while not rospy.is_shutdown():
-        panda_2_open()
-        move_to_pre_pick("panda_2_link0", "panda_2_hand_tcp", object.info.name)
-        move_to_pick("panda_2_link0", "panda_2_hand_tcp", object.info.name)
-        panda_2_close()
-        move_to_post_pick("panda_2_link0", "panda_2_hand_tcp", object.info.name)
+        control_gripper(gripper_2_client, True)
+        move_to_pre_pick("panda_2_link0", "panda_2_hand_tcp",
+                         spawned_object.info.name)
+        move_to_pick("panda_2_link0", "panda_2_hand_tcp",
+                     spawned_object.info.name)
+        control_gripper(gripper_2_client, False)
+        move_to_post_pick("panda_2_link0", "panda_2_hand_tcp",
+                          spawned_object.info.name)
         execute_joint_goal(["panda_2_joint1"], [-math.pi / 2])
-        panda_2_open()
+        control_gripper(gripper_2_client, True)
         set_new_object(i)
         i = i + 1
-        execute_joint_goal(["panda_2_joint1"], [math.pi / 2])
+        execute_joint_goal(
+            [
+                "panda_2_joint1",
+                "panda_2_joint2",
+                "panda_2_joint3",
+                "panda_2_joint4",
+                "panda_2_joint5",
+                "panda_2_joint6",
+                "panda_2_joint7",
+            ],
+            [math.pi / 2, 0.37, 0.0, -2.22, 0, 2.56, 0.8],
+        )
