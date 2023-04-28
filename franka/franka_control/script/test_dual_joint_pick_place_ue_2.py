@@ -69,7 +69,7 @@ def set_new_object(object_id):
 
     spawned_object.pose.position.x = uniform(-0.2, 0.2)
     spawned_object.pose.position.y = 0.8
-    spawned_object.pose.position.z = 1.2
+    spawned_object.pose.position.z = 1.05
     spawned_object.pose.orientation.x = 0.0
     spawned_object.pose.orientation.y = 0.0
     spawned_object.pose.orientation.z = 0.0

@@ -41,7 +41,7 @@ def set_bowl():
     spawned_object.info.movable = False
     spawned_object.info.size.x = 1.0
     spawned_object.info.size.y = 1.0
-    spawned_object.info.size.z = 1.0
+    spawned_object.info.size.z = 1.1
     spawned_object.info.rgba = ColorRGBA(1, 0.65, 0, 1)
     spawned_object.info.mesh = "/Game/Meshes/bowl/bowl.bowl"
 
@@ -104,7 +104,7 @@ def set_new_object(object_id):
 
     spawned_object.pose.position.x = uniform(-0.2, 0.2)
     spawned_object.pose.position.y = -0.8
-    spawned_object.pose.position.z = 1.2
+    spawned_object.pose.position.z = 1.05
     spawned_object.pose.orientation.x = 0.0
     spawned_object.pose.orientation.y = 0.0
     spawned_object.pose.orientation.z = 0.0

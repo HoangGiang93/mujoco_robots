@@ -20,10 +20,10 @@
 
     <group ns="$(arg namespace)">
         <node pkg="franka_control" type="test_dual_joint_pick_place_ue_1.py" name="test_1"
-            output="screen" launch-prefix="bash -c 'sleep 0; $0 $@' " />
+            output="screen" launch-prefix="bash -c 'sleep 10; $0 $@' " />
 
         <node pkg="franka_control" type="test_dual_joint_pick_place_ue_2.py" name="test_2"
-            output="screen" launch-prefix="bash -c 'sleep 6; $0 $@' " />
+            output="screen" launch-prefix="bash -c 'sleep 16; $0 $@' " />
     </group>
 
 

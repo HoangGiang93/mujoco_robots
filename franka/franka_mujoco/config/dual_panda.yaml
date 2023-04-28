@@ -23,7 +23,9 @@ pub_object_marker_array:
   spawned_object_bodies_rate: 60.0
 
 pub_tf:
-  world_bodies_rate: 60.0
+  robot_bodies_rate: 0.0
+  world_bodies_rate: 0.0
+  spawned_object_bodies_rate: 0.0
 
 pub_object_state_array:
   world_bodies_rate:  60.0
@@ -33,6 +35,6 @@ pub_joint_states:
 
 pub_base_pose_rate: 60.0
 
-spawn_and_destroy_objects_rate: 600.0
+spawn_and_destroy_objects_rate: 10.0
 
 root_frame_id: map
