@@ -1,8 +1,0 @@
-- git:
-    local-name: hsr_description/hsr_description
-    uri: git@github.com:code-iai/hsr_description.git
-    version: ae70f2b593c042490855015522300e48e496a0e6
-- git:
-    local-name: hsr_description/hsr_meshes
-    uri: git@github.com:HoangGiang93/hsr_meshes.git
-    version: 7409071bb0fa8fd3c4e43a474c2b1779a4b9802e

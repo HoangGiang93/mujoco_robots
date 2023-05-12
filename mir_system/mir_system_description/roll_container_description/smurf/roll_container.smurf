@@ -1,9 +1,0 @@
-# main SMURF file of model "roll_container"
-# created with Phobos 1.0.1 "Capricious Choutengan" - https://github.com/dfki-ric/phobos
-
-SMURF version: 1.0.1 "Capricious Choutengan"
-modelname: roll_container
-date: '20210118_11:20'
-files:
-- ../urdf/roll_container.urdf
-- roll_container_materials.yml
