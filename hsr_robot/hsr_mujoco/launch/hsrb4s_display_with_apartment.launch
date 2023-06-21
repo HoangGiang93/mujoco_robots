@@ -4,7 +4,7 @@
     <arg name="namespace" default="hsrb4s" />
     <include file="$(find hsr_mujoco)/launch/hsrb4s_sim.launch">
         <arg name="namespace" value="$(arg namespace)" />
-        <arg name="world" value ="$(find mujoco_world)/model/iai_apartment/iai_apartment.xml" />
+        <arg name="world" value ="$(find mujoco_world)/model/iai_apartment/iai_apartment_with_window4.xml" />
     </include>
 
     <group ns="$(arg namespace)">
@@ -25,7 +25,7 @@
 
     <node name="apartment_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
         <remap from="robot_description" to="apartment_description" />
-        <remap from="joint_states" to="/mujoco/joint_states" />
+        <remap from="joint_states" to="/mujoco/world_joint_states" />
         <param name="tf_prefix" value="iai_apartment" />
         <param name="publish_frequency" value="60" />
     </node>
