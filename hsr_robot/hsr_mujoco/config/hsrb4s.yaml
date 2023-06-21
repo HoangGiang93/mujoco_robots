@@ -7,6 +7,12 @@ max_time_step: 0.005
 
 add_odom_joints: true
 
+pub_object_marker_array:
+  free_bodies_only: True # Only publish the marker array of free objects
+  robot_bodies_rate: 0.0 # The frequency to publish the marker array of robot
+  world_bodies_rate: 0.0 # The frequency to publish the marker array of world
+  spawned_object_bodies_rate: 60.0 # The frequency to publish the marker array of spawned objects
+
 pub_tf:
   world_bodies_rate: 0.0
 
