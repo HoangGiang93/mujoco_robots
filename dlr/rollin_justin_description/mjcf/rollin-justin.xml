@@ -1,0 +1,267 @@
+<?xml version="1.0" ?>
+<mujoco model="justin">
+	<compiler meshdir="rollin-justin/" texturedir="rollin-justin/obj/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
+	<default>
+		<default class="visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="collision">
+			<geom rgba="0.9 0.9 0.9 1.0"/>
+		</default>
+	</default>
+	<asset>
+		<mesh name="base_collision1d01d01d0" file="stl/base1d01d01d0.stl"/>
+		<mesh name="torso1_collision1d01d01d0" file="stl/torso11d01d01d0.stl"/>
+		<mesh name="torso2_collision1d01d01d0" file="stl/torso21d01d01d0.stl"/>
+		<mesh name="torso3_collision1d01d01d0" file="stl/torso31d01d01d0.stl"/>
+		<mesh name="torso4_collision1d01d01d0" file="stl/torso41d01d01d0.stl"/>
+		<mesh name="head1_collision1d01d01d0" file="stl/head11d01d01d0.stl"/>
+		<mesh name="head2_collision1d01d01d0" file="stl/head21d01d01d0.stl"/>
+		<mesh name="left_arm1_collision1d01d01d0" file="stl/left_arm11d01d01d0.stl"/>
+		<mesh name="left_arm2_collision1d01d01d0" file="stl/left_arm21d01d01d0.stl"/>
+		<mesh name="left_arm3_collision1d01d01d0" file="stl/left_arm31d01d01d0.stl"/>
+		<mesh name="left_arm4_collision1d01d01d0" file="stl/left_arm41d01d01d0.stl"/>
+		<mesh name="left_arm5_collision1d01d01d0" file="stl/left_arm51d01d01d0.stl"/>
+		<mesh name="left_arm6_collision1d01d01d0" file="stl/left_arm61d01d01d0.stl"/>
+		<mesh name="left_arm7_collision1d01d01d0" file="stl/left_arm71d01d01d0.stl"/>
+		<mesh name="right_arm1_collision1d01d01d0" file="stl/right_arm11d01d01d0.stl"/>
+		<mesh name="right_arm2_collision1d01d01d0" file="stl/right_arm21d01d01d0.stl"/>
+		<mesh name="right_arm3_collision1d01d01d0" file="stl/right_arm31d01d01d0.stl"/>
+		<mesh name="right_arm4_collision1d01d01d0" file="stl/right_arm41d01d01d0.stl"/>
+		<mesh name="right_arm5_collision1d01d01d0" file="stl/right_arm51d01d01d0.stl"/>
+		<mesh name="right_arm6_collision1d01d01d0" file="stl/right_arm61d01d01d0.stl"/>
+		<mesh name="right_arm7_collision1d01d01d0" file="stl/right_arm71d01d01d0.stl"/>
+		<mesh name="finger_base_collision1d01d01d0" file="stl/finger_base1d01d01d0.stl"/>
+		<mesh name="finger_phaprox_collision1d01d01d0" file="stl/finger_phaprox1d01d01d0.stl"/>
+		<mesh name="finger_phamed_collision1d01d01d0" file="stl/finger_phamed1d01d01d0.stl"/>
+		<mesh name="hii2_geh_phadist_gesamt_asm_collision1d01d01d0" file="stl/hii2_geh_phadist_gesamt_asm1d01d01d0.stl"/>
+	</asset>
+	<worldbody>
+		<body name="justin" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+			<body name="justin__world" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+				<body name="justin__base_link" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+					<geom name="justin__base_link_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="base_collision1d01d01d0"/>
+					<body name="justin__torso1" pos="0.0 0.0 0.6939" quat="1.0 0.0 0.0 0.0">
+						<geom name="justin__torso1_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso1_collision1d01d01d0"/>
+						<joint name="justin__torso1" pos="0.0 0.0 0.0" type="hinge" range="-1.7453300509426566 3.3161301061630795" axis="0.0 0.0 1.0"/>
+						<body name="justin__torso2" pos="0.0 0.0 0.0" quat="0.5000031633974484 -0.49999999998999284 -0.49999999998999284 -0.49999683660255156">
+							<geom name="justin__torso2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso2_collision1d01d01d0"/>
+							<joint name="justin__torso2" pos="0.0 0.0 0.0" type="hinge" range="-1.2217299437638127 0.523600007310303" axis="0.0 0.0 1.0"/>
+							<body name="justin__torso3" pos="0.30000000000000016 -8.470329472543003e-22 0.0" quat="1.0 2.0536478857275792e-23 -1.6155871338926322e-27 0.0">
+								<geom name="justin__torso3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso3_collision1d01d01d0"/>
+								<joint name="justin__torso3" pos="-1.0536230050081759e-21 -1.6653345368174843e-16 1.9006559522054725e-21" type="hinge" range="0.1745329917784602 2.3387401324079655" axis="0.0 0.0 1.0"/>
+								<body name="justin__torso4" pos="0.30000000000000004 -1.6940658945086007e-21 6.462348535570529e-27" quat="1.0 2.0536478857275792e-23 -1.6155871338926322e-27 0.0">
+									<geom name="justin__torso4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso4_collision1d01d01d0"/>
+									<joint name="justin__torso4" pos="-3.5121413068602766e-22 -5.551115121831776e-17 2.045273562797924e-21" type="hinge" range="-1.570000041628963 0.0" axis="0.0 0.0 1.0"/>
+									<body name="justin__head1" pos="0.23499999999999988 0.08799999999999998 -2.3985006589770017e-23" quat="0.5000031633974484 0.49999999998999295 0.4999968366025516 0.49999999998999284">
+										<geom name="justin__head1_collision_0" pos="0.0 0.0 0.055" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="head1_collision1d01d01d0"/>
+										<joint name="justin__head1" pos="7.264003432624036e-22 1.1102239025983697e-16 1.3877085392200045e-17" type="hinge" range="-0.7853980302393938 0.7853980302393938" axis="0.0 0.0 1.0"/>
+										<body name="justin__head2" pos="2.7755575615628914e-17 0.0 0.0" quat="0.7071090180427969 -0.7071045443232221 -2.9947566288030594e-22 8.765023606135298e-22">
+											<geom name="justin__head2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="head2_collision1d01d01d0"/>
+											<joint name="justin__head2" pos="-2.775557561507341e-17 1.7560383415507074e-22 1.1110059272479197e-27" type="hinge" range="-0.43633201339295974 0.7853980302393938" axis="0.0 0.0 1.0"/>
+										</body>
+									</body>
+									<body name="justin__left_arm1" pos="0.18999999999999995 0.08800000000000001 0.256" quat="-1.2815869636463272e-06 0.9659269619249057 -3.4339416486209343e-07 -0.25881480681128244">
+										<geom name="justin__left_arm1_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm1_collision1d01d01d0"/>
+										<joint name="justin__left_arm1" pos="3.512076683417094e-22 5.5511063427118727e-17 -1.3878139015205033e-17" type="hinge" range="-2.967059994706469 2.967059994706469" axis="0.0 0.0 1.0"/>
+										<body name="justin__left_arm2" pos="0.0 0.0 0.0" quat="0.7071090180427969 0.707104544323222 3.92100864172614e-17 3.9296260578708965e-17">
+											<geom name="justin__left_arm2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm2_collision1d01d01d0"/>
+											<joint name="justin__left_arm2" pos="0.0 0.0 -0.0" type="hinge" range="-2.094400029241212 2.094400029241212" axis="0.0 0.0 1.0"/>
+											<body name="justin__left_arm3" pos="-2.220446049250313e-16 -0.3999999999999999 0.0" quat="-0.4999979632753698 0.500002855481038 0.5000002001153886 0.49999898111482355">
+												<geom name="justin__left_arm3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm3_collision1d01d01d0"/>
+												<joint name="justin__left_arm3" pos="5.551222650048059e-17 9.61483200642265e-17 2.2204425567480451e-16" type="hinge" range="-2.967059994706469 2.967059994706469" axis="0.0 0.0 1.0"/>
+												<body name="justin__left_arm4" pos="0.0 0.0 2.220446049250313e-16" quat="0.7071090180427969 0.7071045443232221 3.1961350156084786e-17 6.685105737558919e-18">
+													<geom name="justin__left_arm4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm4_collision1d01d01d0"/>
+													<joint name="justin__left_arm4" pos="2.1762077718852878e-21 -1.9229765071324584e-16 1.1101990858284768e-16" type="hinge" range="-2.094400029241212 2.094400029241212" axis="0.0 0.0 1.0"/>
+													<body name="justin__left_arm5" pos="0.0 -0.3900000000000001 0.0" quat="0.7071090180427969 -0.707104544323222 -3.1818898238330977e-22 4.866343455640875e-22">
+														<geom name="justin__left_arm5_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm5_collision1d01d01d0"/>
+														<joint name="justin__left_arm5" pos="-3.292422416604961e-22 -9.614917655737579e-17 5.550934598163166e-17" type="hinge" range="-2.967059994706469 2.967059994706469" axis="0.0 0.0 1.0"/>
+														<body name="justin__left_arm6" pos="0.0 0.0 2.220446049250313e-16" quat="0.5000038128102512 -0.4999982581065866 0.49999935057719014 0.49999857848595824">
+															<geom name="justin__left_arm6_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm6_collision1d01d01d0"/>
+															<joint name="justin__left_arm6" pos="2.1762077718852874e-21 -1.9229765071324584e-16 1.1101990858284768e-16" type="hinge" range="-0.7853980302393938 1.3962599394860464" axis="0.0 0.0 1.0"/>
+															<body name="justin__left_arm7" pos="0.0 0.0 0.0" quat="0.5000036953262093 -0.499999150484371 -0.499999468061232 -0.4999976861081738">
+																<geom name="justin__left_arm7_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="left_arm7_collision1d01d01d0"/>
+																<joint name="justin__left_arm7" pos="0.0 0.0 -0.0" type="hinge" range="-0.7853980302393938 2.3561899628184917" axis="0.0 0.0 1.0"/>
+																<body name="justin__left_palm" pos="0.0 0.10109999999999975 -1.3877787807814457e-17" quat="9.38188636525993e-07 9.381827008315599e-07 0.7071045443225996 0.7071090180421745"/>
+																<body name="justin__left_2tip_base" pos="0.04820000000000024 0.24090000000000034 -0.023599999999999996" quat="-0.5390362960267299 0.5562926800189976 0.5027128371555263 -0.3837422690844807">
+																	<body name="justin__left_2tip1" pos="-4.440892098500626e-16 -5.551115123125783e-17 2.220446049250313e-16" quat="1.0 -3.469446951953614e-18 -1.3877787807814457e-17 3.469446951953615e-18">
+																		<joint name="justin__left_2tip1" pos="-1.5634027414223574e-16 4.0018617325262083e-16 2.5496914756719033e-16" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__left_2tip2" pos="-4.440892098500626e-16 -5.551115123125783e-17 2.220446049250313e-16" quat="0.7071090180427969 0.707104544323222 7.666442831099699e-18 1.7479379066558992e-17">
+																			<geom name="justin__left_2tip2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__left_2tip2" pos="-1.5634027414223574e-16 4.0018617325262083e-16 2.5496914756719033e-16" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__left_2tip3" pos="0.07499999999999973 -3.3306690738754696e-16 0.0" quat="1.0 3.46944695195362e-18 3.4694469519536138e-18 0.0">
+																				<geom name="justin__left_2tip3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__left_2tip3" pos="2.1702434560979313e-16 2.558401863718037e-16 -2.605875442897566e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__left_2tip4" pos="0.040000000000000036 -1.1102230246251565e-16 5.551115123125783e-17" quat="0.7071090180427969 -2.9438954217166104e-17 -2.4532679145183895e-17 -0.707104544323222">
+																					<geom name="justin__left_2tip4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__left_2tip4" pos="4.981678222411375e-17 1.1067865316371039e-16 4.335515785973151e-17" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+																<body name="justin__left_3middle_base" pos="0.04689999999999994 0.23530000000000006 0.016289999999999985" quat="-0.5390362960267299 0.5562926800189976 0.5027128371555263 -0.3837422690844807">
+																	<geom name="justin__left_3middle_base_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_base_collision1d01d01d0"/>
+																	<body name="justin__left_3middle1" pos="0.0 -1.1102230246251565e-16 3.3306690738754696e-16" quat="1.0 -3.469446951953614e-18 -1.3877787807814457e-17 3.469446951953615e-18">
+																		<joint name="justin__left_3middle1" pos="-1.3728824618237774e-16 -5.616951267073178e-17 3.182081704596575e-16" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__left_3middle2" pos="0.0 -1.1102230246251565e-16 3.3306690738754696e-16" quat="0.7071090180427969 0.707104544323222 7.666442831099699e-18 1.7479379066558992e-17">
+																			<geom name="justin__left_3middle2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__left_3middle2" pos="-1.3728824618237774e-16 -5.616951267073178e-17 3.182081704596575e-16" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__left_3middle3" pos="0.07499000000000011 -3.3306690738754696e-16 0.0" quat="1.0 3.46944695195362e-18 3.4694469519536138e-18 0.0">
+																				<geom name="justin__left_3middle3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__left_3middle3" pos="2.6011732735529186e-16 2.0924423819941249e-16 1.0869839571341691e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__left_3middle4" pos="0.03999999999999959 -1.1102230246251565e-16 0.0" quat="0.7071090180427969 -2.9438954217166104e-17 -2.4532679145183895e-17 -0.707104544323222">
+																					<geom name="justin__left_3middle4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__left_3middle4" pos="3.536660617471919e-17 1.2526053617308504e-16 -4.0371896945733314e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+																<body name="justin__left_4ring_base" pos="0.0374000000000001 0.22990000000000022 0.062299999999999994" quat="-0.5390362960267299 0.5562926800189976 0.5027128371555263 -0.3837422690844807">
+																	<body name="justin__left_4ring1" pos="-4.440892098500626e-16 -5.551115123125783e-17 1.1102230246251565e-16" quat="1.0 -3.469446951953614e-18 -1.3877787807814457e-17 3.469446951953615e-18">
+																		<joint name="justin__left_4ring1" pos="-8.309429914058352e-17 4.189894632293339e-16 1.7368313969260415e-16" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__left_4ring2" pos="-4.440892098500626e-16 -5.551115123125783e-17 1.1102230246251565e-16" quat="0.7071090180427969 0.707104544323222 7.666442831099699e-18 1.7479379066558992e-17">
+																			<geom name="justin__left_4ring2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__left_4ring2" pos="-8.309429914058352e-17 4.189894632293339e-16 1.7368313969260415e-16" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__left_4ring3" pos="0.07499999999999973 -4.440892098500626e-16 0.0" quat="1.0 3.46944695195362e-18 3.4694469519536138e-18 0.0">
+																				<geom name="justin__left_4ring3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__left_4ring3" pos="2.99474024432372e-16 3.301903347269057e-16 -2.608274311510298e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__left_4ring4" pos="0.03999999999999959 -1.1102230246251565e-16 0.0" quat="0.7071090180427969 -2.9438954217166104e-17 -2.4532679145183895e-17 -0.707104544323222">
+																					<geom name="justin__left_4ring4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__left_4ring4" pos="3.536660617471919e-17 1.2526053617308504e-16 -4.0371896945733314e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+																<body name="justin__left_1thumb_base" pos="-0.0504 0.20290000000000008 -0.046200000000000005" quat="0.3802274816584823 0.28664183871594595 0.5528058536848998 0.6838634415004939">
+																	<body name="justin__left_1thumb1" pos="-2.220446049250313e-16 0.0 0.0" quat="1.0 -6.938893903907228e-18 0.0 9.62964972193618e-35">
+																		<joint name="justin__left_1thumb1" pos="6.290930558431454e-18 -2.162868621813316e-16 -4.9841990497730986e-17" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__left_1thumb2" pos="-2.220446049250313e-16 0.0 0.0" quat="0.7071090180427969 0.707104544323222 -6.13315426515963e-19 6.133154265159632e-19">
+																			<geom name="justin__left_1thumb2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__left_1thumb2" pos="6.290930558431454e-18 -2.162868621813316e-16 -4.9841990497730986e-17" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__left_1thumb3" pos="0.07500000000000018 0.0 0.0" quat="1.0 -7.806255641895626e-18 4.336808689942049e-19 -1.7347234759768075e-18">
+																				<geom name="justin__left_1thumb3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__left_1thumb3" pos="-5.11138107872557e-18 4.049772910572139e-17 -1.7573281930502321e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__left_1thumb4" pos="0.03999000000000019 0.0 0.0" quat="0.7071090180427969 -1.2879794690390632e-17 6.623788756842204e-17 -0.7071045443232222">
+																					<geom name="justin__left_1thumb4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__left_1thumb4" pos="-5.504564238627548e-18 4.361293903693073e-17 -1.892507284823327e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+															</body>
+														</body>
+													</body>
+												</body>
+											</body>
+										</body>
+									</body>
+									<body name="justin__right_arm1" pos="0.18999999999999972 0.08799999999999998 -0.256" quat="0.25881480681275504 9.381927987834072e-07 0.9659269619245111 9.381927987834071e-07">
+										<geom name="justin__right_arm1_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm1_collision1d01d01d0"/>
+										<joint name="justin__right_arm1" pos="1.756038341690058e-21 2.7755584394709613e-16 1.38760317691951e-17" type="hinge" range="-2.967059994706469 2.967059994706469" axis="0.0 0.0 1.0"/>
+										<body name="justin__right_arm2" pos="-2.220446049250313e-16 0.0 -1.1102230246251565e-16" quat="0.7071090180427969 0.707104544323222 -5.98939341609114e-22 2.994692807169614e-22">
+											<geom name="justin__right_arm2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm2_collision1d01d01d0"/>
+											<joint name="justin__right_arm2" pos="-9.614862540316766e-17 2.2204404980472366e-16 5.551252110821743e-17" type="hinge" range="-2.094400029241212 2.094400029241212" axis="0.0 0.0 1.0"/>
+											<body name="justin__right_arm3" pos="2.220446049250313e-16 0.4 -1.3877787807814457e-17" quat="-0.5000000163038245 0.4999988860457905 0.49999814708693363 0.5000029505500712">
+												<geom name="justin__right_arm3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm3_collision1d01d01d0"/>
+												<joint name="justin__right_arm3" pos="-1.2018573740022665e-17 6.935169960024034e-18 2.220447181844981e-16" type="hinge" range="-2.967059994706469 2.967059994706469" axis="0.0 0.0 1.0"/>
+												<body name="justin__right_arm4" pos="0.0 0.0 2.220446049250313e-16" quat="0.7071090180427969 0.7071045443232222 -2.9946947575952534e-22 5.9894084620399815e-22">
+													<geom name="justin__right_arm4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm4_collision1d01d01d0"/>
+													<joint name="justin__right_arm4" pos="-1.5760080890128095e-21 1.9229765071769975e-16 -1.110199085852757e-16" type="hinge" range="-2.094400029241212 2.094400029241212" axis="0.0 0.0 1.0"/>
+													<body name="justin__right_arm5" pos="0.0 0.3900000000000001 0.0" quat="-9.381886365338448e-07 -9.381827008255435e-07 0.7071045443225996 0.7071090180421745">
+														<geom name="justin__right_arm5_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm5_collision1d01d01d0"/>
+														<joint name="justin__right_arm5" pos="8.734865387368006e-22 9.614917655336736e-17 -5.5509345982678627e-17" type="hinge" range="-2.967059994706469 2.967059994706469" axis="0.0 0.0 1.0"/>
+														<body name="justin__right_arm6" pos="-1.3877787807814457e-17 -2.220446049250313e-16 -2.220446049250313e-16" quat="0.5000036527601436 0.49999757317759447 -0.49999951062729764 0.4999992634149504">
+															<geom name="justin__right_arm6_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm6_collision1d01d01d0"/>
+															<joint name="justin__right_arm6" pos="1.38781744544726e-17 3.033175900256629e-16 -8.127756149085865e-17" type="hinge" range="-0.7853980302393938 1.3962599394860464" axis="0.0 0.0 1.0"/>
+															<body name="justin__right_arm7" pos="-2.220446049250313e-16 1.3877787807814457e-17 -4.440892098500626e-16" quat="0.500000616667985 0.500002545381459 0.4999975467227736 -0.4999992912144024">
+																<geom name="justin__right_arm7_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="right_arm7_collision1d01d01d0"/>
+																<joint name="justin__right_arm7" pos="2.340640575196082e-16 -2.2203775935893614e-16 -3.7765708820612073e-16" type="hinge" range="-0.7853980302393938 2.3561899628184917" axis="0.0 0.0 1.0"/>
+																<body name="justin__right_palm" pos="0.0 0.10109999999999975 0.0" quat="9.381886365333541e-07 9.381827008315635e-07 0.7071045443225997 0.7071090180421745"/>
+																<body name="justin__right_3middle_base" pos="0.046900000000000164 0.23529999999999984 -0.01629" quat="0.5554459572115333 -0.539869382013141 -0.38459039547926505 0.5021066288023044">
+																	<body name="justin__right_3middle1" pos="-4.440892098500626e-16 -5.551115123125783e-17 1.1102230246251565e-16" quat="1.0 3.469446951953608e-18 -1.3877787807814454e-17 6.938893903907228e-18">
+																		<joint name="justin__right_3middle1" pos="-1.654876070211358e-16 -4.190778888408667e-16 9.803183598939264e-17" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__right_3middle2" pos="-4.440892098500626e-16 -5.551115123125783e-17 1.1102230246251565e-16" quat="0.7071090180427969 0.7071045443232221 -1.2266184360001029e-17 2.4532632581529365e-17">
+																			<geom name="justin__right_3middle2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__right_3middle2" pos="-1.654876070211358e-16 -4.190778888408667e-16 9.803183598939264e-17" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__right_3middle3" pos="0.07500000000000018 1.1102230246251565e-16 -5.551115123125783e-17" quat="1.0 1.0408340855860846e-17 3.469446951953614e-18 1.3877787807814454e-17">
+																				<geom name="justin__right_3middle3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__right_3middle3" pos="1.3980385980178417e-16 1.1788857204015753e-17 -1.6814148579570892e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__right_3middle4" pos="0.040000000000000036 -1.1102230246251565e-16 0.0" quat="0.7071090180427969 -2.943889213262077e-17 -4.4158586538094604e-17 -0.7071045443232222">
+																					<geom name="justin__right_3middle4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__right_3middle4" pos="-7.84716064895604e-17 -7.854719533375969e-17 -3.46727982641741e-17" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+																<body name="justin__right_4ring_base" pos="0.03739999999999988 0.22989999999999977 -0.06230000000000001" quat="0.5554459572115333 -0.539869382013141 -0.38459039547926505 0.5021066288023044">
+																	<body name="justin__right_4ring1" pos="-4.440892098500626e-16 0.0 1.1102230246251565e-16" quat="1.0 3.469446951953608e-18 -1.3877787807814454e-17 6.938893903907228e-18">
+																		<joint name="justin__right_4ring1" pos="-1.2425886091418446e-16 -4.1931053054239404e-16 1.352020429205739e-16" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__right_4ring2" pos="-4.440892098500626e-16 0.0 1.1102230246251565e-16" quat="0.7071090180427969 0.7071045443232221 -1.2266184360001029e-17 2.4532632581529365e-17">
+																			<geom name="justin__right_4ring2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__right_4ring2" pos="-1.2425886091418446e-16 -4.1931053054239404e-16 1.352020429205739e-16" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__right_4ring3" pos="0.07500000000000018 1.1102230246251565e-16 5.551115123125783e-17" quat="1.0 1.0408340855860846e-17 3.469446951953614e-18 1.3877787807814454e-17">
+																				<geom name="justin__right_4ring3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__right_4ring3" pos="6.656433615918024e-17 9.314140669719615e-17 -1.8668026978070641e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__right_4ring4" pos="0.040000000000000036 2.220446049250313e-16 5.551115123125783e-17" quat="0.7071090180427969 -2.943889213262077e-17 -4.4158586538094604e-17 -0.7071045443232222">
+																					<geom name="justin__right_4ring4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__right_4ring4" pos="1.322811083308455e-16 1.8515031216419646e-16 -4.254492903788366e-17" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+																<body name="justin__right_2tip_base" pos="0.04820000000000024 0.2408999999999999 0.023599999999999996" quat="0.5554459572115333 -0.539869382013141 -0.38459039547926505 0.5021066288023044">
+																	<body name="justin__right_2tip1" pos="0.0 -5.551115123125783e-17 0.0" quat="1.0 3.469446951953608e-18 -1.3877787807814454e-17 6.938893903907228e-18">
+																		<joint name="justin__right_2tip1" pos="-4.122874610695134e-17 2.3264170152734053e-19 -3.717020693118124e-17" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__right_2tip2" pos="0.0 -5.551115123125783e-17 0.0" quat="0.7071090180427969 0.7071045443232221 -1.2266184360001029e-17 2.4532632581529365e-17">
+																			<geom name="justin__right_2tip2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__right_2tip2" pos="-4.122874610695134e-17 2.3264170152734053e-19 -3.717020693118124e-17" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__right_2tip3" pos="0.07500000000000018 -1.1102230246251565e-16 5.551115123125783e-17" quat="1.0 1.0408340855860846e-17 3.469446951953614e-18 1.3877787807814454e-17">
+																				<geom name="justin__right_2tip3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__right_2tip3" pos="-9.835064826862505e-17 -5.553941513704781e-17 -1.8761177725989922e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__right_2tip4" pos="0.040000000000000036 -1.1102230246251565e-16 0.0" quat="0.7071090180427969 -2.943889213262077e-17 -4.4158586538094604e-17 -0.7071045443232222">
+																					<geom name="justin__right_2tip4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__right_2tip4" pos="-7.84716064895604e-17 -7.854719533375969e-17 -3.46727982641741e-17" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+																<body name="justin__right_1thumb_base" pos="-0.05039999999999978 0.20289999999999964 0.046200000000000005" quat="0.2872740278164936 0.37977190397240235 0.6829645056591517 0.5539010903627248">
+																	<body name="justin__right_1thumb1" pos="0.0 1.1102230246251565e-16 0.0" quat="1.0 1.3877787807814457e-17 3.469446951953614e-18 4.3368086899419985e-19">
+																		<joint name="justin__right_1thumb1" pos="1.108108606855426e-16 -1.7147849733445565e-18 6.630558852975419e-18" type="hinge" range="-0.5235990086248943 0.5235990086248943" axis="0.0 0.0 1.0"/>
+																		<body name="justin__right_1thumb2" pos="0.0 1.1102230246251565e-16 0.0" quat="0.7071090180427969 0.7071045443232222 -1.4719446066163084e-17 1.962607812683438e-17">
+																			<geom name="justin__right_1thumb2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phaprox_collision1d01d01d0"/>
+																			<joint name="justin__right_1thumb2" pos="1.108108606855426e-16 -1.7147849733445565e-18 6.630558852975419e-18" type="hinge" range="-0.3490659835569204 1.5009799609218153" axis="0.0 0.0 1.0"/>
+																			<body name="justin__right_1thumb3" pos="0.07499999999999996 2.220446049250313e-16 0.0" quat="1.0 6.938893903907227e-18 -8.67361737988404e-19 -1.7347234759768256e-18">
+																				<geom name="justin__right_1thumb3_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="finger_phamed_collision1d01d01d0"/>
+																				<joint name="justin__right_1thumb3" pos="2.228010975124274e-16 4.0471679187881054e-18 -3.715420441022374e-17" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				<body name="justin__right_1thumb4" pos="0.04000000000000026 0.0 1.1102230246251565e-16" quat="0.7071090180427969 -5.038267116352868e-18 -3.548130286840193e-18 -0.7071045443232222">
+																					<geom name="justin__right_1thumb4_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="hii2_geh_phadist_gesamt_asm_collision1d01d01d0"/>
+																					<joint name="justin__right_1thumb4" pos="-1.1889265359753006e-18 -5.124686416005954e-17 2.7497863436671566e-16" type="hinge" range="-0.1745329917784602 1.7627800145112373" axis="0.0 0.0 1.0"/>
+																				</body>
+																			</body>
+																		</body>
+																	</body>
+																</body>
+															</body>
+														</body>
+													</body>
+												</body>
+											</body>
+										</body>
+									</body>
+								</body>
+							</body>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+	</worldbody>
+</mujoco>
