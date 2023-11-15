@@ -1,0 +1,308 @@
+<mujoco model="armar6">
+    <compiler angle="radian" meshdir="/home/giangnguyen/Workspace/mujoco_ws/src/mujoco_robots/armar/armar_description/mjcf/armar6/stl/" autolimits="true" balanceinertia="true" discardvisual="true" boundmass="0.000001" boundinertia="0.000001"/>
+    <statistic meansize="0.114918" extent="2.54061" center="-0.0386466 0.000577288 0.760546"/>
+    <asset>
+        <mesh name="platform" file="platform.stl"/>
+        <mesh name="torso" file="torso.stl"/>
+        <mesh name="2h09010_arml_cla" file="2h09010_arml_cla.stl"/>
+        <mesh name="2h09020_arml_t12" file="2h09020_arml_t12.stl"/>
+        <mesh name="2h09030_arml_t23" file="2h09030_arml_t23.stl"/>
+        <mesh name="2h09040_arml_t34" file="2h09040_arml_t34.stl"/>
+        <mesh name="2h09050_arml_t45" file="2h09050_arml_t45.stl"/>
+        <mesh name="2h09060_arml_t56" file="2h09060_arml_t56.stl"/>
+        <mesh name="2h09070_arml_t67" file="2h09070_arml_t67.stl"/>
+        <mesh name="2h09080_arml_t78" file="2h09080_arml_t78.stl"/>
+        <mesh name="2h09090_arml_t8" file="2h09090_arml_t8.stl"/>
+        <mesh name="palm_l" file="palm_l.stl"/>
+        <mesh name="index_prox" file="index_prox.stl"/>
+        <mesh name="index_inter" file="index_inter.stl"/>
+        <mesh name="index_dist" file="index_dist.stl"/>
+        <mesh name="middle_prox" file="middle_prox.stl"/>
+        <mesh name="middle_inter" file="middle_inter.stl"/>
+        <mesh name="middle_dist" file="middle_dist.stl"/>
+        <mesh name="pinky_prox" file="pinky_prox.stl"/>
+        <mesh name="pinky_inter" file="pinky_inter.stl"/>
+        <mesh name="pinky_dist" file="pinky_dist.stl"/>
+        <mesh name="ring_prox" file="ring_prox.stl"/>
+        <mesh name="ring_inter" file="ring_inter.stl"/>
+        <mesh name="ring_dist" file="ring_dist.stl"/>
+        <mesh name="thumb_prox" file="thumb_prox.stl"/>
+        <mesh name="thumb_dist" file="thumb_dist.stl"/>
+        <mesh name="palm_r" file="palm_r.stl"/>
+        <mesh name="6a11000_halsbasis_t1" file="6a11000_halsbasis_t1.stl"/>
+        <mesh name="6a12000_halsmitte_t12" file="6a12000_halsmitte_t12.stl"/>
+        <mesh name="6a13000_halsoben_v13" file="6a13000_halsoben_v13.stl"/>
+    </asset>
+    <worldbody>
+        <body name="armar6">
+            <geom quat="0.707107 0 0 -0.707107" type="mesh" rgba="1 1 1 1" mesh="platform"/>
+            <body name="link0_7" pos="0 0 1.195" quat="0.707107 0 0 -0.707107">
+                <joint name="TorsoJoint" pos="0 0 0" axis="0 0 1" type="slide" range="-0.5 0.5"/>
+                <geom type="mesh" rgba="1 1 1 1" mesh="torso"/>
+                <geom pos="-0.09 -3.30588e-07 0.1" quat="0.707105 0 0 0.707108" type="mesh" rgba="1 1 1 1" mesh="2h09010_arml_cla"/>
+                <geom pos="0.09 3.30588e-07 0.1" quat="0.707109 0 0 -0.707105" type="mesh" rgba="1 1 1 1" mesh="2h09010_arml_cla"/>
+                <geom pos="0 0 0.3685" quat="0.707105 0 0 0.707108" type="mesh" rgba="1 1 1 1" mesh="6a11000_halsbasis_t1"/>
+                <body name="link0_11" pos="-0.09 -3.30588e-07 0.1" quat="0.707105 0 0 0.707108">
+                    <joint name="ArmL1_Cla1" pos="0 0 0" axis="0 0 1"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="2h09020_arml_t12"/>
+                    <body name="link0_13" pos="0 0.28978 0.07765">
+                        <joint name="ArmL2_Sho1" pos="0 0 0" axis="0 0.965926 0.258819"/>
+                        <geom quat="0.793352 -0.608763 0 0" type="mesh" rgba="1 1 1 1" mesh="2h09030_arml_t23"/>
+                        <body name="link0_15" quat="0.707105 -0.707108 0 0">
+                            <joint name="ArmL3_Sho2" pos="0 0 0" axis="1 0 0"/>
+                            <geom quat="0.707105 0 0.707108 0" type="mesh" rgba="1 1 1 1" mesh="2h09040_arml_t34"/>
+                            <body name="link0_17" quat="0.500001 -0.499999 0.500002 0.499997">
+                                <joint name="ArmL4_Sho3" pos="0 0 0" axis="0 0 1"/>
+                                <geom type="mesh" rgba="1 1 1 1" mesh="2h09050_arml_t45"/>
+                                <body name="link0_19" pos="0 -0.055 0.409">
+                                    <joint name="ArmL5_Elb1" pos="0 0 0" axis="1 0 0"/>
+                                    <geom quat="0.707105 0 0.707108 0" type="mesh" rgba="1 1 1 1" mesh="2h09060_arml_t56"/>
+                                    <body name="link0_21">
+                                        <joint name="ArmL6_Elb2" pos="0 0 0" axis="0 0 1"/>
+                                        <geom type="mesh" rgba="1 1 1 1" mesh="2h09070_arml_t67"/>
+                                        <body name="link0_23" pos="0 0 0.364">
+                                            <joint name="ArmL7_Wri1" pos="0 0 0" axis="0 -1 0"/>
+                                            <geom quat="0.707105 0.707108 0 0" type="mesh" rgba="1 1 1 1" mesh="2h09080_arml_t78"/>
+                                            <body name="link0_25" quat="0.707105 0 0 0.707108">
+                                                <joint name="ArmL8_Wri2" pos="0 0 0" axis="0 -1 0"/>
+                                                <geom type="mesh" rgba="1 1 1 1" mesh="2h09090_arml_t8"/>
+                                                <geom pos="0 0 0.14" quat="-0.499999 0.500001 0.500001 0.499999" type="mesh" rgba="1 1 1 1" mesh="palm_l"/>
+                                                <body name="link0_30" pos="-3.99899e-08 0.0392205 0.28531" quat="-0.4777 0.521347 -0.477701 0.521346">
+                                                    <joint name="Index_L_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="index_prox"/>
+                                                    <body name="link0_32" pos="0 -0.05595 0">
+                                                        <joint name="Index_L_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="index_inter"/>
+                                                        <body name="link0_34" pos="0 -0.03197 0">
+                                                            <joint name="Index_L_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="1.76043e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="index_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_36" pos="-5.63852e-08 0.0553005 0.27032" quat="-0.390371 0.589586 -0.390372 0.589584">
+                                                    <joint name="LeftHandFingers" pos="0 0 0" axis="1 0 0"/>
+                                                </body>
+                                                <body name="link0_38" pos="-0.04691 -0.0394997 0.22111" quat="0.137185 0.665452 0.722816 -0.126064">
+                                                    <joint name="LeftHandThumb" pos="0 0 0" axis="1 0 0"/>
+                                                </body>
+                                                <body name="link0_40" pos="-7.64768e-09 0.00750056 0.29172" quat="0.499999 -0.5 0.499999 -0.500002">
+                                                    <joint name="Middle_L_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="middle_prox"/>
+                                                    <body name="link0_42" pos="0 -0.06 0">
+                                                        <joint name="Middle_L_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="middle_inter"/>
+                                                        <body name="link0_44" pos="0 -0.039 0">
+                                                            <joint name="Middle_L_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="1.76034e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="middle_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_46" pos="5.63842e-08 -0.0552995 0.27032" quat="-0.589585 0.390372 -0.589582 0.390375">
+                                                    <joint name="Pinky_L_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="pinky_prox"/>
+                                                    <body name="link0_48" pos="0 -0.0461 0">
+                                                        <joint name="Pinky_L_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="pinky_inter"/>
+                                                        <body name="link0_50" pos="0 -0.02706 0">
+                                                            <joint name="Pinky_L_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="1.76038e-12 -1.32679e-06 -1 1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="pinky_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_52" pos="2.68153e-08 -0.0262995 0.28652" quat="-0.5417 0.454491 -0.541696 0.454494">
+                                                    <joint name="Ring_L_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="ring_prox"/>
+                                                    <body name="link0_54" pos="0 -0.05506 0">
+                                                        <joint name="Ring_L_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="ring_inter"/>
+                                                        <body name="link0_56" pos="0 -0.03704 0">
+                                                            <joint name="Ring_L_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="9.38184e-07 9.38187e-07 -0.707108 -0.707105" type="mesh" rgba="1 1 1 1" mesh="ring_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_58" pos="-0.04691 0.0395003 0.22111" quat="-0.12637 0.722964 0.665152 0.137572">
+                                                    <joint name="Thumb_L_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="thumb_prox"/>
+                                                    <body name="link0_60" pos="2e-05 -0.04408 -5e-05">
+                                                        <joint name="Thumb_L_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom quat="1.7604e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="thumb_dist"/>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+                <body name="link0_63" pos="0.09 3.30588e-07 0.1" quat="0.707109 0 0 -0.707105">
+                    <joint name="ArmR1_Cla1" pos="0 0 0" axis="0 0 1"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="2h09020_arml_t12"/>
+                    <body name="link0_65" pos="0 0.28978 0.07765">
+                        <joint name="ArmR2_Sho1" pos="0 0 0" axis="0 0.965926 0.258819"/>
+                        <geom quat="0.793352 -0.608763 0 0" type="mesh" rgba="1 1 1 1" mesh="2h09030_arml_t23"/>
+                        <body name="link0_67" quat="0.707105 -0.707108 0 0">
+                            <joint name="ArmR3_Sho2" pos="0 0 0" axis="1 0 0"/>
+                            <geom quat="0.707105 0 0.707108 0" type="mesh" rgba="1 1 1 1" mesh="2h09040_arml_t34"/>
+                            <body name="link0_69" quat="0.499998 -0.500002 -0.5 -0.5">
+                                <joint name="ArmR4_Sho3" pos="0 0 0" axis="0 0 1"/>
+                                <geom type="mesh" rgba="1 1 1 1" mesh="2h09050_arml_t45"/>
+                                <body name="link0_71" pos="0 -0.055 0.409">
+                                    <joint name="ArmR5_Elb1" pos="0 0 0" axis="1 0 0"/>
+                                    <geom quat="0.707105 0 0.707108 0" type="mesh" rgba="1 1 1 1" mesh="2h09060_arml_t56"/>
+                                    <body name="link0_73">
+                                        <joint name="ArmR6_Elb2" pos="0 0 0" axis="0 0 1"/>
+                                        <geom type="mesh" rgba="1 1 1 1" mesh="2h09070_arml_t67"/>
+                                        <body name="link0_75" pos="0 0 0.364">
+                                            <joint name="ArmR7_Wri1" pos="0 0 0" axis="0 -1 0"/>
+                                            <geom quat="0.707105 0.707108 0 0" type="mesh" rgba="1 1 1 1" mesh="2h09080_arml_t78"/>
+                                            <body name="link0_77" quat="0.707105 0 0 0.707108">
+                                                <joint name="ArmR8_Wri2" pos="0 0 0" axis="0 -1 0"/>
+                                                <geom type="mesh" rgba="1 1 1 1" mesh="2h09090_arml_t8"/>
+                                                <geom pos="0 0 0.14" quat="-0.499999 0.500001 0.500001 0.499999" type="mesh" rgba="1 1 1 1" mesh="palm_r"/>
+                                                <body name="link0_82" pos="3.99888e-08 -0.0392195 0.28531" quat="0.521345 -0.477702 0.521345 -0.477703">
+                                                    <joint name="Index_R_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="index_prox"/>
+                                                    <body name="link0_84" pos="0 -0.05595 0">
+                                                        <joint name="Index_R_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="index_inter"/>
+                                                        <body name="link0_86" pos="0 -0.03197 0">
+                                                            <joint name="Index_R_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="1.76043e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="index_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_88" pos="7.64655e-09 -0.00749944 0.29172" quat="0.499999 -0.5 0.499999 -0.500002">
+                                                    <joint name="Middle_R_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="middle_prox"/>
+                                                    <body name="link0_90" pos="0 -0.06 0">
+                                                        <joint name="Middle_R_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="middle_inter"/>
+                                                        <body name="link0_92" pos="0 -0.039 0">
+                                                            <joint name="Middle_R_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="1.7604e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="middle_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_94" pos="-5.63852e-08 0.0553005 0.27032" quat="-0.390371 0.589586 -0.390372 0.589584">
+                                                    <joint name="Pinky_R_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="pinky_prox"/>
+                                                    <body name="link0_96" pos="0 -0.0461 0">
+                                                        <joint name="Pinky_R_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="pinky_inter"/>
+                                                        <body name="link0_98" pos="0 -0.02706 0">
+                                                            <joint name="Pinky_R_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="1.76038e-12 1.32679e-06 -1 -1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="pinky_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_100" pos="-5.63852e-08 0.0553005 0.27032" quat="-0.390371 0.589586 -0.390372 0.589584">
+                                                    <joint name="RightHandFingers" pos="0 0 0" axis="1 0 0"/>
+                                                </body>
+                                                <body name="link0_102" pos="-0.04691 -0.0394997 0.22111" quat="0.137185 0.665452 0.722816 -0.126064">
+                                                    <joint name="RightHandThumb" pos="0 0 0" axis="1 0 0"/>
+                                                </body>
+                                                <body name="link0_104" pos="-2.68164e-08 0.0263005 0.28652" quat="-0.45449 0.541701 -0.454491 0.541698">
+                                                    <joint name="Ring_R_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="ring_prox"/>
+                                                    <body name="link0_106" pos="0 -0.05506 0">
+                                                        <joint name="Ring_R_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom type="mesh" rgba="1 1 1 1" mesh="ring_inter"/>
+                                                        <body name="link0_108" pos="0 -0.03704 0">
+                                                            <joint name="Ring_R_3_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                            <geom quat="9.38184e-07 9.38187e-07 -0.707108 -0.707105" type="mesh" rgba="1 1 1 1" mesh="ring_dist"/>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="link0_110" pos="-0.04691 -0.0394997 0.22111" quat="0.137185 0.665452 0.722816 -0.126064">
+                                                    <joint name="Thumb_R_1_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                    <geom type="mesh" rgba="1 1 1 1" mesh="thumb_prox"/>
+                                                    <body name="link0_112" pos="-2e-05 -0.04408 -5e-05">
+                                                        <joint name="Thumb_R_2_Joint" pos="0 0 0" axis="1 0 0"/>
+                                                        <geom pos="2e-05 0 -3e-05" quat="1.76034e-12 1.32679e-06 1 1.32679e-06" type="mesh" rgba="1 1 1 1" mesh="thumb_dist"/>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+                <body name="link0_115" pos="0 0 0.3685" quat="0.707105 0 0 0.707108">
+                    <joint name="Neck_1_Yaw" pos="0 0 0" axis="0 0 1"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="6a12000_halsmitte_t12"/>
+                    <body name="link0_117" quat="0.499998 0.5 0.500002 0.5">
+                        <joint name="Neck_2_Pitch" pos="0 0 0" axis="1 0 0"/>
+                        <geom type="mesh" rgba="1 1 1 1" mesh="6a13000_halsoben_v13"/>
+                        <body name="link0_120" pos="0.033 0.2478 0.193" quat="0.707105 0 -0.707108 0">
+                            <joint name="VirtualCentralGazeDepthCamera" pos="0 0 0" axis="1 0 0" type="slide" range="-0.5 0.5"/>
+                        </body>
+                        <body name="link0_124" pos="0 0.173 0.1605" quat="9.38184e-07 0.707108 -9.38187e-07 0.707105">
+                            <joint name="VirtualCentralGaze" pos="0 0 0" axis="1 0 0" type="slide" range="-0.5 0.5"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <equality/>
+    <contact>
+        <exclude body1="armar6" body2="link0_7"/>
+        <exclude body1="link0_7" body2="link0_11"/>
+        <exclude body1="link0_11" body2="link0_13"/>
+        <exclude body1="link0_13" body2="link0_15"/>
+        <exclude body1="link0_15" body2="link0_17"/>
+        <exclude body1="link0_17" body2="link0_19"/>
+        <exclude body1="link0_19" body2="link0_21"/>
+        <exclude body1="link0_21" body2="link0_23"/>
+        <exclude body1="link0_23" body2="link0_25"/>
+        <exclude body1="link0_25" body2="link0_30"/>
+        <exclude body1="link0_30" body2="link0_32"/>
+        <exclude body1="link0_32" body2="link0_34"/>
+        <exclude body1="link0_25" body2="link0_36"/>
+        <exclude body1="link0_25" body2="link0_38"/>
+        <exclude body1="link0_25" body2="link0_40"/>
+        <exclude body1="link0_40" body2="link0_42"/>
+        <exclude body1="link0_42" body2="link0_44"/>
+        <exclude body1="link0_25" body2="link0_46"/>
+        <exclude body1="link0_46" body2="link0_48"/>
+        <exclude body1="link0_48" body2="link0_50"/>
+        <exclude body1="link0_25" body2="link0_52"/>
+        <exclude body1="link0_52" body2="link0_54"/>
+        <exclude body1="link0_54" body2="link0_56"/>
+        <exclude body1="link0_25" body2="link0_58"/>
+        <exclude body1="link0_58" body2="link0_60"/>
+        <exclude body1="link0_7" body2="link0_63"/>
+        <exclude body1="link0_63" body2="link0_65"/>
+        <exclude body1="link0_65" body2="link0_67"/>
+        <exclude body1="link0_67" body2="link0_69"/>
+        <exclude body1="link0_69" body2="link0_71"/>
+        <exclude body1="link0_71" body2="link0_73"/>
+        <exclude body1="link0_73" body2="link0_75"/>
+        <exclude body1="link0_75" body2="link0_77"/>
+        <exclude body1="link0_77" body2="link0_82"/>
+        <exclude body1="link0_82" body2="link0_84"/>
+        <exclude body1="link0_84" body2="link0_86"/>
+        <exclude body1="link0_77" body2="link0_88"/>
+        <exclude body1="link0_88" body2="link0_90"/>
+        <exclude body1="link0_90" body2="link0_92"/>
+        <exclude body1="link0_77" body2="link0_94"/>
+        <exclude body1="link0_94" body2="link0_96"/>
+        <exclude body1="link0_96" body2="link0_98"/>
+        <exclude body1="link0_77" body2="link0_100"/>
+        <exclude body1="link0_77" body2="link0_102"/>
+        <exclude body1="link0_77" body2="link0_104"/>
+        <exclude body1="link0_104" body2="link0_106"/>
+        <exclude body1="link0_106" body2="link0_108"/>
+        <exclude body1="link0_77" body2="link0_110"/>
+        <exclude body1="link0_110" body2="link0_112"/>
+        <exclude body1="link0_7" body2="link0_115"/>
+        <exclude body1="link0_115" body2="link0_117"/>
+        <exclude body1="link0_117" body2="link0_120"/>
+        <exclude body1="link0_117" body2="link0_124"/>
+    </contact>
+</mujoco>
