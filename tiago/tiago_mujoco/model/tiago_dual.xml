@@ -3,7 +3,7 @@
     <option timestep="0.005" />
     <size njmax="1000" nconmax="400" />
     <asset>
-        <mesh name="base_collision" file="base_collision.stl" />
+        <mesh name="base_collision_1" file="base_collision_1.stl" />
         <mesh name="torso_lift_collision_core" file="torso_lift_collision_core.stl" />
         <mesh name="torso_lift_collision_shoulder" file="torso_lift_collision_shoulder.stl" />
         <mesh name="torso_lift_collision_neck" file="torso_lift_collision_neck.stl" />
@@ -25,7 +25,7 @@
     </asset>
     <worldbody>
         <body name="tiago_dual" >
-            <geom pos="0 0 0.0985" type="mesh" rgba="1 1 1 1" mesh="base_collision" />
+            <geom pos="0 0 0.0985" type="mesh" rgba="1 1 1 1" mesh="base_collision_1" />
             <geom size="0.005 0.085" pos="-0.201 0.1062 0.3785" type="cylinder" rgba="0 0 0 1" />
             <geom size="0.005 0.085" pos="-0.201 -0.1062 0.3785" type="cylinder" rgba="0 0 0 1" />
             <geom size="0.2 0.125 0.02" pos="0.023 0 0.3115" type="box" rgba="0.9 0.9 0.9 1" />

@@ -3,14 +3,40 @@
     <default />
     <asset>
         <mesh name="base" file="base.stl" />
+        <mesh name="base_1" file="base_1.stl" />
+        <mesh name="base_2" file="base_2.stl" />
+        <mesh name="base_3" file="base_3.stl" />
+        <mesh name="base_4" file="base_4.stl" />
+        <mesh name="base_5" file="base_5.stl" />
+        <mesh name="base_6" file="base_6.stl" />
+        <mesh name="base_7" file="base_7.stl" />
+        <mesh name="base_8" file="base_8.stl" />
+        <mesh name="base_9" file="base_9.stl" />
+        <mesh name="base_10" file="base_10.stl" />
+        <mesh name="base_11" file="base_11.stl" />
+        <mesh name="base_12" file="base_12.stl" />
+
+
+s
+
+
+
+
         <mesh name="laser" file="laser.stl" />
         <mesh name="torso" file="torso.stl" />
+        <mesh name="torso_1" file="torso_1.stl" />
+        <mesh name="torso_2" file="torso_2.stl" />
+
         <mesh name="head_pan" file="head_pan.stl" />
         <mesh name="head" file="head.stl" />
         <mesh name="tablet" file="tablet.stl" />
         <mesh name="rgbd" file="rgbd.stl" />
         <mesh name="shoulder" file="shoulder.stl" />
+        <mesh name="shoulder_1" file="shoulder_1.stl" />
+
         <mesh name="arm_flex" file="arm_flex.stl" />
+        <mesh name="arm_flex_1" file="arm_flex_1.stl" />
+
         <mesh name="arm_roll" file="arm_roll.stl" />
         <mesh name="wrist_roll" file="wrist_roll.stl" />
         <mesh name="palm" file="palm.stl" />
@@ -21,7 +47,27 @@
     </asset>
     <worldbody>
         <body name="hsrb4s" pos="1.5 2.5 0">
-            <geom type="mesh" mesh="base" />
+            <geom type="mesh" mesh="base" />    
+            <geom type="mesh" mesh="base_1" />  
+            <geom type="mesh" mesh="base_2" />    
+            <geom type="mesh" mesh="base_3" />    
+            <geom type="mesh" mesh="base_4" />    
+            <geom type="mesh" mesh="base_5" />    
+            <geom type="mesh" mesh="base_6" />    
+            <geom type="mesh" mesh="base_7" />    
+            <geom type="mesh" mesh="base_8" />    
+            <geom type="mesh" mesh="base_9" />  
+            <geom type="mesh" mesh="base_10" />  
+            <geom type="mesh" mesh="base_11" />  
+            <geom type="mesh" mesh="base_12" />  
+
+              
+  
+
+
+  
+
+
             <geom pos="0.1675 0 0.1844" type="mesh" mesh="laser" />
             <body name="base_roll_link" pos="0 0 0">
                 <inertial pos="-0.019482 0.002191 0.071013" quat="-0.163088 0.695987 0.176074 0.676759" mass="10.2394" diaginertia="0.145076 0.0958414 0.0713624" />
@@ -67,6 +113,9 @@
                 <inertial pos="-0.051142 0.003454 -0.2905" quat="0.511154 0.00760492 -0.0140194 0.859341" mass="3.42078" diaginertia="0.105342 0.104252 0.0127461" />
                 <joint name="torso_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="0 0.345" damping="500" />
                 <geom type="mesh" mesh="torso" />
+                <geom type="mesh" mesh="torso_1" />
+                <geom type="mesh" mesh="torso_2" />
+
                 <body name="head_pan_link" pos="0 0 0">
                     <inertial pos="0.001724 -0.001969 -0.028886" quat="0.865343 0.459592 0.192259 -0.0547077" mass="0.571903" diaginertia="0.00102408 0.00077623 0.000589392" />
                     <joint name="head_pan_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.84 1.75" damping="1" />
@@ -84,10 +133,13 @@
                 <inertial pos="0.051549 0.042438 -0.064145" quat="-0.111496 0.499152 -0.110462 0.852182" mass="1.27582" diaginertia="0.00909548 0.00799354 0.00328099" />
                 <joint name="arm_lift_joint" pos="0 0 0" axis="0 0 1" type="slide" limited="true" range="0 0.69" damping="1" />
                 <geom type="mesh" mesh="shoulder" />
+                <geom type="mesh" mesh="shoulder_1" />
                 <body name="arm_flex_link" pos="0.141 0.078 0">
                     <inertial pos="0.000632 0.006404 0.118529" quat="0.999966 -0.00826681 1.5355e-06 -1.33584e-06" mass="1.33929" diaginertia="2.51222 2.51222 2.51222" />
                     <joint name="arm_flex_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-2.62 0" damping="1" />
                     <geom type="mesh" mesh="arm_flex" />
+                    <geom type="mesh" mesh="arm_flex_1" />
+
                     <body name="arm_roll_link" pos="0.005 0 0.345">
                         <inertial pos="-0.006927 0.002039 -0.064837" quat="0.704471 0.707171 -0.0444888 0.0406182" mass="0.247936" diaginertia="0.00426928 0.00411787 0.00078077" />
                         <joint name="arm_roll_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.09 3.84" damping="0.1" />
