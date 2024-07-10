@@ -6,7 +6,13 @@
         <mesh name="base" file="base.stl" />
         <mesh name="shoulder" file="shoulder.stl" />
         <mesh name="upperarm" file="upperarm.stl" />
+        <mesh name="upperarm_01" file="upperarm_01.stl" />
+        <mesh name="upperarm_02" file="upperarm_02.stl" />
+        <mesh name="upperarm_03" file="upperarm_03.stl" />
+        <mesh name="upperarm_04" file="upperarm_04.stl" />
         <mesh name="forearm" file="forearm.stl" />
+        <mesh name="forearm_01" file="forearm_01.stl" />
+        <mesh name="forearm_02" file="forearm_02.stl" />
         <mesh name="wrist1" file="wrist1.stl" />
         <mesh name="wrist2" file="wrist2.stl" />
         <mesh name="wrist3" file="wrist3.stl" />
@@ -21,10 +27,16 @@
                 <inertial pos="0 0 0.28" mass="8.393" diaginertia="0.226891 0.226891 0.0151074" />
                 <joint name="shoulder_lift_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-6.28319 6.28319" />
                 <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperarm" />
+                <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperarm_01" />
+                <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperarm_02" />
+                <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperarm_03" />
+                <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="upperarm_04" />
                 <body name="forearm_link" pos="0 -0.1197 0.425">
                     <inertial pos="0 0 0.196125" mass="2.275" diaginertia="0.0312168 0.0312168 0.004095" />
                     <joint name="elbow_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.14159 3.14159" />
                     <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="forearm" />
+                    <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="forearm_01" />
+                    <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="forearm_02" />
                     <body name="wrist_1_link" pos="0 0 0.39225" quat="0.707107 0 0.707107 0">
                         <inertial pos="0 0.093 0" mass="1.219" diaginertia="0.0025599 0.0025599 0.0021942" />
                         <joint name="wrist_1_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-6.28319 6.28319" />

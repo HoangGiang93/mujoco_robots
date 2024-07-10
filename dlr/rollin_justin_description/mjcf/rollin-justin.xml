@@ -11,7 +11,8 @@
 	</default>
 	<asset>
 		<mesh name="base_collision1d01d01d0" file="stl/base1d01d01d0.stl"/>
-		<mesh name="torso1_collision1d01d01d0" file="stl/torso11d01d01d0.stl"/>
+		<mesh name="torso1_collision1d01d01d0_03" file="stl/torso11d01d01d0_03.stl"/>
+		<mesh name="torso1_collision1d01d01d0_04" file="stl/torso11d01d01d0_04.stl"/>
 		<mesh name="torso2_collision1d01d01d0" file="stl/torso21d01d01d0.stl"/>
 		<mesh name="torso3_collision1d01d01d0" file="stl/torso31d01d01d0.stl"/>
 		<mesh name="torso4_collision1d01d01d0" file="stl/torso41d01d01d0.stl"/>
@@ -42,7 +43,8 @@
 				<body name="justin__base_link" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
 					<geom name="justin__base_link_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="base_collision1d01d01d0"/>
 					<body name="justin__torso1" pos="0.0 0.0 0.6939" quat="1.0 0.0 0.0 0.0">
-						<geom name="justin__torso1_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso1_collision1d01d01d0"/>
+						<geom name="justin__torso1_collision_03" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso1_collision1d01d01d0_03"/>
+						<geom name="justin__torso1_collision_04" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso1_collision1d01d01d0_04"/>
 						<joint name="justin__torso1" pos="0.0 0.0 0.0" type="hinge" range="-1.7453300509426566 3.3161301061630795" axis="0.0 0.0 1.0"/>
 						<body name="justin__torso2" pos="0.0 0.0 0.0" quat="0.5000031633974484 -0.49999999998999284 -0.49999999998999284 -0.49999683660255156">
 							<geom name="justin__torso2_collision_0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" class="collision" type="mesh" mesh="torso2_collision1d01d01d0"/>
